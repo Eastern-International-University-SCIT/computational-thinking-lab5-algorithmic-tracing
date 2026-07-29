@@ -292,6 +292,7 @@
     applyI18n();
     bindControls();
     bindSplitter();
+    bindRowSplitter();
     applyPuzzleInstance();
     window.addEventListener("resize", onResize);
   });
