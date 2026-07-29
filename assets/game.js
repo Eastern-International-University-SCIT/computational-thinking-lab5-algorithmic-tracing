@@ -25,7 +25,7 @@
       roadmapKicker: "Your learning path", roadmapTitle: "Algorithm roadmap",
       roadmapText: "Progress is saved automatically on this browser. Complete every puzzle in a set to unlock the next algorithm.",
       footerText: "Built for learning, one trace at a time.", offline: "Works fully offline", close: "Close",
-      resetHeading: "Reset course progress?", resetText: "This will mark all 135 puzzles as incomplete and lock the course after Linear Search again.",
+      resetHeading: "Reset course progress?", resetText: "This will mark all 120 puzzles as incomplete and lock the course after Linear Search again.",
       keepProgress: "Keep progress", resetEverything: "Reset everything", roadmapShort: "Roadmap", solved: "Solved",
       openNewTab: "Open in new tab", nextPuzzle: "Next puzzle →", backRoadmap: "Back to roadmap →",
       searchModule: "Search", sortModule: "Sort", treeModule: "Tree", moduleLabel: "MODULE {number}", moduleNote: "{algorithms} algorithms · {puzzles} puzzles",
@@ -68,7 +68,7 @@
       roadmapKicker: "Lộ trình học tập", roadmapTitle: "Lộ trình thuật toán",
       roadmapText: "Tiến độ được tự động lưu trên trình duyệt này. Hoàn thành mọi câu đố trong một bộ để mở khóa thuật toán tiếp theo.",
       footerText: "Học tập qua từng dấu vết thực thi.", offline: "Hoạt động hoàn toàn ngoại tuyến", close: "Đóng",
-      resetHeading: "Đặt lại tiến độ khóa học?", resetText: "Thao tác này sẽ đánh dấu 135 câu đố là chưa hoàn thành và khóa lại khóa học sau Tìm kiếm tuyến tính.",
+      resetHeading: "Đặt lại tiến độ khóa học?", resetText: "Thao tác này sẽ đánh dấu 120 câu đố là chưa hoàn thành và khóa lại khóa học sau Tìm kiếm tuyến tính.",
       keepProgress: "Giữ tiến độ", resetEverything: "Đặt lại tất cả", roadmapShort: "Lộ trình", solved: "Đã giải",
       openNewTab: "Mở trong thẻ mới", nextPuzzle: "Câu đố tiếp theo →", backRoadmap: "Về lộ trình →",
       searchModule: "Tìm kiếm", sortModule: "Sắp xếp", treeModule: "Cây", moduleLabel: "CHỦ ĐỀ {number}", moduleNote: "{algorithms} thuật toán · {puzzles} câu đố",
@@ -99,7 +99,7 @@
 
   const modules = {
     search: { number: "01", titleKey: "searchModule", algorithms: 6, puzzles: 72 },
-    sort: { number: "02", titleKey: "sortModule", algorithms: 5, puzzles: 45 },
+    sort: { number: "02", titleKey: "sortModule", algorithms: 5, puzzles: 30 },
     tree: { number: "03", titleKey: "treeModule", algorithms: 2, puzzles: 18 }
   };
 
@@ -159,31 +159,31 @@
     {
       id: "selection-sort", category: "sort", name: "Selection Sort", short: "SELECTION",
       description: "Track the smallest remaining value and place it into its final position each pass.",
-      folder: "selectionsort_puzzles", app: "selectionsort", groups: [8, 14, 20], cases: 3, groupKind: "size",
+      folder: "selectionsort_puzzles", app: "selectionsort", groups: [8, 14], cases: 3, groupKind: "size",
       unlockAfter: "jump-search"
     },
     {
       id: "bubble-sort", category: "sort", name: "Bubble Sort", short: "BUBBLE",
       description: "Compare neighbors, swap inverted pairs, and watch larger values rise to the end.",
-      folder: "bubblesort_puzzles", app: "bubblesort", groups: [8, 14, 20], cases: 3, groupKind: "size",
+      folder: "bubblesort_puzzles", app: "bubblesort", groups: [8, 14], cases: 3, groupKind: "size",
       unlockAfter: "selection-sort"
     },
     {
       id: "quick-sort", category: "sort", name: "Quick Sort", short: "QUICK",
       description: "Partition values around a pivot and trace the recursive work on both sides.",
-      folder: "quicksort_puzzles", app: "quicksort", groups: [8, 14, 20], cases: 3, groupKind: "size",
+      folder: "quicksort_puzzles", app: "quicksort", groups: [8, 14], cases: 3, groupKind: "size",
       unlockAfter: "bubble-sort"
     },
     {
       id: "merge-sort", category: "sort", name: "Merge Sort", short: "MERGE",
       description: "Split the array recursively, then reconstruct it through ordered merges.",
-      folder: "mergesort_puzzles", app: "mergesort", groups: [8, 14, 20], cases: 3, groupKind: "size",
+      folder: "mergesort_puzzles", app: "mergesort", groups: [8, 14], cases: 3, groupKind: "size",
       unlockAfter: "quick-sort"
     },
     {
       id: "natural-merge-sort", category: "sort", name: "Natural Merge Sort", short: "NATURAL MERGE",
       description: "Discover existing ordered runs and merge them until the whole array is sorted.",
-      folder: "naturalmergesort_puzzles", app: "naturalmergesort", groups: [8, 14, 20], cases: 3, groupKind: "size",
+      folder: "naturalmergesort_puzzles", app: "naturalmergesort", groups: [8, 14], cases: 3, groupKind: "size",
       unlockAfter: "quick-sort"
     },
     {
