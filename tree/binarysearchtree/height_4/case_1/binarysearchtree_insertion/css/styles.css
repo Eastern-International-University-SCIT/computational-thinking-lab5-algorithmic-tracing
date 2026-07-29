@@ -767,7 +767,9 @@ body.is-resizing-panels canvas {
 .controls.is-locked .speed-field {
   pointer-events: none;
 }
-.controls.is-locked #btn-reset {
+.controls.is-locked #btn-reset,
+.controls.is-locked #btn-rerun,
+.controls.is-locked .speed-field {
   pointer-events: auto;
   opacity: 1;
 }

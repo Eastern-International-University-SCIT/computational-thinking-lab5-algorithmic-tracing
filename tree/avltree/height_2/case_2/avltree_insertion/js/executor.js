@@ -1002,13 +1002,6 @@ window.AvlInsertExecutor = (function () {
   }
 
   function rerun() {
-    if (
-      window.TracePuzzle &&
-      window.TracePuzzle.isTaskComplete &&
-      window.TracePuzzle.isTaskComplete()
-    ) {
-      return;
-    }
     if (running) {
       abort = true;
       paused = false;

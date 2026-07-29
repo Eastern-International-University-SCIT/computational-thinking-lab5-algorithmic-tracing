@@ -14,6 +14,8 @@ Use the **EN / VI** control on the dashboard to switch the entire course between
 
 The first puzzle opens a three-step quick-start guide covering simulation controls, navigation of the 3D view, and filling gaps in the execution trace. Students can reopen it at any time with the **Guide / Hướng dẫn** button in the puzzle toolbar.
 
+After a puzzle is completed, **Rerun / Chạy lại** and the speed control remain available. Replaying preserves the solved trace and course progress.
+
 Course and algorithm-set progress are shown as percentages. Completing Search reveals a short explanation of why sorting enables faster repeated searches; completing Sort reveals how balanced search trees support fast search, insertion, and deletion without re-sorting the full collection.
 
 The reusable integrity checker is `tools/audit-puzzles.js`. It validates the 135 puzzle instances, 18,390 trace rows, answer pieces, available CSV traces, embedded game data, step references, and final algorithm outcomes.
