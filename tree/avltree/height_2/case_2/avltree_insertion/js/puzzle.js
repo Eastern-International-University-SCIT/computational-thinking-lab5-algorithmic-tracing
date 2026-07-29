@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Trace-fill puzzle for AVL insertion.
  * Students drag Line / variable chips into blank rows where values change.
  * Execution gates on each blank row until that row is fully correct.
@@ -1083,6 +1083,48 @@ window.TracePuzzle = (function () {
   let validatedSteps = new Set();
   let taskComplete = false;
   let nextPieceId = 1;
+  function puzzleStorageKey() {
+    try {
+      let path = window.location.pathname.replace(/\\/g, "/");
+      const coursePath = path.match(/(?:^|\/)(search|sort|tree)\/.+$/i);
+      if (coursePath) path = coursePath[0].replace(/^\//, "");
+      return "tracelab-puzzle-state:" + path;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function savePuzzleState() {
+    try {
+      const key = puzzleStorageKey();
+      if (!key) return;
+      localStorage.setItem(key, JSON.stringify({ filled: filled, taskComplete: taskComplete }));
+    } catch (_) { /* ignore */ }
+  }
+
+  function restorePuzzleState() {
+    try {
+      const key = puzzleStorageKey();
+      if (!key) return false;
+      const raw = localStorage.getItem(key);
+      if (!raw) return false;
+      const saved = JSON.parse(raw);
+      if (!saved || typeof saved.filled !== "object") return false;
+      filled = saved.filled;
+      taskComplete = !!saved.taskComplete;
+      // Rebuild availablePieces: start from full set and remove placed pieces
+      resetAvailablePieces();
+      Object.keys(filled).forEach(function(step) {
+        const rowFill = filled[step];
+        Object.keys(rowFill).forEach(function(field) {
+          const val = rowFill[field];
+          if (val != null && val !== "") takePiece(field, val);
+        });
+      });
+      return true;
+    } catch (_) { return false; }
+  }
+
 
   const DISPLAY_FIELDS = INSTANCE.blankFields || ["stepId"];
 
@@ -1251,6 +1293,7 @@ window.TracePuzzle = (function () {
       tracePanel.classList.toggle("is-puzzle-complete", taskComplete);
     }
     if (taskComplete) {
+      savePuzzleState();
       closePanel();
       setStatus(t("puzzleComplete"), "ok");
       let completionPath = window.location.pathname.replace(/\\/g, "/");
@@ -1800,6 +1843,7 @@ window.TracePuzzle = (function () {
     if (previous != null && previous !== "") returnPiece(field, previous);
     filled[stepNumber][field] = String(taken.value);
     syncValidationForStep(stepNumber);
+    savePuzzleState();
     renderChips();
     refreshFilledCells();
   }
@@ -1817,6 +1861,7 @@ window.TracePuzzle = (function () {
     filled[toStep][field] = String(value);
     syncValidationForStep(fromStep);
     syncValidationForStep(toStep);
+    savePuzzleState();
     renderChips();
     refreshFilledCells();
   }
@@ -1830,6 +1875,7 @@ window.TracePuzzle = (function () {
     delete filled[stepNumber][field];
     if (Object.keys(filled[stepNumber]).length === 0) delete filled[stepNumber];
     syncValidationForStep(stepNumber);
+    savePuzzleState();
     renderChips();
     refreshFilledCells();
   }
@@ -1842,6 +1888,7 @@ window.TracePuzzle = (function () {
     renderChips();
     refreshFilledCells();
     setStatus("", null);
+    savePuzzleState();
   }
 
   function openPanel() {
@@ -1973,11 +2020,26 @@ window.TracePuzzle = (function () {
   function init() {
     resetAvailablePieces();
     bindUi();
-    reset();
-    refreshSectionTabs();
-    renderChips();
-    closePanel();
-    updateStats();
+    if (restorePuzzleState()) {
+      setCompleteBadge(taskComplete);
+      setControlsLocked(taskComplete);
+      const tracePanel = document.querySelector(".trace-panel");
+      if (tracePanel) tracePanel.classList.toggle("is-puzzle-complete", taskComplete);
+      renderTraceTable();
+      refreshSectionTabs();
+      renderChips();
+      closePanel();
+      updateStats();
+      if (taskComplete) {
+        setStatus(t("puzzleComplete"), "ok");
+      }
+    } else {
+      reset();
+      refreshSectionTabs();
+      renderChips();
+      closePanel();
+      updateStats();
+    }
   }
 
   function shouldGate(nextStepNumber) {
