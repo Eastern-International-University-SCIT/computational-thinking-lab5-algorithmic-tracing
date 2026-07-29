@@ -11,11 +11,11 @@
       : null;
   }
 
-  function applyPuzzleInstance() {
+  function applyPuzzleInstance(preservePuzzleState) {
     const inst = puzzleInstance();
     if (!inst) return;
     currentValues = inst.array.slice();
-    window.SelectionSortExecutor.reset();
+    if (!preservePuzzleState) window.SelectionSortExecutor.reset();
     window.ArrayViz.setArray(currentValues);
     const sizeInput = document.getElementById("array-size");
     if (sizeInput) {
@@ -254,7 +254,7 @@
     bindControls();
     bindSplitter();
     bindRowSplitter();
-    applyPuzzleInstance();
+    applyPuzzleInstance(true);
     window.addEventListener("resize", () => window.ArrayViz.resize());
   });
 })();

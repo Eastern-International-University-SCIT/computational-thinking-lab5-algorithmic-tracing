@@ -679,29 +679,62 @@ window.TracePuzzle = (function () {
     } catch (_) { /* ignore */ }
   }
 
-  function restorePuzzleState() {
+  function completedPuzzleRequested() {
     try {
-      const key = puzzleStorageKey();
-      if (!key) return false;
-      const raw = localStorage.getItem(key);
-      if (!raw) return false;
-      const saved = JSON.parse(raw);
-      if (!saved || typeof saved.filled !== "object") return false;
-      filled = saved.filled;
-      taskComplete = !!saved.taskComplete;
-      // Rebuild availablePieces: start from full set and remove placed pieces
-      resetAvailablePieces();
-      Object.keys(filled).forEach(function(step) {
-        const rowFill = filled[step];
-        Object.keys(rowFill).forEach(function(field) {
-          const val = rowFill[field];
-          if (val != null && val !== "") takePiece(field, val);
-        });
-      });
-      return true;
-    } catch (_) { return false; }
+      return new URLSearchParams(window.location.search).get("completed") === "1";
+    } catch (_) {
+      return false;
+    }
   }
 
+  function loadCompletedAnswers() {
+    filled = {};
+    Object.keys(INSTANCE.answers || {}).forEach(function(step) {
+      const answer = INSTANCE.answers[step] || {};
+      filled[step] = {};
+      Object.keys(answer).forEach(function(field) {
+        filled[step][field] = String(answer[field]);
+      });
+    });
+    taskComplete = true;
+    savePuzzleState();
+  }
+
+  function restorePuzzleState() {
+    let restored = false;
+    try {
+      const key = puzzleStorageKey();
+      const raw = key ? localStorage.getItem(key) : null;
+      if (raw) {
+        const saved = JSON.parse(raw);
+        if (saved && saved.filled && typeof saved.filled === "object" && !Array.isArray(saved.filled)) {
+          filled = saved.filled;
+          taskComplete = !!saved.taskComplete;
+          restored = true;
+        }
+      }
+    } catch (_) {
+      /* A completed puzzle can still be reconstructed from its embedded answers. */
+    }
+
+    if (completedPuzzleRequested() && (!restored || !taskComplete || !isSolved())) {
+      loadCompletedAnswers();
+      restored = true;
+    }
+    if (!restored) return false;
+
+    // Rebuild availablePieces: start from the full set and remove placed pieces.
+    resetAvailablePieces();
+    Object.keys(filled).forEach(function(step) {
+      const rowFill = filled[step];
+      if (!rowFill || typeof rowFill !== "object") return;
+      Object.keys(rowFill).forEach(function(field) {
+        const val = rowFill[field];
+        if (val != null && val !== "") takePiece(field, val);
+      });
+    });
+    return true;
+  }
 
   function t(key) {
     return window.I18n ? window.I18n.t(key) : key;

@@ -9,7 +9,7 @@
       : null;
   }
 
-  function applyPuzzleInstance() {
+  function applyPuzzleInstance(preservePuzzleState) {
     const inst = puzzleInstance();
     if (!inst) return;
     const seq = (inst.sequence || []).slice();
@@ -20,14 +20,16 @@
       input.setAttribute("aria-readonly", "true");
       input.title = "Locked to puzzle instance";
     }
-    if (window.AvlInsertExecutor.isBusy && window.AvlInsertExecutor.isBusy()) {
-      window.AvlInsertExecutor.reset();
-    } else {
-      window.AvlInsertExecutor.clearTrace();
-      if (window.PseudocodeView) {
-        window.PseudocodeView.clearHighlight();
-        if (window.PseudocodeView.clearCallStack) {
-          window.PseudocodeView.clearCallStack();
+    if (!preservePuzzleState) {
+      if (window.AvlInsertExecutor.isBusy && window.AvlInsertExecutor.isBusy()) {
+        window.AvlInsertExecutor.reset();
+      } else {
+        window.AvlInsertExecutor.clearTrace();
+        if (window.PseudocodeView) {
+          window.PseudocodeView.clearHighlight();
+          if (window.PseudocodeView.clearCallStack) {
+            window.PseudocodeView.clearCallStack();
+          }
         }
       }
     }
@@ -290,7 +292,7 @@
     bindControls();
     bindSplitter();
     bindTraceSplitter();
-    applyPuzzleInstance();
+    applyPuzzleInstance(true);
     window.addEventListener("resize", onResize);
   });
 })();

@@ -291,7 +291,9 @@
   }
 
   function withLanguage(path) {
-    return `${path}${path.includes("?") ? "&" : "?"}lang=${language}`;
+    const solved = completed.has(normalizePath(path));
+    const query = `lang=${language}${solved ? "&completed=1" : ""}`;
+    return `${path}${path.includes("?") ? "&" : "?"}${query}`;
   }
 
   function refreshPlayerLanguage() {
