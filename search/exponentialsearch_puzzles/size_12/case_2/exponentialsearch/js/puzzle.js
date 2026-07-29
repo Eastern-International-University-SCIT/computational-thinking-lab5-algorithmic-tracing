@@ -971,7 +971,7 @@ window.TracePuzzle = (function () {
       controls.classList.toggle("is-locked", locked);
       controls.setAttribute("aria-disabled", locked ? "true" : "false");
     }
-    ["btn-run", "btn-step", "btn-pause", "speed"].forEach((id) => {
+    ["btn-pause", "speed"].forEach((id) => {
       const el = document.getElementById(id);
       if (!el) return;
       if (locked) {

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Instrumented Interpolation Search executor.
  * Steps highlight pseudocode lines, animate the 3D array, and grow the trace table.
  */
@@ -54,9 +54,9 @@ window.InterpolationSearchExecutor = (function () {
       window.TracePuzzle.isTaskComplete();
 
     if (puzzleDone) {
-      runBtn.disabled = true;
+      runBtn.disabled = false;
       pauseBtn.disabled = true;
-      stepBtn.disabled = true;
+      stepBtn.disabled = false;
       if (randomBtn) randomBtn.disabled = true;
       if (sizeInput) sizeInput.disabled = true;
       if (keyInput) keyInput.disabled = true;
@@ -452,11 +452,8 @@ window.InterpolationSearchExecutor = (function () {
   }
 
   function run() {
-    if (
-      window.TracePuzzle &&
-      window.TracePuzzle.isTaskComplete &&
-      window.TracePuzzle.isTaskComplete()
-    ) {
+    if (window.TracePuzzle && window.TracePuzzle.isTaskComplete && window.TracePuzzle.isTaskComplete()) {
+      rerun();
       return;
     }
     if (running && paused) {
@@ -475,11 +472,8 @@ window.InterpolationSearchExecutor = (function () {
   }
 
   function pause() {
-    if (
-      window.TracePuzzle &&
-      window.TracePuzzle.isTaskComplete &&
-      window.TracePuzzle.isTaskComplete()
-    ) {
+    if (window.TracePuzzle && window.TracePuzzle.isTaskComplete && window.TracePuzzle.isTaskComplete()) {
+      rerun();
       return;
     }
     if (!running) return;
@@ -488,11 +482,8 @@ window.InterpolationSearchExecutor = (function () {
   }
 
   function step() {
-    if (
-      window.TracePuzzle &&
-      window.TracePuzzle.isTaskComplete &&
-      window.TracePuzzle.isTaskComplete()
-    ) {
+    if (window.TracePuzzle && window.TracePuzzle.isTaskComplete && window.TracePuzzle.isTaskComplete()) {
+      rerun();
       return;
     }
     if (!running) {

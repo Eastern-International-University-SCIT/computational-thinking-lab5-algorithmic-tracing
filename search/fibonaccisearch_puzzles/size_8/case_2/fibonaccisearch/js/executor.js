@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Instrumented Fibonacci Search executor.
  * Steps highlight pseudocode lines, animate the 3D array, and grow the trace table.
  */
@@ -56,9 +56,9 @@ window.FibonacciSearchExecutor = (function () {
       window.TracePuzzle.isTaskComplete();
 
     if (puzzleDone) {
-      runBtn.disabled = true;
+      runBtn.disabled = false;
       pauseBtn.disabled = true;
-      stepBtn.disabled = true;
+      stepBtn.disabled = false;
       if (randomBtn) randomBtn.disabled = true;
       if (sizeInput) sizeInput.disabled = true;
       if (keyInput) keyInput.disabled = true;
@@ -513,11 +513,8 @@ window.FibonacciSearchExecutor = (function () {
   }
 
   function run() {
-    if (
-      window.TracePuzzle &&
-      window.TracePuzzle.isTaskComplete &&
-      window.TracePuzzle.isTaskComplete()
-    ) {
+    if (window.TracePuzzle && window.TracePuzzle.isTaskComplete && window.TracePuzzle.isTaskComplete()) {
+      rerun();
       return;
     }
     if (running && paused) {
@@ -536,11 +533,8 @@ window.FibonacciSearchExecutor = (function () {
   }
 
   function pause() {
-    if (
-      window.TracePuzzle &&
-      window.TracePuzzle.isTaskComplete &&
-      window.TracePuzzle.isTaskComplete()
-    ) {
+    if (window.TracePuzzle && window.TracePuzzle.isTaskComplete && window.TracePuzzle.isTaskComplete()) {
+      rerun();
       return;
     }
     if (!running) return;
@@ -549,11 +543,8 @@ window.FibonacciSearchExecutor = (function () {
   }
 
   function step() {
-    if (
-      window.TracePuzzle &&
-      window.TracePuzzle.isTaskComplete &&
-      window.TracePuzzle.isTaskComplete()
-    ) {
+    if (window.TracePuzzle && window.TracePuzzle.isTaskComplete && window.TracePuzzle.isTaskComplete()) {
+      rerun();
       return;
     }
     if (!running) {
