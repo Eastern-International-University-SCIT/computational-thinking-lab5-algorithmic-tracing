@@ -1,0 +1,875 @@
+{
+  "array": [
+    5,
+    8,
+    10,
+    40,
+    45,
+    50,
+    90,
+    100,
+    110,
+    200,
+    220,
+    400
+  ],
+  "key": 400,
+  "varFields": [
+    "step_length",
+    "jump",
+    "step_or_n",
+    "prev",
+    "result"
+  ],
+  "blankFields": [
+    "stepId",
+    "prev",
+    "jump",
+    "step_or_n",
+    "step_length",
+    "result"
+  ],
+  "executorGlobal": "JumpSearchExecutor",
+  "pickedSteps": [
+    5,
+    7,
+    9,
+    10,
+    12,
+    16,
+    18,
+    19,
+    20,
+    21,
+    25,
+    26
+  ],
+  "answers": {
+    "5": {
+      "stepId": "setStepOrN",
+      "prev": "0",
+      "jump": "3",
+      "step_or_n": "3",
+      "step_length": "3",
+      "result": "—"
+    },
+    "7": {
+      "stepId": "updatePrev",
+      "prev": "3",
+      "jump": "3",
+      "step_or_n": "3",
+      "step_length": "3",
+      "result": "—"
+    },
+    "9": {
+      "stepId": "checkPrevGeN",
+      "prev": "3",
+      "jump": "6",
+      "step_or_n": "3",
+      "step_length": "3",
+      "result": "—"
+    },
+    "10": {
+      "stepId": "updateStepOrN",
+      "prev": "3",
+      "jump": "6",
+      "step_or_n": "6",
+      "step_length": "3",
+      "result": "—"
+    },
+    "12": {
+      "stepId": "updatePrev",
+      "prev": "6",
+      "jump": "6",
+      "step_or_n": "6",
+      "step_length": "3",
+      "result": "—"
+    },
+    "16": {
+      "stepId": "whileJump",
+      "prev": "6",
+      "jump": "9",
+      "step_or_n": "9",
+      "step_length": "3",
+      "result": "—"
+    },
+    "18": {
+      "stepId": "updateStep",
+      "prev": "9",
+      "jump": "12",
+      "step_or_n": "9",
+      "step_length": "3",
+      "result": "—"
+    },
+    "19": {
+      "stepId": "checkPrevGeN",
+      "prev": "9",
+      "jump": "12",
+      "step_or_n": "9",
+      "step_length": "3",
+      "result": "—"
+    },
+    "20": {
+      "stepId": "updateStepOrN",
+      "prev": "9",
+      "jump": "12",
+      "step_or_n": "12",
+      "step_length": "3",
+      "result": "—"
+    },
+    "21": {
+      "stepId": "whileJump",
+      "prev": "9",
+      "jump": "12",
+      "step_or_n": "12",
+      "step_length": "3",
+      "result": "—"
+    },
+    "25": {
+      "stepId": "whileLinear",
+      "prev": "10",
+      "jump": "12",
+      "step_or_n": "12",
+      "step_length": "3",
+      "result": "—"
+    },
+    "26": {
+      "stepId": "incPrev",
+      "prev": "11",
+      "jump": "12",
+      "step_or_n": "12",
+      "step_length": "3",
+      "result": "—"
+    }
+  },
+  "pieces": {
+    "stepId": [
+      {
+        "id": 49,
+        "value": "updateStepOrN"
+      },
+      {
+        "id": 7,
+        "value": "updatePrev"
+      },
+      {
+        "id": 61,
+        "value": "whileLinear"
+      },
+      {
+        "id": 19,
+        "value": "updateStepOrN"
+      },
+      {
+        "id": 37,
+        "value": "updateStep"
+      },
+      {
+        "id": 31,
+        "value": "whileJump"
+      },
+      {
+        "id": 1,
+        "value": "setStepOrN"
+      },
+      {
+        "id": 55,
+        "value": "whileJump"
+      },
+      {
+        "id": 25,
+        "value": "updatePrev"
+      },
+      {
+        "id": 43,
+        "value": "checkPrevGeN"
+      },
+      {
+        "id": 13,
+        "value": "checkPrevGeN"
+      },
+      {
+        "id": 67,
+        "value": "incPrev"
+      }
+    ],
+    "prev": [
+      {
+        "id": 38,
+        "value": "9"
+      },
+      {
+        "id": 8,
+        "value": "3"
+      },
+      {
+        "id": 14,
+        "value": "3"
+      },
+      {
+        "id": 32,
+        "value": "6"
+      },
+      {
+        "id": 2,
+        "value": "0"
+      },
+      {
+        "id": 50,
+        "value": "9"
+      },
+      {
+        "id": 62,
+        "value": "10"
+      },
+      {
+        "id": 68,
+        "value": "11"
+      },
+      {
+        "id": 56,
+        "value": "9"
+      },
+      {
+        "id": 44,
+        "value": "9"
+      },
+      {
+        "id": 26,
+        "value": "6"
+      },
+      {
+        "id": 20,
+        "value": "3"
+      }
+    ],
+    "jump": [
+      {
+        "id": 9,
+        "value": "3"
+      },
+      {
+        "id": 3,
+        "value": "3"
+      },
+      {
+        "id": 21,
+        "value": "6"
+      },
+      {
+        "id": 57,
+        "value": "12"
+      },
+      {
+        "id": 63,
+        "value": "12"
+      },
+      {
+        "id": 69,
+        "value": "12"
+      },
+      {
+        "id": 45,
+        "value": "12"
+      },
+      {
+        "id": 15,
+        "value": "6"
+      },
+      {
+        "id": 33,
+        "value": "9"
+      },
+      {
+        "id": 27,
+        "value": "6"
+      },
+      {
+        "id": 51,
+        "value": "12"
+      },
+      {
+        "id": 39,
+        "value": "12"
+      }
+    ],
+    "step_or_n": [
+      {
+        "id": 4,
+        "value": "3"
+      },
+      {
+        "id": 52,
+        "value": "12"
+      },
+      {
+        "id": 28,
+        "value": "6"
+      },
+      {
+        "id": 70,
+        "value": "12"
+      },
+      {
+        "id": 16,
+        "value": "3"
+      },
+      {
+        "id": 64,
+        "value": "12"
+      },
+      {
+        "id": 40,
+        "value": "9"
+      },
+      {
+        "id": 22,
+        "value": "6"
+      },
+      {
+        "id": 10,
+        "value": "3"
+      },
+      {
+        "id": 58,
+        "value": "12"
+      },
+      {
+        "id": 34,
+        "value": "9"
+      },
+      {
+        "id": 46,
+        "value": "9"
+      }
+    ],
+    "step_length": [
+      {
+        "id": 29,
+        "value": "3"
+      },
+      {
+        "id": 59,
+        "value": "3"
+      },
+      {
+        "id": 41,
+        "value": "3"
+      },
+      {
+        "id": 23,
+        "value": "3"
+      },
+      {
+        "id": 17,
+        "value": "3"
+      },
+      {
+        "id": 35,
+        "value": "3"
+      },
+      {
+        "id": 5,
+        "value": "3"
+      },
+      {
+        "id": 65,
+        "value": "3"
+      },
+      {
+        "id": 53,
+        "value": "3"
+      },
+      {
+        "id": 11,
+        "value": "3"
+      },
+      {
+        "id": 47,
+        "value": "3"
+      },
+      {
+        "id": 71,
+        "value": "3"
+      }
+    ],
+    "result": [
+      {
+        "id": 66,
+        "value": "—"
+      },
+      {
+        "id": 18,
+        "value": "—"
+      },
+      {
+        "id": 54,
+        "value": "—"
+      },
+      {
+        "id": 42,
+        "value": "—"
+      },
+      {
+        "id": 72,
+        "value": "—"
+      },
+      {
+        "id": 24,
+        "value": "—"
+      },
+      {
+        "id": 30,
+        "value": "—"
+      },
+      {
+        "id": 36,
+        "value": "—"
+      },
+      {
+        "id": 48,
+        "value": "—"
+      },
+      {
+        "id": 12,
+        "value": "—"
+      },
+      {
+        "id": 6,
+        "value": "—"
+      },
+      {
+        "id": 60,
+        "value": "—"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "step": 1,
+      "stepId": "mainCall",
+      "n": 12,
+      "key": 400,
+      "step_length": null,
+      "step_or_n": null,
+      "prev": null,
+      "result": null,
+      "jump": null
+    },
+    {
+      "step": 2,
+      "stepId": "setStepLength",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": null,
+      "prev": null,
+      "result": null,
+      "jump": null
+    },
+    {
+      "step": 3,
+      "stepId": "setStep",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": null,
+      "prev": null,
+      "result": null,
+      "jump": 3
+    },
+    {
+      "step": 4,
+      "stepId": "setPrev",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": null,
+      "prev": 0,
+      "result": null,
+      "jump": 3
+    },
+    {
+      "step": 5,
+      "stepId": "setStepOrN",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 3,
+      "prev": 0,
+      "result": null,
+      "jump": 3,
+      "missing": {
+        "stepId": true,
+        "prev": true,
+        "jump": true,
+        "step_or_n": true,
+        "step_length": true,
+        "result": true
+      }
+    },
+    {
+      "step": 6,
+      "stepId": "whileJump",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 3,
+      "prev": 0,
+      "result": null,
+      "jump": 3
+    },
+    {
+      "step": 7,
+      "stepId": "updatePrev",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 3,
+      "prev": 3,
+      "result": null,
+      "jump": 3,
+      "missing": {
+        "stepId": true,
+        "prev": true,
+        "jump": true,
+        "step_or_n": true,
+        "step_length": true,
+        "result": true
+      }
+    },
+    {
+      "step": 8,
+      "stepId": "updateStep",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 3,
+      "prev": 3,
+      "result": null,
+      "jump": 6
+    },
+    {
+      "step": 9,
+      "stepId": "checkPrevGeN",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 3,
+      "prev": 3,
+      "result": null,
+      "jump": 6,
+      "missing": {
+        "stepId": true,
+        "prev": true,
+        "jump": true,
+        "step_or_n": true,
+        "step_length": true,
+        "result": true
+      }
+    },
+    {
+      "step": 10,
+      "stepId": "updateStepOrN",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 6,
+      "prev": 3,
+      "result": null,
+      "jump": 6,
+      "missing": {
+        "stepId": true,
+        "prev": true,
+        "jump": true,
+        "step_or_n": true,
+        "step_length": true,
+        "result": true
+      }
+    },
+    {
+      "step": 11,
+      "stepId": "whileJump",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 6,
+      "prev": 3,
+      "result": null,
+      "jump": 6
+    },
+    {
+      "step": 12,
+      "stepId": "updatePrev",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 6,
+      "prev": 6,
+      "result": null,
+      "jump": 6,
+      "missing": {
+        "stepId": true,
+        "prev": true,
+        "jump": true,
+        "step_or_n": true,
+        "step_length": true,
+        "result": true
+      }
+    },
+    {
+      "step": 13,
+      "stepId": "updateStep",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 6,
+      "prev": 6,
+      "result": null,
+      "jump": 9
+    },
+    {
+      "step": 14,
+      "stepId": "checkPrevGeN",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 6,
+      "prev": 6,
+      "result": null,
+      "jump": 9
+    },
+    {
+      "step": 15,
+      "stepId": "updateStepOrN",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 9,
+      "prev": 6,
+      "result": null,
+      "jump": 9
+    },
+    {
+      "step": 16,
+      "stepId": "whileJump",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 9,
+      "prev": 6,
+      "result": null,
+      "jump": 9,
+      "missing": {
+        "stepId": true,
+        "prev": true,
+        "jump": true,
+        "step_or_n": true,
+        "step_length": true,
+        "result": true
+      }
+    },
+    {
+      "step": 17,
+      "stepId": "updatePrev",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 9,
+      "prev": 9,
+      "result": null,
+      "jump": 9
+    },
+    {
+      "step": 18,
+      "stepId": "updateStep",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 9,
+      "prev": 9,
+      "result": null,
+      "jump": 12,
+      "missing": {
+        "stepId": true,
+        "prev": true,
+        "jump": true,
+        "step_or_n": true,
+        "step_length": true,
+        "result": true
+      }
+    },
+    {
+      "step": 19,
+      "stepId": "checkPrevGeN",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 9,
+      "prev": 9,
+      "result": null,
+      "jump": 12,
+      "missing": {
+        "stepId": true,
+        "prev": true,
+        "jump": true,
+        "step_or_n": true,
+        "step_length": true,
+        "result": true
+      }
+    },
+    {
+      "step": 20,
+      "stepId": "updateStepOrN",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 12,
+      "prev": 9,
+      "result": null,
+      "jump": 12,
+      "missing": {
+        "stepId": true,
+        "prev": true,
+        "jump": true,
+        "step_or_n": true,
+        "step_length": true,
+        "result": true
+      }
+    },
+    {
+      "step": 21,
+      "stepId": "whileJump",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 12,
+      "prev": 9,
+      "result": null,
+      "jump": 12,
+      "missing": {
+        "stepId": true,
+        "prev": true,
+        "jump": true,
+        "step_or_n": true,
+        "step_length": true,
+        "result": true
+      }
+    },
+    {
+      "step": 22,
+      "stepId": "whileLinear",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 12,
+      "prev": 9,
+      "result": null,
+      "jump": 12
+    },
+    {
+      "step": 23,
+      "stepId": "incPrev",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 12,
+      "prev": 10,
+      "result": null,
+      "jump": 12
+    },
+    {
+      "step": 24,
+      "stepId": "checkBound",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 12,
+      "prev": 10,
+      "result": null,
+      "jump": 12
+    },
+    {
+      "step": 25,
+      "stepId": "whileLinear",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 12,
+      "prev": 10,
+      "result": null,
+      "jump": 12,
+      "missing": {
+        "stepId": true,
+        "prev": true,
+        "jump": true,
+        "step_or_n": true,
+        "step_length": true,
+        "result": true
+      }
+    },
+    {
+      "step": 26,
+      "stepId": "incPrev",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 12,
+      "prev": 11,
+      "result": null,
+      "jump": 12,
+      "missing": {
+        "stepId": true,
+        "prev": true,
+        "jump": true,
+        "step_or_n": true,
+        "step_length": true,
+        "result": true
+      }
+    },
+    {
+      "step": 27,
+      "stepId": "checkBound",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 12,
+      "prev": 11,
+      "result": null,
+      "jump": 12
+    },
+    {
+      "step": 28,
+      "stepId": "whileLinear",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 12,
+      "prev": 11,
+      "result": null,
+      "jump": 12
+    },
+    {
+      "step": 29,
+      "stepId": "checkEqual",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 12,
+      "prev": 11,
+      "result": null,
+      "jump": 12
+    },
+    {
+      "step": 30,
+      "stepId": "returnFound",
+      "n": 12,
+      "key": 400,
+      "step_length": 3,
+      "step_or_n": 12,
+      "prev": 11,
+      "result": 11,
+      "jump": 12
+    }
+  ]
+}

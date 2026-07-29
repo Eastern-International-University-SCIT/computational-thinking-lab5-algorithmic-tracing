@@ -1,0 +1,460 @@
+{
+  "array": [
+    10,
+    12,
+    15,
+    50,
+    55,
+    90,
+    200,
+    400
+  ],
+  "key": 15,
+  "varFields": [
+    "low",
+    "pos",
+    "high",
+    "result"
+  ],
+  "blankFields": [
+    "stepId",
+    "low",
+    "pos",
+    "high",
+    "result"
+  ],
+  "executorGlobal": "InterpolationSearchExecutor",
+  "pickedSteps": [
+    3,
+    4,
+    11,
+    12,
+    14,
+    16,
+    17
+  ],
+  "answers": {
+    "3": {
+      "stepId": "setHigh",
+      "low": "0",
+      "pos": "—",
+      "high": "7",
+      "result": "—"
+    },
+    "4": {
+      "stepId": "whileLoop",
+      "low": "0",
+      "pos": "—",
+      "high": "7",
+      "result": "—"
+    },
+    "11": {
+      "stepId": "checkEqual",
+      "low": "1",
+      "pos": "1",
+      "high": "7",
+      "result": "—"
+    },
+    "12": {
+      "stepId": "checkLess",
+      "low": "1",
+      "pos": "1",
+      "high": "7",
+      "result": "—"
+    },
+    "14": {
+      "stepId": "whileLoop",
+      "low": "2",
+      "pos": "1",
+      "high": "7",
+      "result": "—"
+    },
+    "16": {
+      "stepId": "checkEqual",
+      "low": "2",
+      "pos": "2",
+      "high": "7",
+      "result": "—"
+    },
+    "17": {
+      "stepId": "returnFound",
+      "low": "2",
+      "pos": "2",
+      "high": "7",
+      "result": "2"
+    }
+  },
+  "pieces": {
+    "stepId": [
+      {
+        "id": 1,
+        "value": "setHigh"
+      },
+      {
+        "id": 6,
+        "value": "whileLoop"
+      },
+      {
+        "id": 11,
+        "value": "checkEqual"
+      },
+      {
+        "id": 16,
+        "value": "checkLess"
+      },
+      {
+        "id": 21,
+        "value": "whileLoop"
+      },
+      {
+        "id": 26,
+        "value": "checkEqual"
+      },
+      {
+        "id": 31,
+        "value": "returnFound"
+      }
+    ],
+    "low": [
+      {
+        "id": 2,
+        "value": "0"
+      },
+      {
+        "id": 7,
+        "value": "0"
+      },
+      {
+        "id": 12,
+        "value": "1"
+      },
+      {
+        "id": 17,
+        "value": "1"
+      },
+      {
+        "id": 22,
+        "value": "2"
+      },
+      {
+        "id": 27,
+        "value": "2"
+      },
+      {
+        "id": 32,
+        "value": "2"
+      }
+    ],
+    "pos": [
+      {
+        "id": 3,
+        "value": "—"
+      },
+      {
+        "id": 8,
+        "value": "—"
+      },
+      {
+        "id": 13,
+        "value": "1"
+      },
+      {
+        "id": 18,
+        "value": "1"
+      },
+      {
+        "id": 23,
+        "value": "1"
+      },
+      {
+        "id": 28,
+        "value": "2"
+      },
+      {
+        "id": 33,
+        "value": "2"
+      }
+    ],
+    "high": [
+      {
+        "id": 4,
+        "value": "7"
+      },
+      {
+        "id": 9,
+        "value": "7"
+      },
+      {
+        "id": 14,
+        "value": "7"
+      },
+      {
+        "id": 19,
+        "value": "7"
+      },
+      {
+        "id": 24,
+        "value": "7"
+      },
+      {
+        "id": 29,
+        "value": "7"
+      },
+      {
+        "id": 34,
+        "value": "7"
+      }
+    ],
+    "result": [
+      {
+        "id": 5,
+        "value": "—"
+      },
+      {
+        "id": 10,
+        "value": "—"
+      },
+      {
+        "id": 15,
+        "value": "—"
+      },
+      {
+        "id": 20,
+        "value": "—"
+      },
+      {
+        "id": 25,
+        "value": "—"
+      },
+      {
+        "id": 30,
+        "value": "—"
+      },
+      {
+        "id": 35,
+        "value": "2"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "step": 1,
+      "stepId": "mainCall",
+      "n": 8,
+      "key": 15,
+      "low": null,
+      "pos": null,
+      "high": null,
+      "result": null
+    },
+    {
+      "step": 2,
+      "stepId": "setLow",
+      "n": 8,
+      "key": 15,
+      "low": 0,
+      "pos": null,
+      "high": null,
+      "result": null
+    },
+    {
+      "step": 3,
+      "stepId": "setHigh",
+      "n": 8,
+      "key": 15,
+      "low": 0,
+      "pos": null,
+      "high": 7,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "pos": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 4,
+      "stepId": "whileLoop",
+      "n": 8,
+      "key": 15,
+      "low": 0,
+      "pos": null,
+      "high": 7,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "pos": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 5,
+      "stepId": "setPos",
+      "n": 8,
+      "key": 15,
+      "low": 0,
+      "pos": 0,
+      "high": 7,
+      "result": null
+    },
+    {
+      "step": 6,
+      "stepId": "checkEqual",
+      "n": 8,
+      "key": 15,
+      "low": 0,
+      "pos": 0,
+      "high": 7,
+      "result": null
+    },
+    {
+      "step": 7,
+      "stepId": "checkLess",
+      "n": 8,
+      "key": 15,
+      "low": 0,
+      "pos": 0,
+      "high": 7,
+      "result": null
+    },
+    {
+      "step": 8,
+      "stepId": "updateLow",
+      "n": 8,
+      "key": 15,
+      "low": 1,
+      "pos": 0,
+      "high": 7,
+      "result": null
+    },
+    {
+      "step": 9,
+      "stepId": "whileLoop",
+      "n": 8,
+      "key": 15,
+      "low": 1,
+      "pos": 0,
+      "high": 7,
+      "result": null
+    },
+    {
+      "step": 10,
+      "stepId": "setPos",
+      "n": 8,
+      "key": 15,
+      "low": 1,
+      "pos": 1,
+      "high": 7,
+      "result": null
+    },
+    {
+      "step": 11,
+      "stepId": "checkEqual",
+      "n": 8,
+      "key": 15,
+      "low": 1,
+      "pos": 1,
+      "high": 7,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "pos": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 12,
+      "stepId": "checkLess",
+      "n": 8,
+      "key": 15,
+      "low": 1,
+      "pos": 1,
+      "high": 7,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "pos": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 13,
+      "stepId": "updateLow",
+      "n": 8,
+      "key": 15,
+      "low": 2,
+      "pos": 1,
+      "high": 7,
+      "result": null
+    },
+    {
+      "step": 14,
+      "stepId": "whileLoop",
+      "n": 8,
+      "key": 15,
+      "low": 2,
+      "pos": 1,
+      "high": 7,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "pos": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 15,
+      "stepId": "setPos",
+      "n": 8,
+      "key": 15,
+      "low": 2,
+      "pos": 2,
+      "high": 7,
+      "result": null
+    },
+    {
+      "step": 16,
+      "stepId": "checkEqual",
+      "n": 8,
+      "key": 15,
+      "low": 2,
+      "pos": 2,
+      "high": 7,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "pos": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 17,
+      "stepId": "returnFound",
+      "n": 8,
+      "key": 15,
+      "low": 2,
+      "pos": 2,
+      "high": 7,
+      "result": 2,
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "pos": true,
+        "high": true,
+        "result": true
+      }
+    }
+  ]
+}

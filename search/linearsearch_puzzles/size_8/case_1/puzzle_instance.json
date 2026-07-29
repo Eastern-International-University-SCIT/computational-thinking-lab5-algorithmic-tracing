@@ -1,0 +1,101 @@
+{
+  "array": [
+    20,
+    40,
+    30,
+    60,
+    80,
+    70,
+    50,
+    10
+  ],
+  "key": 20,
+  "pickedSteps": [
+    2,
+    5
+  ],
+  "answers": {
+    "2": {
+      "i": "0",
+      "stepId": "setI"
+    },
+    "5": {
+      "result": "0",
+      "stepId": "returnFound"
+    }
+  },
+  "pieces": {
+    "i": [
+      {
+        "id": 1,
+        "value": "0"
+      }
+    ],
+    "stepId": [
+      {
+        "id": 2,
+        "value": "setI"
+      },
+      {
+        "id": 4,
+        "value": "returnFound"
+      }
+    ],
+    "result": [
+      {
+        "id": 3,
+        "value": "0"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "step": 1,
+      "stepId": "mainCall",
+      "n": 8,
+      "key": 20,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 2,
+      "stepId": "setI",
+      "n": 8,
+      "key": 20,
+      "i": 0,
+      "result": null,
+      "missing": {
+        "i": true,
+        "stepId": true
+      }
+    },
+    {
+      "step": 3,
+      "stepId": "whileLoop",
+      "n": 8,
+      "key": 20,
+      "i": 0,
+      "result": null
+    },
+    {
+      "step": 4,
+      "stepId": "checkEqual",
+      "n": 8,
+      "key": 20,
+      "i": 0,
+      "result": null
+    },
+    {
+      "step": 5,
+      "stepId": "returnFound",
+      "n": 8,
+      "key": 20,
+      "i": 0,
+      "result": 0,
+      "missing": {
+        "result": true,
+        "stepId": true
+      }
+    }
+  ]
+}

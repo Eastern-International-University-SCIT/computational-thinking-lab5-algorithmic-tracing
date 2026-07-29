@@ -1,0 +1,28 @@
+{
+  "height": 4,
+  "case": 3,
+  "label": "balanced",
+  "sequence": [
+    800,
+    500,
+    300,
+    200,
+    100,
+    400,
+    700,
+    600,
+    1100,
+    1000,
+    900,
+    1200
+  ],
+  "treeHeight": 4,
+  "balanced": true,
+  "totalRows": 219,
+  "pickedRows": 55,
+  "blankFields": [
+    "stepId"
+  ],
+  "pickRatio": 0.25,
+  "skipFirstRatio": 0.3
+}

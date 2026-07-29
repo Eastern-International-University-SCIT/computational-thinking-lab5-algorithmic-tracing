@@ -1,0 +1,711 @@
+{
+  "array": [
+    150,
+    140,
+    120,
+    80,
+    40,
+    30,
+    20,
+    90,
+    100,
+    160,
+    60,
+    50,
+    70,
+    110,
+    130,
+    10
+  ],
+  "key": 161,
+  "pickedSteps": [
+    3,
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    19,
+    20,
+    21,
+    24,
+    27,
+    30,
+    31,
+    35,
+    37,
+    38,
+    39,
+    40,
+    42,
+    49
+  ],
+  "answers": {
+    "3": {
+      "stepId": "whileLoop"
+    },
+    "5": {
+      "i": "1",
+      "stepId": "incI"
+    },
+    "7": {
+      "stepId": "checkEqual"
+    },
+    "9": {
+      "stepId": "whileLoop"
+    },
+    "11": {
+      "i": "3",
+      "stepId": "incI"
+    },
+    "13": {
+      "stepId": "checkEqual"
+    },
+    "15": {
+      "stepId": "whileLoop"
+    },
+    "19": {
+      "stepId": "checkEqual"
+    },
+    "20": {
+      "i": "6",
+      "stepId": "incI"
+    },
+    "21": {
+      "stepId": "whileLoop"
+    },
+    "24": {
+      "stepId": "whileLoop"
+    },
+    "27": {
+      "stepId": "whileLoop"
+    },
+    "30": {
+      "stepId": "whileLoop"
+    },
+    "31": {
+      "stepId": "checkEqual"
+    },
+    "35": {
+      "i": "11",
+      "stepId": "incI"
+    },
+    "37": {
+      "stepId": "checkEqual"
+    },
+    "38": {
+      "i": "12",
+      "stepId": "incI"
+    },
+    "39": {
+      "stepId": "whileLoop"
+    },
+    "40": {
+      "stepId": "checkEqual"
+    },
+    "42": {
+      "stepId": "whileLoop"
+    },
+    "49": {
+      "stepId": "checkEqual"
+    }
+  },
+  "pieces": {
+    "i": [
+      {
+        "id": 2,
+        "value": "1"
+      },
+      {
+        "id": 6,
+        "value": "3"
+      },
+      {
+        "id": 11,
+        "value": "6"
+      },
+      {
+        "id": 18,
+        "value": "11"
+      },
+      {
+        "id": 21,
+        "value": "12"
+      }
+    ],
+    "stepId": [
+      {
+        "id": 1,
+        "value": "whileLoop"
+      },
+      {
+        "id": 3,
+        "value": "incI"
+      },
+      {
+        "id": 4,
+        "value": "checkEqual"
+      },
+      {
+        "id": 5,
+        "value": "whileLoop"
+      },
+      {
+        "id": 7,
+        "value": "incI"
+      },
+      {
+        "id": 8,
+        "value": "checkEqual"
+      },
+      {
+        "id": 9,
+        "value": "whileLoop"
+      },
+      {
+        "id": 10,
+        "value": "checkEqual"
+      },
+      {
+        "id": 12,
+        "value": "incI"
+      },
+      {
+        "id": 13,
+        "value": "whileLoop"
+      },
+      {
+        "id": 14,
+        "value": "whileLoop"
+      },
+      {
+        "id": 15,
+        "value": "whileLoop"
+      },
+      {
+        "id": 16,
+        "value": "whileLoop"
+      },
+      {
+        "id": 17,
+        "value": "checkEqual"
+      },
+      {
+        "id": 19,
+        "value": "incI"
+      },
+      {
+        "id": 20,
+        "value": "checkEqual"
+      },
+      {
+        "id": 22,
+        "value": "incI"
+      },
+      {
+        "id": 23,
+        "value": "whileLoop"
+      },
+      {
+        "id": 24,
+        "value": "checkEqual"
+      },
+      {
+        "id": 25,
+        "value": "whileLoop"
+      },
+      {
+        "id": 26,
+        "value": "checkEqual"
+      }
+    ],
+    "result": []
+  },
+  "rows": [
+    {
+      "step": 1,
+      "stepId": "mainCall",
+      "n": 16,
+      "key": 161,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 2,
+      "stepId": "setI",
+      "n": 16,
+      "key": 161,
+      "i": 0,
+      "result": null
+    },
+    {
+      "step": 3,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 0,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 4,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 0,
+      "result": null
+    },
+    {
+      "step": 5,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 1,
+      "result": null,
+      "missing": {
+        "i": true,
+        "stepId": true
+      }
+    },
+    {
+      "step": 6,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 1,
+      "result": null
+    },
+    {
+      "step": 7,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 1,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 8,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 2,
+      "result": null
+    },
+    {
+      "step": 9,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 2,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 10,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 2,
+      "result": null
+    },
+    {
+      "step": 11,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 3,
+      "result": null,
+      "missing": {
+        "i": true,
+        "stepId": true
+      }
+    },
+    {
+      "step": 12,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 3,
+      "result": null
+    },
+    {
+      "step": 13,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 3,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 14,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 4,
+      "result": null
+    },
+    {
+      "step": 15,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 4,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 16,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 4,
+      "result": null
+    },
+    {
+      "step": 17,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 5,
+      "result": null
+    },
+    {
+      "step": 18,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 5,
+      "result": null
+    },
+    {
+      "step": 19,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 5,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 20,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 6,
+      "result": null,
+      "missing": {
+        "i": true,
+        "stepId": true
+      }
+    },
+    {
+      "step": 21,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 6,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 22,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 6,
+      "result": null
+    },
+    {
+      "step": 23,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 7,
+      "result": null
+    },
+    {
+      "step": 24,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 7,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 25,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 7,
+      "result": null
+    },
+    {
+      "step": 26,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 8,
+      "result": null
+    },
+    {
+      "step": 27,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 8,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 28,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 8,
+      "result": null
+    },
+    {
+      "step": 29,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 9,
+      "result": null
+    },
+    {
+      "step": 30,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 9,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 31,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 9,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 32,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 10,
+      "result": null
+    },
+    {
+      "step": 33,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 10,
+      "result": null
+    },
+    {
+      "step": 34,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 10,
+      "result": null
+    },
+    {
+      "step": 35,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 11,
+      "result": null,
+      "missing": {
+        "i": true,
+        "stepId": true
+      }
+    },
+    {
+      "step": 36,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 11,
+      "result": null
+    },
+    {
+      "step": 37,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 11,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 38,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 12,
+      "result": null,
+      "missing": {
+        "i": true,
+        "stepId": true
+      }
+    },
+    {
+      "step": 39,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 12,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 40,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 12,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 41,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 13,
+      "result": null
+    },
+    {
+      "step": 42,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 13,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 43,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 13,
+      "result": null
+    },
+    {
+      "step": 44,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 14,
+      "result": null
+    },
+    {
+      "step": 45,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 14,
+      "result": null
+    },
+    {
+      "step": 46,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 14,
+      "result": null
+    },
+    {
+      "step": 47,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 15,
+      "result": null
+    },
+    {
+      "step": 48,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 15,
+      "result": null
+    },
+    {
+      "step": 49,
+      "stepId": "checkEqual",
+      "n": 16,
+      "key": 161,
+      "i": 15,
+      "result": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 50,
+      "stepId": "incI",
+      "n": 16,
+      "key": 161,
+      "i": 16,
+      "result": null
+    },
+    {
+      "step": 51,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 161,
+      "i": 16,
+      "result": null
+    },
+    {
+      "step": 52,
+      "stepId": "returnMiss",
+      "n": 16,
+      "key": 161,
+      "i": 16,
+      "result": "NOT_FOUND"
+    }
+  ]
+}

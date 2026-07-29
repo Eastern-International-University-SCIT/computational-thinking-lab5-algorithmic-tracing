@@ -1,0 +1,87 @@
+{
+  "array": [
+    10,
+    12,
+    15,
+    50,
+    55,
+    90,
+    200,
+    400
+  ],
+  "key": 10,
+  "varFields": [
+    "bound",
+    "low",
+    "mid",
+    "high",
+    "result"
+  ],
+  "blankFields": [
+    "stepId",
+    "result"
+  ],
+  "executorGlobal": "ExponentialSearchExecutor",
+  "pickedSteps": [
+    3
+  ],
+  "answers": {
+    "3": {
+      "stepId": "returnZero",
+      "result": "0"
+    }
+  },
+  "pieces": {
+    "stepId": [
+      {
+        "id": 1,
+        "value": "returnZero"
+      }
+    ],
+    "result": [
+      {
+        "id": 2,
+        "value": "0"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "step": 1,
+      "stepId": "mainCall",
+      "n": 8,
+      "key": 10,
+      "bound": null,
+      "low": null,
+      "mid": null,
+      "high": null,
+      "result": null
+    },
+    {
+      "step": 2,
+      "stepId": "checkFirst",
+      "n": 8,
+      "key": 10,
+      "bound": null,
+      "low": null,
+      "mid": null,
+      "high": null,
+      "result": null
+    },
+    {
+      "step": 3,
+      "stepId": "returnZero",
+      "n": 8,
+      "key": 10,
+      "bound": null,
+      "low": null,
+      "mid": null,
+      "high": null,
+      "result": 0,
+      "missing": {
+        "stepId": true,
+        "result": true
+      }
+    }
+  ]
+}

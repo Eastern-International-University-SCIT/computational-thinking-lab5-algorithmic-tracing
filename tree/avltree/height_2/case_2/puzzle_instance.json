@@ -1,0 +1,1066 @@
+{
+  "sequence": [
+    10,
+    20,
+    30
+  ],
+  "height": 2,
+  "caseNum": 2,
+  "caseId": "right_unbalanced",
+  "varFields": [
+    "key",
+    "node",
+    "bf",
+    "case",
+    "new_root",
+    "temp",
+    "height_left",
+    "height_right",
+    "root"
+  ],
+  "blankFields": [
+    "stepId"
+  ],
+  "pickedSteps": [
+    22,
+    39,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68
+  ],
+  "answers": {
+    "22": {
+      "stepId": "caseRL"
+    },
+    "39": {
+      "stepId": "uhSet"
+    },
+    "54": {
+      "stepId": "caseRR"
+    },
+    "55": {
+      "stepId": "rotateLeftRR"
+    },
+    "56": {
+      "stepId": "rotL_y"
+    },
+    "57": {
+      "stepId": "rotL_T2"
+    },
+    "58": {
+      "stepId": "rotL_yLeft"
+    },
+    "59": {
+      "stepId": "rotL_zRight"
+    },
+    "60": {
+      "stepId": "rotL_updZ"
+    },
+    "61": {
+      "stepId": "uhHl"
+    },
+    "62": {
+      "stepId": "uhHr"
+    },
+    "63": {
+      "stepId": "uhSet"
+    },
+    "64": {
+      "stepId": "rotL_updY"
+    },
+    "65": {
+      "stepId": "uhHl"
+    },
+    "66": {
+      "stepId": "uhHr"
+    },
+    "67": {
+      "stepId": "uhSet"
+    },
+    "68": {
+      "stepId": "rotL_return"
+    }
+  },
+  "pieces": {
+    "stepId": [
+      {
+        "id": 10,
+        "value": "uhHl"
+      },
+      {
+        "id": 12,
+        "value": "uhSet"
+      },
+      {
+        "id": 4,
+        "value": "rotateLeftRR"
+      },
+      {
+        "id": 14,
+        "value": "uhHl"
+      },
+      {
+        "id": 17,
+        "value": "rotL_return"
+      },
+      {
+        "id": 2,
+        "value": "uhSet"
+      },
+      {
+        "id": 11,
+        "value": "uhHr"
+      },
+      {
+        "id": 16,
+        "value": "uhSet"
+      },
+      {
+        "id": 6,
+        "value": "rotL_T2"
+      },
+      {
+        "id": 13,
+        "value": "rotL_updY"
+      },
+      {
+        "id": 1,
+        "value": "caseRL"
+      },
+      {
+        "id": 7,
+        "value": "rotL_yLeft"
+      },
+      {
+        "id": 9,
+        "value": "rotL_updZ"
+      },
+      {
+        "id": 8,
+        "value": "rotL_zRight"
+      },
+      {
+        "id": 3,
+        "value": "caseRR"
+      },
+      {
+        "id": 5,
+        "value": "rotL_y"
+      },
+      {
+        "id": 15,
+        "value": "uhHr"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "step": 1,
+      "stepId": "mainLoop",
+      "key": 10,
+      "node": null,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": null
+    },
+    {
+      "step": 2,
+      "stepId": "callInsert",
+      "key": 10,
+      "node": null,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": null
+    },
+    {
+      "step": 3,
+      "stepId": "checkNull",
+      "key": 10,
+      "node": null,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": null
+    },
+    {
+      "step": 4,
+      "stepId": "returnNew",
+      "key": 10,
+      "node": 10,
+      "bf": 0,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 5,
+      "stepId": "mainLoop",
+      "key": 20,
+      "node": null,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 6,
+      "stepId": "callInsert",
+      "key": 20,
+      "node": null,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 7,
+      "stepId": "checkNull",
+      "key": 20,
+      "node": 10,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 8,
+      "stepId": "checkLess",
+      "key": 20,
+      "node": 10,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 9,
+      "stepId": "checkGreater",
+      "key": 20,
+      "node": 10,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 10,
+      "stepId": "goRight",
+      "key": 20,
+      "node": 10,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 11,
+      "stepId": "checkNull",
+      "key": 20,
+      "node": null,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 12,
+      "stepId": "returnNew",
+      "key": 20,
+      "node": 20,
+      "bf": 0,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 13,
+      "stepId": "updateHeight",
+      "key": 20,
+      "node": 10,
+      "bf": 0,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 14,
+      "stepId": "uhHl",
+      "key": 20,
+      "node": 10,
+      "bf": 0,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 15,
+      "stepId": "uhHr",
+      "key": 20,
+      "node": 10,
+      "bf": 0,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10
+    },
+    {
+      "step": 16,
+      "stepId": "uhSet",
+      "key": 20,
+      "node": 10,
+      "bf": 0,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10
+    },
+    {
+      "step": 17,
+      "stepId": "calcBf",
+      "key": 20,
+      "node": 10,
+      "bf": 0,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10
+    },
+    {
+      "step": 18,
+      "stepId": "bfReturn",
+      "key": 20,
+      "node": 10,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10
+    },
+    {
+      "step": 19,
+      "stepId": "caseLL",
+      "key": 20,
+      "node": 10,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10
+    },
+    {
+      "step": 20,
+      "stepId": "caseRR",
+      "key": 20,
+      "node": 10,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10
+    },
+    {
+      "step": 21,
+      "stepId": "caseLR",
+      "key": 20,
+      "node": 10,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10
+    },
+    {
+      "step": 22,
+      "stepId": "caseRL",
+      "key": 20,
+      "node": 10,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 23,
+      "stepId": "returnNode",
+      "key": 20,
+      "node": 10,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 24,
+      "stepId": "mainLoop",
+      "key": 30,
+      "node": null,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 25,
+      "stepId": "callInsert",
+      "key": 30,
+      "node": null,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 26,
+      "stepId": "checkNull",
+      "key": 30,
+      "node": 10,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 27,
+      "stepId": "checkLess",
+      "key": 30,
+      "node": 10,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 28,
+      "stepId": "checkGreater",
+      "key": 30,
+      "node": 10,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 29,
+      "stepId": "goRight",
+      "key": 30,
+      "node": 10,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 30,
+      "stepId": "checkNull",
+      "key": 30,
+      "node": 20,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 31,
+      "stepId": "checkLess",
+      "key": 30,
+      "node": 20,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 32,
+      "stepId": "checkGreater",
+      "key": 30,
+      "node": 20,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 33,
+      "stepId": "goRight",
+      "key": 30,
+      "node": 20,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 34,
+      "stepId": "checkNull",
+      "key": 30,
+      "node": null,
+      "bf": null,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 35,
+      "stepId": "returnNew",
+      "key": 30,
+      "node": 30,
+      "bf": 0,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 36,
+      "stepId": "updateHeight",
+      "key": 30,
+      "node": 20,
+      "bf": 0,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 37,
+      "stepId": "uhHl",
+      "key": 30,
+      "node": 20,
+      "bf": 0,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 38,
+      "stepId": "uhHr",
+      "key": 30,
+      "node": 20,
+      "bf": 0,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10
+    },
+    {
+      "step": 39,
+      "stepId": "uhSet",
+      "key": 30,
+      "node": 20,
+      "bf": 0,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 40,
+      "stepId": "calcBf",
+      "key": 30,
+      "node": 20,
+      "bf": 0,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10
+    },
+    {
+      "step": 41,
+      "stepId": "bfReturn",
+      "key": 30,
+      "node": 20,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10
+    },
+    {
+      "step": 42,
+      "stepId": "caseLL",
+      "key": 30,
+      "node": 20,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10
+    },
+    {
+      "step": 43,
+      "stepId": "caseRR",
+      "key": 30,
+      "node": 20,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10
+    },
+    {
+      "step": 44,
+      "stepId": "caseLR",
+      "key": 30,
+      "node": 20,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10
+    },
+    {
+      "step": 45,
+      "stepId": "caseRL",
+      "key": 30,
+      "node": 20,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 0,
+      "root": 10
+    },
+    {
+      "step": 46,
+      "stepId": "returnNode",
+      "key": 30,
+      "node": 20,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 47,
+      "stepId": "updateHeight",
+      "key": 30,
+      "node": 10,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": null,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 48,
+      "stepId": "uhHl",
+      "key": 30,
+      "node": 10,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": null,
+      "root": 10
+    },
+    {
+      "step": 49,
+      "stepId": "uhHr",
+      "key": 30,
+      "node": 10,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 1,
+      "root": 10
+    },
+    {
+      "step": 50,
+      "stepId": "uhSet",
+      "key": 30,
+      "node": 10,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 1,
+      "root": 10
+    },
+    {
+      "step": 51,
+      "stepId": "calcBf",
+      "key": 30,
+      "node": 10,
+      "bf": -1,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 1,
+      "root": 10
+    },
+    {
+      "step": 52,
+      "stepId": "bfReturn",
+      "key": 30,
+      "node": 10,
+      "bf": -2,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 1,
+      "root": 10
+    },
+    {
+      "step": 53,
+      "stepId": "caseLL",
+      "key": 30,
+      "node": 10,
+      "bf": -2,
+      "case": null,
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 1,
+      "root": 10
+    },
+    {
+      "step": 54,
+      "stepId": "caseRR",
+      "key": 30,
+      "node": 10,
+      "bf": -2,
+      "case": "RR",
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 1,
+      "root": 10,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 55,
+      "stepId": "rotateLeftRR",
+      "key": 30,
+      "node": 10,
+      "bf": -2,
+      "case": "RR",
+      "new_root": null,
+      "height_left": -1,
+      "height_right": 1,
+      "root": 10,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 56,
+      "stepId": "rotL_y",
+      "key": 30,
+      "node": 10,
+      "bf": -2,
+      "case": "RR",
+      "new_root": 20,
+      "height_left": -1,
+      "height_right": 1,
+      "root": 10,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 57,
+      "stepId": "rotL_T2",
+      "key": 30,
+      "node": 10,
+      "bf": -2,
+      "case": "RR",
+      "new_root": 20,
+      "height_left": -1,
+      "height_right": 1,
+      "root": 10,
+      "temp": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 58,
+      "stepId": "rotL_yLeft",
+      "key": 30,
+      "node": 10,
+      "bf": -2,
+      "case": "RR",
+      "new_root": 20,
+      "height_left": -1,
+      "height_right": 1,
+      "root": 20,
+      "temp": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 59,
+      "stepId": "rotL_zRight",
+      "key": 30,
+      "node": 10,
+      "bf": -2,
+      "case": "RR",
+      "new_root": 20,
+      "height_left": -1,
+      "height_right": 1,
+      "root": 20,
+      "temp": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 60,
+      "stepId": "rotL_updZ",
+      "key": 30,
+      "node": 10,
+      "bf": -2,
+      "case": "RR",
+      "new_root": 20,
+      "height_left": -1,
+      "height_right": 1,
+      "root": 20,
+      "temp": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 61,
+      "stepId": "uhHl",
+      "key": 30,
+      "node": 10,
+      "bf": -2,
+      "case": "RR",
+      "new_root": 20,
+      "height_left": -1,
+      "height_right": 1,
+      "root": 20,
+      "temp": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 62,
+      "stepId": "uhHr",
+      "key": 30,
+      "node": 10,
+      "bf": -2,
+      "case": "RR",
+      "new_root": 20,
+      "height_left": -1,
+      "height_right": -1,
+      "root": 20,
+      "temp": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 63,
+      "stepId": "uhSet",
+      "key": 30,
+      "node": 10,
+      "bf": 0,
+      "case": "RR",
+      "new_root": 20,
+      "height_left": -1,
+      "height_right": -1,
+      "root": 20,
+      "temp": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 64,
+      "stepId": "rotL_updY",
+      "key": 30,
+      "node": 10,
+      "bf": 0,
+      "case": "RR",
+      "new_root": 20,
+      "height_left": -1,
+      "height_right": -1,
+      "root": 20,
+      "temp": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 65,
+      "stepId": "uhHl",
+      "key": 30,
+      "node": 20,
+      "bf": 0,
+      "case": "RR",
+      "new_root": 20,
+      "height_left": 0,
+      "height_right": -1,
+      "root": 20,
+      "temp": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 66,
+      "stepId": "uhHr",
+      "key": 30,
+      "node": 20,
+      "bf": 0,
+      "case": "RR",
+      "new_root": 20,
+      "height_left": 0,
+      "height_right": 0,
+      "root": 20,
+      "temp": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 67,
+      "stepId": "uhSet",
+      "key": 30,
+      "node": 20,
+      "bf": 0,
+      "case": "RR",
+      "new_root": 20,
+      "height_left": 0,
+      "height_right": 0,
+      "root": 20,
+      "temp": null,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 68,
+      "stepId": "rotL_return",
+      "key": 30,
+      "node": 20,
+      "bf": 0,
+      "case": "RR",
+      "new_root": 20,
+      "height_left": 0,
+      "height_right": 0,
+      "root": 20,
+      "temp": null,
+      "missing": {
+        "stepId": true
+      }
+    }
+  ],
+  "meta": {
+    "totalRows": 68,
+    "blankRows": 17,
+    "skipFirstRatio": 0.3,
+    "pickRatio": 0.25,
+    "changingFields": [
+      "node",
+      "bf",
+      "root",
+      "key",
+      "height_left",
+      "height_right",
+      "case",
+      "new_root",
+      "temp"
+    ]
+  }
+}

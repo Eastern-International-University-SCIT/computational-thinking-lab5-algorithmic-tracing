@@ -1,0 +1,586 @@
+{
+  "array": [
+    10,
+    12,
+    15,
+    50,
+    55,
+    90,
+    200,
+    400
+  ],
+  "key": 55,
+  "varFields": [
+    "bound",
+    "low",
+    "mid",
+    "high",
+    "result"
+  ],
+  "blankFields": [
+    "stepId",
+    "bound",
+    "low",
+    "mid",
+    "high",
+    "result"
+  ],
+  "executorGlobal": "ExponentialSearchExecutor",
+  "pickedSteps": [
+    2,
+    4,
+    5,
+    7,
+    8,
+    9,
+    11,
+    14
+  ],
+  "answers": {
+    "2": {
+      "stepId": "checkFirst",
+      "bound": "—",
+      "low": "—",
+      "mid": "—",
+      "high": "—",
+      "result": "—"
+    },
+    "4": {
+      "stepId": "whileExp",
+      "bound": "1",
+      "low": "—",
+      "mid": "—",
+      "high": "—",
+      "result": "—"
+    },
+    "5": {
+      "stepId": "doubleBound",
+      "bound": "2",
+      "low": "—",
+      "mid": "—",
+      "high": "—",
+      "result": "—"
+    },
+    "7": {
+      "stepId": "doubleBound",
+      "bound": "4",
+      "low": "—",
+      "mid": "—",
+      "high": "—",
+      "result": "—"
+    },
+    "8": {
+      "stepId": "whileExp",
+      "bound": "4",
+      "low": "—",
+      "mid": "—",
+      "high": "—",
+      "result": "—"
+    },
+    "9": {
+      "stepId": "setLow",
+      "bound": "4",
+      "low": "2",
+      "mid": "—",
+      "high": "—",
+      "result": "—"
+    },
+    "11": {
+      "stepId": "whileLoop",
+      "bound": "4",
+      "low": "2",
+      "mid": "—",
+      "high": "4",
+      "result": "—"
+    },
+    "14": {
+      "stepId": "checkLess",
+      "bound": "4",
+      "low": "2",
+      "mid": "3",
+      "high": "4",
+      "result": "—"
+    }
+  },
+  "pieces": {
+    "stepId": [
+      {
+        "id": 1,
+        "value": "checkFirst"
+      },
+      {
+        "id": 7,
+        "value": "whileExp"
+      },
+      {
+        "id": 13,
+        "value": "doubleBound"
+      },
+      {
+        "id": 19,
+        "value": "doubleBound"
+      },
+      {
+        "id": 25,
+        "value": "whileExp"
+      },
+      {
+        "id": 31,
+        "value": "setLow"
+      },
+      {
+        "id": 37,
+        "value": "whileLoop"
+      },
+      {
+        "id": 43,
+        "value": "checkLess"
+      }
+    ],
+    "bound": [
+      {
+        "id": 2,
+        "value": "—"
+      },
+      {
+        "id": 8,
+        "value": "1"
+      },
+      {
+        "id": 14,
+        "value": "2"
+      },
+      {
+        "id": 20,
+        "value": "4"
+      },
+      {
+        "id": 26,
+        "value": "4"
+      },
+      {
+        "id": 32,
+        "value": "4"
+      },
+      {
+        "id": 38,
+        "value": "4"
+      },
+      {
+        "id": 44,
+        "value": "4"
+      }
+    ],
+    "low": [
+      {
+        "id": 3,
+        "value": "—"
+      },
+      {
+        "id": 9,
+        "value": "—"
+      },
+      {
+        "id": 15,
+        "value": "—"
+      },
+      {
+        "id": 21,
+        "value": "—"
+      },
+      {
+        "id": 27,
+        "value": "—"
+      },
+      {
+        "id": 33,
+        "value": "2"
+      },
+      {
+        "id": 39,
+        "value": "2"
+      },
+      {
+        "id": 45,
+        "value": "2"
+      }
+    ],
+    "mid": [
+      {
+        "id": 4,
+        "value": "—"
+      },
+      {
+        "id": 10,
+        "value": "—"
+      },
+      {
+        "id": 16,
+        "value": "—"
+      },
+      {
+        "id": 22,
+        "value": "—"
+      },
+      {
+        "id": 28,
+        "value": "—"
+      },
+      {
+        "id": 34,
+        "value": "—"
+      },
+      {
+        "id": 40,
+        "value": "—"
+      },
+      {
+        "id": 46,
+        "value": "3"
+      }
+    ],
+    "high": [
+      {
+        "id": 5,
+        "value": "—"
+      },
+      {
+        "id": 11,
+        "value": "—"
+      },
+      {
+        "id": 17,
+        "value": "—"
+      },
+      {
+        "id": 23,
+        "value": "—"
+      },
+      {
+        "id": 29,
+        "value": "—"
+      },
+      {
+        "id": 35,
+        "value": "—"
+      },
+      {
+        "id": 41,
+        "value": "4"
+      },
+      {
+        "id": 47,
+        "value": "4"
+      }
+    ],
+    "result": [
+      {
+        "id": 6,
+        "value": "—"
+      },
+      {
+        "id": 12,
+        "value": "—"
+      },
+      {
+        "id": 18,
+        "value": "—"
+      },
+      {
+        "id": 24,
+        "value": "—"
+      },
+      {
+        "id": 30,
+        "value": "—"
+      },
+      {
+        "id": 36,
+        "value": "—"
+      },
+      {
+        "id": 42,
+        "value": "—"
+      },
+      {
+        "id": 48,
+        "value": "—"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "step": 1,
+      "stepId": "mainCall",
+      "n": 8,
+      "key": 55,
+      "bound": null,
+      "low": null,
+      "mid": null,
+      "high": null,
+      "result": null
+    },
+    {
+      "step": 2,
+      "stepId": "checkFirst",
+      "n": 8,
+      "key": 55,
+      "bound": null,
+      "low": null,
+      "mid": null,
+      "high": null,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "bound": true,
+        "low": true,
+        "mid": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 3,
+      "stepId": "setBound",
+      "n": 8,
+      "key": 55,
+      "bound": 1,
+      "low": null,
+      "mid": null,
+      "high": null,
+      "result": null
+    },
+    {
+      "step": 4,
+      "stepId": "whileExp",
+      "n": 8,
+      "key": 55,
+      "bound": 1,
+      "low": null,
+      "mid": null,
+      "high": null,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "bound": true,
+        "low": true,
+        "mid": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 5,
+      "stepId": "doubleBound",
+      "n": 8,
+      "key": 55,
+      "bound": 2,
+      "low": null,
+      "mid": null,
+      "high": null,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "bound": true,
+        "low": true,
+        "mid": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 6,
+      "stepId": "whileExp",
+      "n": 8,
+      "key": 55,
+      "bound": 2,
+      "low": null,
+      "mid": null,
+      "high": null,
+      "result": null
+    },
+    {
+      "step": 7,
+      "stepId": "doubleBound",
+      "n": 8,
+      "key": 55,
+      "bound": 4,
+      "low": null,
+      "mid": null,
+      "high": null,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "bound": true,
+        "low": true,
+        "mid": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 8,
+      "stepId": "whileExp",
+      "n": 8,
+      "key": 55,
+      "bound": 4,
+      "low": null,
+      "mid": null,
+      "high": null,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "bound": true,
+        "low": true,
+        "mid": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 9,
+      "stepId": "setLow",
+      "n": 8,
+      "key": 55,
+      "bound": 4,
+      "low": 2,
+      "mid": null,
+      "high": null,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "bound": true,
+        "low": true,
+        "mid": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 10,
+      "stepId": "setHigh",
+      "n": 8,
+      "key": 55,
+      "bound": 4,
+      "low": 2,
+      "mid": null,
+      "high": 4,
+      "result": null
+    },
+    {
+      "step": 11,
+      "stepId": "whileLoop",
+      "n": 8,
+      "key": 55,
+      "bound": 4,
+      "low": 2,
+      "mid": null,
+      "high": 4,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "bound": true,
+        "low": true,
+        "mid": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 12,
+      "stepId": "setMid",
+      "n": 8,
+      "key": 55,
+      "bound": 4,
+      "low": 2,
+      "mid": 3,
+      "high": 4,
+      "result": null
+    },
+    {
+      "step": 13,
+      "stepId": "checkEqual",
+      "n": 8,
+      "key": 55,
+      "bound": 4,
+      "low": 2,
+      "mid": 3,
+      "high": 4,
+      "result": null
+    },
+    {
+      "step": 14,
+      "stepId": "checkLess",
+      "n": 8,
+      "key": 55,
+      "bound": 4,
+      "low": 2,
+      "mid": 3,
+      "high": 4,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "bound": true,
+        "low": true,
+        "mid": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 15,
+      "stepId": "updateLow",
+      "n": 8,
+      "key": 55,
+      "bound": 4,
+      "low": 4,
+      "mid": 3,
+      "high": 4,
+      "result": null
+    },
+    {
+      "step": 16,
+      "stepId": "whileLoop",
+      "n": 8,
+      "key": 55,
+      "bound": 4,
+      "low": 4,
+      "mid": 3,
+      "high": 4,
+      "result": null
+    },
+    {
+      "step": 17,
+      "stepId": "setMid",
+      "n": 8,
+      "key": 55,
+      "bound": 4,
+      "low": 4,
+      "mid": 4,
+      "high": 4,
+      "result": null
+    },
+    {
+      "step": 18,
+      "stepId": "checkEqual",
+      "n": 8,
+      "key": 55,
+      "bound": 4,
+      "low": 4,
+      "mid": 4,
+      "high": 4,
+      "result": null
+    },
+    {
+      "step": 19,
+      "stepId": "returnFound",
+      "n": 8,
+      "key": 55,
+      "bound": 4,
+      "low": 4,
+      "mid": 4,
+      "high": 4,
+      "result": 4
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AVL Insertion Studio — Puzzle (height 2, case 3)</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233d5a80'/%3E%3Ccircle cx='16' cy='10' r='3.5' fill='%23fff'/%3E%3Ccircle cx='9' cy='20' r='3' fill='%23fff'/%3E%3Ccircle cx='23' cy='20' r='3' fill='%23fff'/%3E%3Cpath d='M16 13.5L9 17M16 13.5L23 17' stroke='%23fff' stroke-width='1.4'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <h1 data-i18n="title">AVL Insertion Studio</h1>
+        <p data-i18n="subtitle">Pseudocode · 3D tree · fill-the-blank trace puzzle</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="controls">
+        <label class="field field-wide field-locked">
+          <span data-i18n="sequence">Sequence</span>
+          <span class="locked-input-wrap">
+            <input
+              id="insert-sequence"
+              type="text"
+              value="30, 20, 10, 40"
+              spellcheck="false"
+              autocomplete="off"
+              readonly
+              tabindex="-1"
+              aria-readonly="true"
+            />
+            <span class="lock-icon" aria-hidden="true"></span>
+          </span>
+        </label>
+        <button id="btn-apply" type="button" class="btn btn-secondary" data-i18n="apply" style="display:none">Apply</button>
+        <button id="btn-random" type="button" class="btn btn-secondary" data-i18n="randomize" style="display:none">Randomize</button>
+        <div class="speed-field">
+          <label for="speed" data-i18n="speed">Speed</label>
+          <input id="speed" type="range" min="1" max="10" value="5" />
+        </div>
+        <button id="btn-run" type="button" class="btn btn-primary" data-i18n="run">Run</button>
+        <button id="btn-step" type="button" class="btn btn-secondary" data-i18n="step">Step</button>
+        <button id="btn-pause" type="button" class="btn btn-secondary" data-i18n="pause" disabled>Pause</button>
+        <button id="btn-rerun" type="button" class="btn btn-secondary" data-i18n="rerun" data-i18n-title="rerunTitle" title="Rerun algorithm from the start (keeps filled blanks)">Rerun</button>
+        <button id="btn-reset" type="button" class="btn btn-ghost" data-i18n="reset">Reset</button>
+      </div>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" id="lang-en" class="lang-btn is-active" data-lang="en">EN</button>
+        <button type="button" id="lang-vi" class="lang-btn" data-lang="vi">VI</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <section class="panel panel-viz" id="panel-viz" aria-label="3D AVL visualization">
+      <div class="panel-head panel-head-row">
+        <div>
+          <h2 data-i18n="vizTitle">AVL Tree (3D)</h2>
+          <p data-i18n="vizHint">Drag to peek · scroll to zoom · height & balance factor labels · CURRENT walks the tree</p>
+        </div>
+        <div class="zoom-controls">
+          <button type="button" id="btn-zoom-out" class="btn btn-ghost btn-icon" data-i18n-title="zoomOut" title="Zoom out">−</button>
+          <button type="button" id="btn-zoom-in" class="btn btn-ghost btn-icon" data-i18n-title="zoomIn" title="Zoom in">+</button>
+        </div>
+      </div>
+      <div id="canvas-host">
+        <div id="result-hud" class="result-hud" hidden></div>
+        <div id="compare-hud" class="compare-hud" hidden></div>
+        <div
+          id="processing-key-panel"
+          class="processing-key-panel"
+          aria-live="polite"
+          aria-label="Currently processing key"
+        >
+          <div class="processing-key-title" data-i18n="processingKeyTitle">Processing</div>
+          <div id="processing-key-value" class="processing-key-value is-empty">—</div>
+        </div>
+      </div>
+      <div class="legend">
+        <span><i class="swatch waiting"></i><span data-i18n="legendWaiting">To insert</span></span>
+        <span><i class="swatch done"></i><span data-i18n="legendDone">Processed</span></span>
+        <span><i class="swatch active"></i><span data-i18n="legendActive">Comparing</span></span>
+        <span><i class="swatch purple"></i><span data-i18n="legendSmaller">Smaller / equal</span></span>
+        <span><i class="swatch sorted"></i><span data-i18n="legendInserted">In tree</span></span>
+        <span><i class="swatch bf-zero"></i><span data-i18n="legendBf0">Balance Factor 0</span></span>
+        <span><i class="swatch bf-pos1"></i><span data-i18n="legendBfPos1">Balance Factor +1</span></span>
+        <span><i class="swatch bf-neg1"></i><span data-i18n="legendBfNeg1">Balance Factor −1</span></span>
+        <span><i class="swatch bf-high"></i><span data-i18n="legendBfHigh">Balance Factor &gt; +1</span></span>
+        <span><i class="swatch bf-low"></i><span data-i18n="legendBfLow">Balance Factor &lt; −1</span></span>
+      </div>
+    </section>
+
+    <div
+      class="splitter"
+      id="stage-splitter"
+      role="separator"
+      aria-orientation="vertical"
+      aria-controls="panel-viz panel-algo"
+      tabindex="0"
+      data-i18n-title="splitterLabel"
+      title="Drag to resize panels"
+    ></div>
+
+    <section class="panel panel-algo" id="panel-algo" aria-label="Pseudocode algorithm">
+      <div class="panel-head">
+        <h2 data-i18n="algoTitle">Algorithm (Pseudocode)</h2>
+        <p data-i18n="algoHint">Current line is highlighted · recursion stack floats over the code · helpers expand height / rotate</p>
+      </div>
+      <div class="pseudocode-wrap">
+        <div id="recursion-stack" class="recursion-stack" aria-live="polite" aria-label="Recursion call stack">
+          <div class="recursion-title" data-i18n="recursionTitle">Call stack</div>
+          <div id="recursion-frames" class="recursion-frames"></div>
+        </div>
+        <div id="pseudocode" class="pseudocode" tabindex="0"></div>
+      </div>
+    </section>
+  </main>
+
+  <div
+    class="row-splitter"
+    id="trace-splitter"
+    role="separator"
+    aria-orientation="horizontal"
+    aria-controls="stage"
+    tabindex="0"
+    data-i18n-title="splitterRowLabel"
+    title="Drag to resize execution trace height"
+  ></div>
+
+  <section class="trace-panel" aria-label="Execution trace">
+    <div class="panel-head panel-head-row">
+      <div>
+        <h2 data-i18n="traceTitle">Execution Trace</h2>
+        <p data-i18n="traceHint">Full instance table · fill blanks on rows where values change</p>
+      </div>
+      <div class="puzzle-trace-actions">
+        <span
+          id="puzzle-complete-badge"
+          class="puzzle-complete-badge"
+          hidden
+          data-i18n="puzzleComplete"
+        >Complete</span>
+        <span id="puzzle-row-stats" class="puzzle-row-stats" aria-live="polite">
+          <span data-i18n="puzzleCorrectRows">Correct rows</span>
+          <strong
+            ><span id="puzzle-correct-count">0</span>/<span id="puzzle-total-blanks">1</span></strong
+          >
+        </span>
+        <button
+          type="button"
+          id="btn-puzzle-palette"
+          class="btn btn-secondary"
+          data-i18n="puzzleOpenPalette"
+          aria-expanded="false"
+          aria-controls="puzzle-panel"
+        >
+          Fill blanks
+        </button>
+      </div>
+    </div>
+    <p id="puzzle-banner" class="puzzle-banner" data-i18n="puzzleBanner">
+      Puzzle: fill every blank on rows where values change, then Run or Step.
+    </p>
+    <div class="trace-scroll">
+      <table id="trace-table">
+        <thead>
+          <tr>
+            <th data-i18n="colStep">#</th>
+            <th data-i18n="colLine">Line</th>
+            <th data-i18n="colKey">key</th>
+            <th data-i18n="colNode">node</th>
+            <th data-i18n="colBf">balance_factor</th>
+            <th data-i18n="colCase">case</th>
+            <th data-i18n="colNewRoot">new_root</th>
+            <th data-i18n="colTemp">temp</th>
+            <th data-i18n="colHeightLeft">height_left</th>
+            <th data-i18n="colHeightRight">height_right</th>
+            <th data-i18n="colRoot">root</th>
+          </tr>
+        </thead>
+        <tbody id="trace-body"></tbody>
+      </table>
+      <p id="trace-empty" class="trace-empty hidden" data-i18n="traceEmpty">Press Run or Step to start tracing.</p>
+    </div>
+  </section>
+
+  <aside
+    id="puzzle-panel"
+    class="puzzle-panel"
+    hidden
+    role="dialog"
+    aria-labelledby="puzzle-panel-title"
+  >
+    <div class="puzzle-panel-bar" id="puzzle-panel-handle">
+      <strong id="puzzle-panel-title" data-i18n="puzzlePanelTitle">Trace pieces</strong>
+      <button type="button" id="btn-puzzle-close" class="btn btn-ghost btn-icon" aria-label="Close">×</button>
+    </div>
+    <p id="puzzle-panel-hint" class="puzzle-panel-hint" data-i18n="puzzlePanelHint">
+      Choose a column, then drag values onto blank cells in highlighted rows.
+    </p>
+    <div class="puzzle-sections" role="tablist">
+      <button
+        type="button"
+        class="puzzle-section-btn is-active"
+        data-section="stepId"
+        role="tab"
+        aria-selected="true"
+      >
+        Line
+      </button>
+    </div>
+    <div id="puzzle-chips" class="puzzle-chips"></div>
+    <div class="puzzle-panel-actions">
+      <button
+        type="button"
+        id="btn-puzzle-reset-pieces"
+        class="btn btn-ghost puzzle-reset-btn"
+        data-i18n="puzzleResetPieces"
+      >
+        Reset pieces
+      </button>
+    </div>
+    <p id="puzzle-status" class="puzzle-status" aria-live="polite"></p>
+  </aside>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/pseudocode.js"></script>
+  <script src="js/sketch.js"></script>
+  <script src="js/puzzle.js"></script>
+  <script src="js/executor.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

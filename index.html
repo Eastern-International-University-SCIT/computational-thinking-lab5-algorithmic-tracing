@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An offline execution-trace puzzle course for search, sort, and tree algorithms.">
+  <title>TraceLab — Algorithm Puzzle Course</title>
+  <link rel="stylesheet" href="assets/game.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="TraceLab home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand-name">TRACE<span>LAB</span></span>
+    </a>
+
+    <section class="header-progress" aria-label="Course progress" data-i18n-aria-label="courseProgress">
+      <div class="progress-copy">
+        <span data-i18n="courseProgress">Course progress</span>
+        <strong id="headerProgressText">0%</strong>
+      </div>
+      <div class="progress-track" role="progressbar" aria-label="Overall course progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="headerProgressTrack">
+        <span id="headerProgressBar"></span>
+      </div>
+    </section>
+
+    <nav class="top-actions" aria-label="Progress tools">
+      <button class="quiet-button" id="saveProgressButton" type="button" title="Download a progress file" data-i18n="save" data-i18n-title="saveTitle">Save</button>
+      <button class="quiet-button" id="loadProgressButton" type="button" title="Load a progress file" data-i18n="load" data-i18n-title="loadTitle">Load</button>
+      <div class="language-toggle" role="group" aria-label="Language" data-i18n-aria-label="language">
+        <button type="button" data-language="en" aria-pressed="true">EN</button>
+        <button type="button" data-language="vi" aria-pressed="false">VI</button>
+      </div>
+      <button class="icon-button" id="resetProgressButton" type="button" aria-label="Reset all progress" title="Reset progress" data-i18n-aria-label="resetAll" data-i18n-title="resetTitle">↻</button>
+      <input id="progressFileInput" type="file" accept="application/json,.json" hidden>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span><b data-i18n="heroEyebrow">Computational Thinking Lab</b></p>
+        <h1 id="heroTitle" data-i18n-html="heroTitle">Think it through.<br><em>Trace it out.</em></h1>
+        <p class="hero-lede" data-i18n="heroLede">Complete the missing steps in real algorithm execution traces. Each solved set unlocks the next challenge on your path.</p>
+        <a class="primary-button" href="#roadmap"><b data-i18n="continueCourse">Continue the course</b> <span aria-hidden="true">↓</span></a>
+        <div class="hero-facts" aria-label="Course overview">
+          <span><strong>13</strong><small data-i18n="algorithms">Algorithms</small></span>
+          <span><strong>135</strong><small data-i18n="puzzles">Puzzles</small></span>
+          <span><strong>3</strong><small data-i18n="modules">Modules</small></span>
+        </div>
+      </div>
+
+      <div class="trace-preview" aria-hidden="true" data-hint="DRAG VALUES INTO THE GAPS">
+        <div class="preview-topline">
+          <span>execution_trace.csv</span>
+          <span class="preview-dots"><i></i><i></i><i></i></span>
+        </div>
+        <div class="preview-array">
+          <span>12</span><span>27</span><span class="active">31</span><span>44</span><span>58</span><span>63</span>
+        </div>
+        <div class="preview-table">
+          <div class="preview-row heading"><span>step</span><span>low</span><span>mid</span><span>high</span></div>
+          <div class="preview-row"><span>01</span><span>0</span><span class="blank">?</span><span>5</span></div>
+          <div class="preview-row"><span>02</span><span>0</span><span>2</span><span class="blank">?</span></div>
+          <div class="preview-row success"><span>03</span><span>3</span><span>4</span><span>5</span></div>
+        </div>
+        <div class="preview-status"><span>✓</span><b data-i18n="traceVerified">Trace verified</b></div>
+      </div>
+    </section>
+
+    <section class="how-it-works" aria-labelledby="howTitle">
+      <div>
+        <p class="section-kicker" data-i18n="howKicker">How it works</p>
+        <h2 id="howTitle" data-i18n="howTitle">One path. Three ways of thinking.</h2>
+      </div>
+      <ol>
+        <li><span>01</span><div><strong data-i18n="observe">Observe</strong><p data-i18n="observeText">Run or step through the simulation.</p></div></li>
+        <li><span>02</span><div><strong data-i18n="reason">Reason</strong><p data-i18n="reasonText">Fill each gap in the execution trace.</p></div></li>
+        <li><span>03</span><div><strong data-i18n="unlock">Unlock</strong><p data-i18n="unlockText">Finish the set to reach the next algorithm.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="roadmap" id="roadmap" aria-labelledby="roadmapTitle">
+      <div class="roadmap-heading">
+        <div>
+          <p class="section-kicker" data-i18n="roadmapKicker">Your learning path</p>
+          <h2 id="roadmapTitle" data-i18n="roadmapTitle">Algorithm roadmap</h2>
+        </div>
+        <p data-i18n="roadmapText">Progress is saved automatically on this browser. Complete every puzzle in a set to unlock the next algorithm.</p>
+      </div>
+      <div id="courseModules"></div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#top"><span class="brand-name">TRACE<span>LAB</span></span></a>
+    <p data-i18n="footerText">Built for learning, one trace at a time.</p>
+    <p class="offline-note"><span></span><b data-i18n="offline">Works fully offline</b></p>
+  </footer>
+
+  <dialog class="algorithm-dialog" id="algorithmDialog">
+    <div class="dialog-shell">
+      <button class="dialog-close" id="closeAlgorithmDialog" type="button" aria-label="Close" data-i18n-aria-label="close">×</button>
+      <div class="dialog-heading">
+        <p class="eyebrow" id="dialogModuleLabel"></p>
+        <h2 id="dialogTitle"></h2>
+        <p id="dialogDescription"></p>
+      </div>
+      <div class="dialog-progress">
+        <div><span id="dialogProgressLabel"></span><strong id="dialogProgressText"></strong></div>
+        <div class="progress-track"><span id="dialogProgressBar"></span></div>
+      </div>
+      <div id="levelGroups" class="level-groups"></div>
+    </div>
+  </dialog>
+
+  <dialog class="confirm-dialog" id="resetDialog">
+    <form method="dialog">
+      <span class="confirm-icon" aria-hidden="true">↻</span>
+      <h2 data-i18n="resetHeading">Reset course progress?</h2>
+      <p data-i18n="resetText">This will mark all 135 puzzles as incomplete and lock the course after Linear Search again.</p>
+      <div class="confirm-actions">
+        <button class="quiet-button" value="cancel" data-i18n="keepProgress">Keep progress</button>
+        <button class="danger-button" value="reset" data-i18n="resetEverything">Reset everything</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="guide-dialog" id="guideDialog" aria-labelledby="guideTitle">
+    <div class="guide-shell">
+      <button class="dialog-close" id="closeGuideButton" type="button" aria-label="Close guide">×</button>
+      <div class="guide-visual" id="guideVisual" aria-hidden="true"></div>
+      <div class="guide-copy">
+        <p class="eyebrow" id="guideKicker"></p>
+        <h2 id="guideTitle"></h2>
+        <p id="guideText"></p>
+        <div class="guide-dots" id="guideDots" aria-label="Guide steps"></div>
+        <div class="guide-actions">
+          <button class="quiet-button" id="guidePreviousButton" type="button"></button>
+          <button class="primary-button" id="guideNextButton" type="button"></button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <section class="puzzle-player" id="puzzlePlayer" aria-label="Puzzle player" hidden>
+    <header class="player-bar">
+      <button class="player-back" id="closePuzzleButton" type="button"><span aria-hidden="true">←</span> <b data-i18n="roadmapShort">Roadmap</b></button>
+      <div class="player-title">
+        <span id="playerAlgorithm"></span>
+        <strong id="playerLevel"></strong>
+      </div>
+      <div class="player-actions">
+        <span class="player-solved" id="playerSolved" hidden>✓ <b data-i18n="solved">Solved</b></span>
+        <button class="player-guide" id="openGuideButton" type="button"><span aria-hidden="true">?</span> <b data-i18n="guide">Guide</b></button>
+        <a class="player-new-tab" id="openPuzzleNewTab" href="#" target="_blank"><b data-i18n="openNewTab">Open in new tab</b> ↗</a>
+        <button class="primary-button compact" id="nextPuzzleButton" type="button" hidden data-i18n="nextPuzzle">Next puzzle →</button>
+      </div>
+    </header>
+    <iframe id="puzzleFrame" title="Algorithm trace puzzle" src="about:blank"></iframe>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/game.js"></script>
+</body>
+</html>

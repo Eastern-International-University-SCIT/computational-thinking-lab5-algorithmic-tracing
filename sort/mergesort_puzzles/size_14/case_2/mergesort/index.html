@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merge Sort Studio — Puzzle</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='#5b21b6'/%3E%3Crect x='6' y='18' width='5' height='8' fill='%23fff'/%3E%3Crect x='13' y='12' width='5' height='14' fill='%23fff'/%3E%3Crect x='20' y='8' width='5' height='18' fill='%23fff'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <h1 data-i18n="title">Merge Sort Studio</h1>
+        <p data-i18n="subtitle">Pseudocode · 3D array · fill-the-blank trace puzzle</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="controls">
+        <label class="field field-locked">
+          <span data-i18n="arraySize">Array size</span>
+          <span class="locked-input-wrap">
+            <input id="array-size" type="number" min="4" max="20" value="14" readonly tabindex="-1" aria-readonly="true" />
+            <span class="lock-icon" aria-hidden="true"></span>
+          </span>
+        </label>
+        <button id="btn-random" type="button" class="btn btn-secondary" data-i18n="randomize" style="display:none">Randomize</button>
+        <div class="speed-field">
+          <label for="speed" data-i18n="speed">Speed</label>
+          <input id="speed" type="range" min="1" max="10" value="5" />
+        </div>
+        <button id="btn-run" type="button" class="btn btn-primary" data-i18n="run">Run</button>
+        <button id="btn-step" type="button" class="btn btn-secondary" data-i18n="step">Step</button>
+        <button id="btn-pause" type="button" class="btn btn-secondary" data-i18n="pause" disabled>Pause</button>
+        <button id="btn-rerun" type="button" class="btn btn-secondary" data-i18n="rerun" title="Rerun algorithm from the start (keeps filled blanks)">Rerun</button>
+        <button id="btn-reset" type="button" class="btn btn-ghost" data-i18n="reset">Reset</button>
+      </div>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" id="lang-en" class="lang-btn is-active" data-lang="en">EN</button>
+        <button type="button" id="lang-vi" class="lang-btn" data-lang="vi">VI</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <section class="panel panel-viz" id="panel-viz" aria-label="3D array visualization">
+      <div class="panel-head panel-head-row">
+        <div>
+          <h2 data-i18n="vizTitle">Array (3D)</h2>
+          <p data-i18n="vizHint">Drag to peek at depth · scroll to zoom</p>
+        </div>
+        <div class="zoom-controls">
+          <button type="button" id="btn-zoom-out" class="btn btn-ghost btn-icon" data-i18n-title="zoomOut" title="Zoom out">−</button>
+          <button type="button" id="btn-zoom-in" class="btn btn-ghost btn-icon" data-i18n-title="zoomIn" title="Zoom in">+</button>
+        </div>
+      </div>
+      <div id="canvas-host">
+        <div id="result-hud" class="result-hud" hidden></div>
+        <div id="compare-hud" class="compare-hud" hidden></div>
+      </div>
+      <div class="legend">
+        <span><i class="swatch range"></i><span data-i18n="legendRun1">Left half</span></span>
+        <span><i class="swatch swap"></i><span data-i18n="legendRun2">Right half</span></span>
+        <span><i class="swatch active"></i><span data-i18n="legendActive">Comparing</span></span>
+        <span><i class="swatch sorted"></i><span data-i18n="legendSorted">Sorted</span></span>
+      </div>
+    </section>
+
+    <div
+      class="splitter"
+      id="stage-splitter"
+      role="separator"
+      aria-orientation="vertical"
+      aria-controls="panel-viz panel-algo"
+      tabindex="0"
+      data-i18n-title="splitterLabel"
+      title="Drag to resize panels"
+    ></div>
+
+    <section class="panel panel-algo" id="panel-algo" aria-label="Pseudocode algorithm">
+      <div class="panel-head">
+        <h2 data-i18n="algoTitle">Algorithm (Pseudocode)</h2>
+        <p data-i18n="algoHint">Current line is highlighted · recursion stack floats over the code · divide, conquer, merge</p>
+      </div>
+      <div class="pseudocode-wrap">
+        <div id="recursion-stack" class="recursion-stack" aria-live="polite" aria-label="Recursion call stack">
+          <div class="recursion-title" data-i18n="recursionTitle">Call stack</div>
+          <div id="recursion-frames" class="recursion-frames"></div>
+        </div>
+        <div id="pseudocode" class="pseudocode" tabindex="0"></div>
+      </div>
+    </section>
+  </main>
+
+  <div
+    class="row-splitter"
+    id="trace-splitter"
+    role="separator"
+    aria-orientation="horizontal"
+    aria-controls="stage"
+    tabindex="0"
+    data-i18n-title="splitterRowLabel"
+    title="Drag to resize execution trace height"
+  ></div>
+
+  <section class="trace-panel" aria-label="Execution trace">
+    <div class="panel-head panel-head-row">
+      <div>
+        <h2 data-i18n="traceTitle">Execution Trace</h2>
+        <p data-i18n="traceHint">Full instance table · fill blanks on rows where values change</p>
+      </div>
+      <div class="puzzle-trace-actions">
+        <span id="puzzle-complete-badge" class="puzzle-complete-badge" hidden data-i18n="puzzleComplete">Complete</span>
+        <span id="puzzle-row-stats" class="puzzle-row-stats" aria-live="polite">
+          <span data-i18n="puzzleCorrectRows">Correct rows</span>
+          <strong><span id="puzzle-correct-count">0</span>/<span id="puzzle-total-blanks">1</span></strong>
+        </span>
+        <button type="button" id="btn-puzzle-palette" class="btn btn-secondary" data-i18n="puzzleOpenPalette" aria-expanded="false" aria-controls="puzzle-panel">
+          Fill blanks
+        </button>
+      </div>
+    </div>
+    <p id="puzzle-banner" class="puzzle-banner" data-i18n="puzzleBanner">
+      Puzzle: fill every blank on rows where values change, then Run or Step.
+    </p>
+    <div class="trace-scroll">
+      <table id="trace-table">
+        <thead>
+          <tr>
+            <th data-i18n="colStep">#</th>
+            <th data-i18n="colLine">Line</th>
+            <th data-i18n="colArray">array</th>
+            <th data-i18n="colLeft">left</th>
+            <th data-i18n="colMid">mid</th>
+            <th data-i18n="colRight">right</th>
+            <th data-i18n="colI">i</th>
+            <th data-i18n="colJ">j</th>
+            <th data-i18n="colK">k</th>
+          </tr>
+        </thead>
+        <tbody id="trace-body"></tbody>
+      </table>
+      <p id="trace-empty" class="trace-empty hidden" data-i18n="traceEmpty">Press Run or Step to start tracing.</p>
+    </div>
+  </section>
+
+  <aside id="puzzle-panel" class="puzzle-panel" hidden role="dialog" aria-labelledby="puzzle-panel-title">
+    <div class="puzzle-panel-bar" id="puzzle-panel-handle">
+      <strong id="puzzle-panel-title" data-i18n="puzzlePanelTitle">Trace pieces</strong>
+      <button type="button" id="btn-puzzle-close" class="btn btn-ghost btn-icon" aria-label="Close">×</button>
+    </div>
+    <p id="puzzle-panel-hint" class="puzzle-panel-hint" data-i18n="puzzlePanelHint">
+      Choose a column, then drag values onto blank cells in highlighted rows.
+    </p>
+    <div class="puzzle-sections" role="tablist">
+      <button type="button" class="puzzle-section-btn is-active" data-section="stepId" role="tab" aria-selected="true">Line</button>
+      <button type="button" class="puzzle-section-btn " data-section="left" role="tab" aria-selected="false">left</button>
+      <button type="button" class="puzzle-section-btn " data-section="mid" role="tab" aria-selected="false">mid</button>
+      <button type="button" class="puzzle-section-btn " data-section="right" role="tab" aria-selected="false">right</button>
+      <button type="button" class="puzzle-section-btn " data-section="i" role="tab" aria-selected="false">i</button>
+      <button type="button" class="puzzle-section-btn " data-section="j" role="tab" aria-selected="false">j</button>
+      <button type="button" class="puzzle-section-btn " data-section="k" role="tab" aria-selected="false">k</button>
+    </div>
+    <div id="puzzle-chips" class="puzzle-chips"></div>
+    <div class="puzzle-panel-actions">
+      <button type="button" id="btn-puzzle-reset-pieces" class="btn btn-ghost puzzle-reset-btn" data-i18n="puzzleResetPieces">
+        Reset pieces
+      </button>
+    </div>
+    <p id="puzzle-status" class="puzzle-status" aria-live="polite"></p>
+  </aside>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/pseudocode.js"></script>
+  <script src="js/sketch.js"></script>
+  <script src="js/puzzle.js"></script>
+  <script src="js/executor.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

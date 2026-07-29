@@ -1,0 +1,95 @@
+{
+  "array": [
+    2,
+    5,
+    8,
+    10,
+    40,
+    42,
+    45,
+    80,
+    85,
+    90,
+    150,
+    160,
+    170,
+    300,
+    310,
+    500
+  ],
+  "key": 2,
+  "varFields": [
+    "bound",
+    "low",
+    "mid",
+    "high",
+    "result"
+  ],
+  "blankFields": [
+    "stepId",
+    "result"
+  ],
+  "executorGlobal": "ExponentialSearchExecutor",
+  "pickedSteps": [
+    2
+  ],
+  "answers": {
+    "2": {
+      "stepId": "checkFirst",
+      "result": "—"
+    }
+  },
+  "pieces": {
+    "stepId": [
+      {
+        "id": 1,
+        "value": "checkFirst"
+      }
+    ],
+    "result": [
+      {
+        "id": 2,
+        "value": "—"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "step": 1,
+      "stepId": "mainCall",
+      "n": 16,
+      "key": 2,
+      "bound": null,
+      "low": null,
+      "mid": null,
+      "high": null,
+      "result": null
+    },
+    {
+      "step": 2,
+      "stepId": "checkFirst",
+      "n": 16,
+      "key": 2,
+      "bound": null,
+      "low": null,
+      "mid": null,
+      "high": null,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "result": true
+      }
+    },
+    {
+      "step": 3,
+      "stepId": "returnZero",
+      "n": 16,
+      "key": 2,
+      "bound": null,
+      "low": null,
+      "mid": null,
+      "high": null,
+      "result": 0
+    }
+  ]
+}

@@ -1,0 +1,1297 @@
+{
+  "array": [
+    10,
+    12,
+    15,
+    50,
+    55,
+    90,
+    200,
+    400
+  ],
+  "key": 90,
+  "varFields": [
+    "fibM",
+    "fibMMm1",
+    "fibMMm2",
+    "offset",
+    "i",
+    "result"
+  ],
+  "blankFields": [
+    "stepId",
+    "fibM",
+    "fibMMm1",
+    "fibMMm2",
+    "offset",
+    "i",
+    "result"
+  ],
+  "executorGlobal": "FibonacciSearchExecutor",
+  "pickedSteps": [
+    2,
+    3,
+    8,
+    13,
+    16,
+    22,
+    24,
+    25,
+    27,
+    29,
+    30,
+    32,
+    34,
+    37,
+    40,
+    41
+  ],
+  "answers": {
+    "2": {
+      "stepId": "setFibMMm2",
+      "fibM": "—",
+      "fibMMm1": "—",
+      "fibMMm2": "0",
+      "offset": "—",
+      "i": "—",
+      "result": "—"
+    },
+    "3": {
+      "stepId": "setFibMMm1",
+      "fibM": "—",
+      "fibMMm1": "1",
+      "fibMMm2": "0",
+      "offset": "—",
+      "i": "—",
+      "result": "—"
+    },
+    "8": {
+      "stepId": "growFibM",
+      "fibM": "2",
+      "fibMMm1": "1",
+      "fibMMm2": "1",
+      "offset": "—",
+      "i": "—",
+      "result": "—"
+    },
+    "13": {
+      "stepId": "whileFibGrow",
+      "fibM": "3",
+      "fibMMm1": "2",
+      "fibMMm2": "1",
+      "offset": "—",
+      "i": "—",
+      "result": "—"
+    },
+    "16": {
+      "stepId": "growFibM",
+      "fibM": "5",
+      "fibMMm1": "3",
+      "fibMMm2": "2",
+      "offset": "—",
+      "i": "—",
+      "result": "—"
+    },
+    "22": {
+      "stepId": "setOffset",
+      "fibM": "8",
+      "fibMMm1": "5",
+      "fibMMm2": "3",
+      "offset": "-1",
+      "i": "—",
+      "result": "—"
+    },
+    "24": {
+      "stepId": "setI",
+      "fibM": "8",
+      "fibMMm1": "5",
+      "fibMMm2": "3",
+      "offset": "-1",
+      "i": "2",
+      "result": "—"
+    },
+    "25": {
+      "stepId": "checkLess",
+      "fibM": "8",
+      "fibMMm1": "5",
+      "fibMMm2": "3",
+      "offset": "-1",
+      "i": "2",
+      "result": "—"
+    },
+    "27": {
+      "stepId": "shrinkRightFibMMm1",
+      "fibM": "5",
+      "fibMMm1": "3",
+      "fibMMm2": "3",
+      "offset": "-1",
+      "i": "2",
+      "result": "—"
+    },
+    "29": {
+      "stepId": "updateOffset",
+      "fibM": "5",
+      "fibMMm1": "3",
+      "fibMMm2": "2",
+      "offset": "2",
+      "i": "2",
+      "result": "—"
+    },
+    "30": {
+      "stepId": "whileFibM",
+      "fibM": "5",
+      "fibMMm1": "3",
+      "fibMMm2": "2",
+      "offset": "2",
+      "i": "2",
+      "result": "—"
+    },
+    "32": {
+      "stepId": "checkLess",
+      "fibM": "5",
+      "fibMMm1": "3",
+      "fibMMm2": "2",
+      "offset": "2",
+      "i": "4",
+      "result": "—"
+    },
+    "34": {
+      "stepId": "shrinkRightFibMMm1",
+      "fibM": "3",
+      "fibMMm1": "2",
+      "fibMMm2": "2",
+      "offset": "2",
+      "i": "4",
+      "result": "—"
+    },
+    "37": {
+      "stepId": "whileFibM",
+      "fibM": "3",
+      "fibMMm1": "2",
+      "fibMMm2": "1",
+      "offset": "4",
+      "i": "4",
+      "result": "—"
+    },
+    "40": {
+      "stepId": "checkGreater",
+      "fibM": "3",
+      "fibMMm1": "2",
+      "fibMMm2": "1",
+      "offset": "4",
+      "i": "5",
+      "result": "—"
+    },
+    "41": {
+      "stepId": "returnFound",
+      "fibM": "3",
+      "fibMMm1": "2",
+      "fibMMm2": "1",
+      "offset": "4",
+      "i": "5",
+      "result": "5"
+    }
+  },
+  "pieces": {
+    "stepId": [
+      {
+        "id": 1,
+        "value": "setFibMMm2"
+      },
+      {
+        "id": 8,
+        "value": "setFibMMm1"
+      },
+      {
+        "id": 15,
+        "value": "growFibM"
+      },
+      {
+        "id": 22,
+        "value": "whileFibGrow"
+      },
+      {
+        "id": 29,
+        "value": "growFibM"
+      },
+      {
+        "id": 36,
+        "value": "setOffset"
+      },
+      {
+        "id": 43,
+        "value": "setI"
+      },
+      {
+        "id": 50,
+        "value": "checkLess"
+      },
+      {
+        "id": 57,
+        "value": "shrinkRightFibMMm1"
+      },
+      {
+        "id": 64,
+        "value": "updateOffset"
+      },
+      {
+        "id": 71,
+        "value": "whileFibM"
+      },
+      {
+        "id": 78,
+        "value": "checkLess"
+      },
+      {
+        "id": 85,
+        "value": "shrinkRightFibMMm1"
+      },
+      {
+        "id": 92,
+        "value": "whileFibM"
+      },
+      {
+        "id": 99,
+        "value": "checkGreater"
+      },
+      {
+        "id": 106,
+        "value": "returnFound"
+      }
+    ],
+    "fibM": [
+      {
+        "id": 2,
+        "value": "—"
+      },
+      {
+        "id": 9,
+        "value": "—"
+      },
+      {
+        "id": 16,
+        "value": "2"
+      },
+      {
+        "id": 23,
+        "value": "3"
+      },
+      {
+        "id": 30,
+        "value": "5"
+      },
+      {
+        "id": 37,
+        "value": "8"
+      },
+      {
+        "id": 44,
+        "value": "8"
+      },
+      {
+        "id": 51,
+        "value": "8"
+      },
+      {
+        "id": 58,
+        "value": "5"
+      },
+      {
+        "id": 65,
+        "value": "5"
+      },
+      {
+        "id": 72,
+        "value": "5"
+      },
+      {
+        "id": 79,
+        "value": "5"
+      },
+      {
+        "id": 86,
+        "value": "3"
+      },
+      {
+        "id": 93,
+        "value": "3"
+      },
+      {
+        "id": 100,
+        "value": "3"
+      },
+      {
+        "id": 107,
+        "value": "3"
+      }
+    ],
+    "fibMMm1": [
+      {
+        "id": 3,
+        "value": "—"
+      },
+      {
+        "id": 10,
+        "value": "1"
+      },
+      {
+        "id": 17,
+        "value": "1"
+      },
+      {
+        "id": 24,
+        "value": "2"
+      },
+      {
+        "id": 31,
+        "value": "3"
+      },
+      {
+        "id": 38,
+        "value": "5"
+      },
+      {
+        "id": 45,
+        "value": "5"
+      },
+      {
+        "id": 52,
+        "value": "5"
+      },
+      {
+        "id": 59,
+        "value": "3"
+      },
+      {
+        "id": 66,
+        "value": "3"
+      },
+      {
+        "id": 73,
+        "value": "3"
+      },
+      {
+        "id": 80,
+        "value": "3"
+      },
+      {
+        "id": 87,
+        "value": "2"
+      },
+      {
+        "id": 94,
+        "value": "2"
+      },
+      {
+        "id": 101,
+        "value": "2"
+      },
+      {
+        "id": 108,
+        "value": "2"
+      }
+    ],
+    "fibMMm2": [
+      {
+        "id": 4,
+        "value": "0"
+      },
+      {
+        "id": 11,
+        "value": "0"
+      },
+      {
+        "id": 18,
+        "value": "1"
+      },
+      {
+        "id": 25,
+        "value": "1"
+      },
+      {
+        "id": 32,
+        "value": "2"
+      },
+      {
+        "id": 39,
+        "value": "3"
+      },
+      {
+        "id": 46,
+        "value": "3"
+      },
+      {
+        "id": 53,
+        "value": "3"
+      },
+      {
+        "id": 60,
+        "value": "3"
+      },
+      {
+        "id": 67,
+        "value": "2"
+      },
+      {
+        "id": 74,
+        "value": "2"
+      },
+      {
+        "id": 81,
+        "value": "2"
+      },
+      {
+        "id": 88,
+        "value": "2"
+      },
+      {
+        "id": 95,
+        "value": "1"
+      },
+      {
+        "id": 102,
+        "value": "1"
+      },
+      {
+        "id": 109,
+        "value": "1"
+      }
+    ],
+    "offset": [
+      {
+        "id": 5,
+        "value": "—"
+      },
+      {
+        "id": 12,
+        "value": "—"
+      },
+      {
+        "id": 19,
+        "value": "—"
+      },
+      {
+        "id": 26,
+        "value": "—"
+      },
+      {
+        "id": 33,
+        "value": "—"
+      },
+      {
+        "id": 40,
+        "value": "-1"
+      },
+      {
+        "id": 47,
+        "value": "-1"
+      },
+      {
+        "id": 54,
+        "value": "-1"
+      },
+      {
+        "id": 61,
+        "value": "-1"
+      },
+      {
+        "id": 68,
+        "value": "2"
+      },
+      {
+        "id": 75,
+        "value": "2"
+      },
+      {
+        "id": 82,
+        "value": "2"
+      },
+      {
+        "id": 89,
+        "value": "2"
+      },
+      {
+        "id": 96,
+        "value": "4"
+      },
+      {
+        "id": 103,
+        "value": "4"
+      },
+      {
+        "id": 110,
+        "value": "4"
+      }
+    ],
+    "i": [
+      {
+        "id": 6,
+        "value": "—"
+      },
+      {
+        "id": 13,
+        "value": "—"
+      },
+      {
+        "id": 20,
+        "value": "—"
+      },
+      {
+        "id": 27,
+        "value": "—"
+      },
+      {
+        "id": 34,
+        "value": "—"
+      },
+      {
+        "id": 41,
+        "value": "—"
+      },
+      {
+        "id": 48,
+        "value": "2"
+      },
+      {
+        "id": 55,
+        "value": "2"
+      },
+      {
+        "id": 62,
+        "value": "2"
+      },
+      {
+        "id": 69,
+        "value": "2"
+      },
+      {
+        "id": 76,
+        "value": "2"
+      },
+      {
+        "id": 83,
+        "value": "4"
+      },
+      {
+        "id": 90,
+        "value": "4"
+      },
+      {
+        "id": 97,
+        "value": "4"
+      },
+      {
+        "id": 104,
+        "value": "5"
+      },
+      {
+        "id": 111,
+        "value": "5"
+      }
+    ],
+    "result": [
+      {
+        "id": 7,
+        "value": "—"
+      },
+      {
+        "id": 14,
+        "value": "—"
+      },
+      {
+        "id": 21,
+        "value": "—"
+      },
+      {
+        "id": 28,
+        "value": "—"
+      },
+      {
+        "id": 35,
+        "value": "—"
+      },
+      {
+        "id": 42,
+        "value": "—"
+      },
+      {
+        "id": 49,
+        "value": "—"
+      },
+      {
+        "id": 56,
+        "value": "—"
+      },
+      {
+        "id": 63,
+        "value": "—"
+      },
+      {
+        "id": 70,
+        "value": "—"
+      },
+      {
+        "id": 77,
+        "value": "—"
+      },
+      {
+        "id": 84,
+        "value": "—"
+      },
+      {
+        "id": 91,
+        "value": "—"
+      },
+      {
+        "id": 98,
+        "value": "—"
+      },
+      {
+        "id": 105,
+        "value": "—"
+      },
+      {
+        "id": 112,
+        "value": "5"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "step": 1,
+      "stepId": "mainCall",
+      "n": 8,
+      "key": 90,
+      "fibM": null,
+      "fibMMm1": null,
+      "fibMMm2": null,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 2,
+      "stepId": "setFibMMm2",
+      "n": 8,
+      "key": 90,
+      "fibM": null,
+      "fibMMm1": null,
+      "fibMMm2": 0,
+      "offset": null,
+      "i": null,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 3,
+      "stepId": "setFibMMm1",
+      "n": 8,
+      "key": 90,
+      "fibM": null,
+      "fibMMm1": 1,
+      "fibMMm2": 0,
+      "offset": null,
+      "i": null,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 4,
+      "stepId": "setFibM",
+      "n": 8,
+      "key": 90,
+      "fibM": 1,
+      "fibMMm1": 1,
+      "fibMMm2": 0,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 5,
+      "stepId": "whileFibGrow",
+      "n": 8,
+      "key": 90,
+      "fibM": 1,
+      "fibMMm1": 1,
+      "fibMMm2": 0,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 6,
+      "stepId": "growFibMMm2",
+      "n": 8,
+      "key": 90,
+      "fibM": 1,
+      "fibMMm1": 1,
+      "fibMMm2": 1,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 7,
+      "stepId": "growFibMMm1",
+      "n": 8,
+      "key": 90,
+      "fibM": 1,
+      "fibMMm1": 1,
+      "fibMMm2": 1,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 8,
+      "stepId": "growFibM",
+      "n": 8,
+      "key": 90,
+      "fibM": 2,
+      "fibMMm1": 1,
+      "fibMMm2": 1,
+      "offset": null,
+      "i": null,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 9,
+      "stepId": "whileFibGrow",
+      "n": 8,
+      "key": 90,
+      "fibM": 2,
+      "fibMMm1": 1,
+      "fibMMm2": 1,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 10,
+      "stepId": "growFibMMm2",
+      "n": 8,
+      "key": 90,
+      "fibM": 2,
+      "fibMMm1": 1,
+      "fibMMm2": 1,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 11,
+      "stepId": "growFibMMm1",
+      "n": 8,
+      "key": 90,
+      "fibM": 2,
+      "fibMMm1": 2,
+      "fibMMm2": 1,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 12,
+      "stepId": "growFibM",
+      "n": 8,
+      "key": 90,
+      "fibM": 3,
+      "fibMMm1": 2,
+      "fibMMm2": 1,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 13,
+      "stepId": "whileFibGrow",
+      "n": 8,
+      "key": 90,
+      "fibM": 3,
+      "fibMMm1": 2,
+      "fibMMm2": 1,
+      "offset": null,
+      "i": null,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 14,
+      "stepId": "growFibMMm2",
+      "n": 8,
+      "key": 90,
+      "fibM": 3,
+      "fibMMm1": 2,
+      "fibMMm2": 2,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 15,
+      "stepId": "growFibMMm1",
+      "n": 8,
+      "key": 90,
+      "fibM": 3,
+      "fibMMm1": 3,
+      "fibMMm2": 2,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 16,
+      "stepId": "growFibM",
+      "n": 8,
+      "key": 90,
+      "fibM": 5,
+      "fibMMm1": 3,
+      "fibMMm2": 2,
+      "offset": null,
+      "i": null,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 17,
+      "stepId": "whileFibGrow",
+      "n": 8,
+      "key": 90,
+      "fibM": 5,
+      "fibMMm1": 3,
+      "fibMMm2": 2,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 18,
+      "stepId": "growFibMMm2",
+      "n": 8,
+      "key": 90,
+      "fibM": 5,
+      "fibMMm1": 3,
+      "fibMMm2": 3,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 19,
+      "stepId": "growFibMMm1",
+      "n": 8,
+      "key": 90,
+      "fibM": 5,
+      "fibMMm1": 5,
+      "fibMMm2": 3,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 20,
+      "stepId": "growFibM",
+      "n": 8,
+      "key": 90,
+      "fibM": 8,
+      "fibMMm1": 5,
+      "fibMMm2": 3,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 21,
+      "stepId": "whileFibGrow",
+      "n": 8,
+      "key": 90,
+      "fibM": 8,
+      "fibMMm1": 5,
+      "fibMMm2": 3,
+      "offset": null,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 22,
+      "stepId": "setOffset",
+      "n": 8,
+      "key": 90,
+      "fibM": 8,
+      "fibMMm1": 5,
+      "fibMMm2": 3,
+      "offset": -1,
+      "i": null,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 23,
+      "stepId": "whileFibM",
+      "n": 8,
+      "key": 90,
+      "fibM": 8,
+      "fibMMm1": 5,
+      "fibMMm2": 3,
+      "offset": -1,
+      "i": null,
+      "result": null
+    },
+    {
+      "step": 24,
+      "stepId": "setI",
+      "n": 8,
+      "key": 90,
+      "fibM": 8,
+      "fibMMm1": 5,
+      "fibMMm2": 3,
+      "offset": -1,
+      "i": 2,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 25,
+      "stepId": "checkLess",
+      "n": 8,
+      "key": 90,
+      "fibM": 8,
+      "fibMMm1": 5,
+      "fibMMm2": 3,
+      "offset": -1,
+      "i": 2,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 26,
+      "stepId": "shrinkRightFibM",
+      "n": 8,
+      "key": 90,
+      "fibM": 5,
+      "fibMMm1": 5,
+      "fibMMm2": 3,
+      "offset": -1,
+      "i": 2,
+      "result": null
+    },
+    {
+      "step": 27,
+      "stepId": "shrinkRightFibMMm1",
+      "n": 8,
+      "key": 90,
+      "fibM": 5,
+      "fibMMm1": 3,
+      "fibMMm2": 3,
+      "offset": -1,
+      "i": 2,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 28,
+      "stepId": "shrinkRightFibMMm2",
+      "n": 8,
+      "key": 90,
+      "fibM": 5,
+      "fibMMm1": 3,
+      "fibMMm2": 2,
+      "offset": -1,
+      "i": 2,
+      "result": null
+    },
+    {
+      "step": 29,
+      "stepId": "updateOffset",
+      "n": 8,
+      "key": 90,
+      "fibM": 5,
+      "fibMMm1": 3,
+      "fibMMm2": 2,
+      "offset": 2,
+      "i": 2,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 30,
+      "stepId": "whileFibM",
+      "n": 8,
+      "key": 90,
+      "fibM": 5,
+      "fibMMm1": 3,
+      "fibMMm2": 2,
+      "offset": 2,
+      "i": 2,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 31,
+      "stepId": "setI",
+      "n": 8,
+      "key": 90,
+      "fibM": 5,
+      "fibMMm1": 3,
+      "fibMMm2": 2,
+      "offset": 2,
+      "i": 4,
+      "result": null
+    },
+    {
+      "step": 32,
+      "stepId": "checkLess",
+      "n": 8,
+      "key": 90,
+      "fibM": 5,
+      "fibMMm1": 3,
+      "fibMMm2": 2,
+      "offset": 2,
+      "i": 4,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 33,
+      "stepId": "shrinkRightFibM",
+      "n": 8,
+      "key": 90,
+      "fibM": 3,
+      "fibMMm1": 3,
+      "fibMMm2": 2,
+      "offset": 2,
+      "i": 4,
+      "result": null
+    },
+    {
+      "step": 34,
+      "stepId": "shrinkRightFibMMm1",
+      "n": 8,
+      "key": 90,
+      "fibM": 3,
+      "fibMMm1": 2,
+      "fibMMm2": 2,
+      "offset": 2,
+      "i": 4,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 35,
+      "stepId": "shrinkRightFibMMm2",
+      "n": 8,
+      "key": 90,
+      "fibM": 3,
+      "fibMMm1": 2,
+      "fibMMm2": 1,
+      "offset": 2,
+      "i": 4,
+      "result": null
+    },
+    {
+      "step": 36,
+      "stepId": "updateOffset",
+      "n": 8,
+      "key": 90,
+      "fibM": 3,
+      "fibMMm1": 2,
+      "fibMMm2": 1,
+      "offset": 4,
+      "i": 4,
+      "result": null
+    },
+    {
+      "step": 37,
+      "stepId": "whileFibM",
+      "n": 8,
+      "key": 90,
+      "fibM": 3,
+      "fibMMm1": 2,
+      "fibMMm2": 1,
+      "offset": 4,
+      "i": 4,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 38,
+      "stepId": "setI",
+      "n": 8,
+      "key": 90,
+      "fibM": 3,
+      "fibMMm1": 2,
+      "fibMMm2": 1,
+      "offset": 4,
+      "i": 5,
+      "result": null
+    },
+    {
+      "step": 39,
+      "stepId": "checkLess",
+      "n": 8,
+      "key": 90,
+      "fibM": 3,
+      "fibMMm1": 2,
+      "fibMMm2": 1,
+      "offset": 4,
+      "i": 5,
+      "result": null
+    },
+    {
+      "step": 40,
+      "stepId": "checkGreater",
+      "n": 8,
+      "key": 90,
+      "fibM": 3,
+      "fibMMm1": 2,
+      "fibMMm2": 1,
+      "offset": 4,
+      "i": 5,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    },
+    {
+      "step": 41,
+      "stepId": "returnFound",
+      "n": 8,
+      "key": 90,
+      "fibM": 3,
+      "fibMMm1": 2,
+      "fibMMm2": 1,
+      "offset": 4,
+      "i": 5,
+      "result": 5,
+      "missing": {
+        "stepId": true,
+        "fibM": true,
+        "fibMMm1": true,
+        "fibMMm2": true,
+        "offset": true,
+        "i": true,
+        "result": true
+      }
+    }
+  ]
+}

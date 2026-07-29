@@ -1,0 +1,1789 @@
+{
+  "sequence": [
+    700,
+    600,
+    500,
+    400,
+    300,
+    200,
+    100
+  ],
+  "height": 6,
+  "balanced": false,
+  "varFields": [
+    "key",
+    "current",
+    "parent",
+    "side",
+    "root"
+  ],
+  "blankFields": [
+    "stepId"
+  ],
+  "tableFields": [
+    "key",
+    "current",
+    "parent",
+    "side",
+    "root"
+  ],
+  "executorGlobal": "BstInsertExecutor",
+  "pickedSteps": [
+    48,
+    50,
+    51,
+    53,
+    54,
+    55,
+    56,
+    59,
+    60,
+    62,
+    63,
+    66,
+    67,
+    70,
+    77,
+    78,
+    79,
+    82,
+    88,
+    89,
+    92,
+    96,
+    97,
+    105,
+    107,
+    109,
+    112,
+    115,
+    118,
+    120,
+    122,
+    123,
+    127,
+    135,
+    143,
+    144,
+    145
+  ],
+  "answers": {
+    "48": {
+      "stepId": "whileLoop"
+    },
+    "50": {
+      "stepId": "checkLess"
+    },
+    "51": {
+      "stepId": "goLeft"
+    },
+    "53": {
+      "stepId": "parentAssign"
+    },
+    "54": {
+      "stepId": "checkLess"
+    },
+    "55": {
+      "stepId": "goLeft"
+    },
+    "56": {
+      "stepId": "whileLoop"
+    },
+    "59": {
+      "stepId": "returnRoot"
+    },
+    "60": {
+      "stepId": "mainLoop"
+    },
+    "62": {
+      "stepId": "createNode"
+    },
+    "63": {
+      "stepId": "checkEmpty"
+    },
+    "66": {
+      "stepId": "whileLoop"
+    },
+    "67": {
+      "stepId": "parentAssign"
+    },
+    "70": {
+      "stepId": "whileLoop"
+    },
+    "77": {
+      "stepId": "goLeft"
+    },
+    "78": {
+      "stepId": "whileLoop"
+    },
+    "79": {
+      "stepId": "parentAssign"
+    },
+    "82": {
+      "stepId": "whileLoop"
+    },
+    "88": {
+      "stepId": "createNode"
+    },
+    "89": {
+      "stepId": "checkEmpty"
+    },
+    "92": {
+      "stepId": "whileLoop"
+    },
+    "96": {
+      "stepId": "whileLoop"
+    },
+    "97": {
+      "stepId": "parentAssign"
+    },
+    "105": {
+      "stepId": "parentAssign"
+    },
+    "107": {
+      "stepId": "goLeft"
+    },
+    "109": {
+      "stepId": "parentAssign"
+    },
+    "112": {
+      "stepId": "whileLoop"
+    },
+    "115": {
+      "stepId": "returnRoot"
+    },
+    "118": {
+      "stepId": "createNode"
+    },
+    "120": {
+      "stepId": "setCurrent"
+    },
+    "122": {
+      "stepId": "whileLoop"
+    },
+    "123": {
+      "stepId": "parentAssign"
+    },
+    "127": {
+      "stepId": "parentAssign"
+    },
+    "135": {
+      "stepId": "parentAssign"
+    },
+    "143": {
+      "stepId": "parentAssign"
+    },
+    "144": {
+      "stepId": "checkLess"
+    },
+    "145": {
+      "stepId": "goLeft"
+    }
+  },
+  "pieces": {
+    "stepId": [
+      {
+        "id": 29,
+        "value": "createNode"
+      },
+      {
+        "id": 13,
+        "value": "parentAssign"
+      },
+      {
+        "id": 24,
+        "value": "parentAssign"
+      },
+      {
+        "id": 19,
+        "value": "createNode"
+      },
+      {
+        "id": 17,
+        "value": "parentAssign"
+      },
+      {
+        "id": 14,
+        "value": "whileLoop"
+      },
+      {
+        "id": 26,
+        "value": "parentAssign"
+      },
+      {
+        "id": 23,
+        "value": "parentAssign"
+      },
+      {
+        "id": 31,
+        "value": "whileLoop"
+      },
+      {
+        "id": 20,
+        "value": "checkEmpty"
+      },
+      {
+        "id": 21,
+        "value": "whileLoop"
+      },
+      {
+        "id": 32,
+        "value": "parentAssign"
+      },
+      {
+        "id": 2,
+        "value": "checkLess"
+      },
+      {
+        "id": 33,
+        "value": "parentAssign"
+      },
+      {
+        "id": 9,
+        "value": "mainLoop"
+      },
+      {
+        "id": 12,
+        "value": "whileLoop"
+      },
+      {
+        "id": 27,
+        "value": "whileLoop"
+      },
+      {
+        "id": 6,
+        "value": "goLeft"
+      },
+      {
+        "id": 11,
+        "value": "checkEmpty"
+      },
+      {
+        "id": 30,
+        "value": "setCurrent"
+      },
+      {
+        "id": 1,
+        "value": "whileLoop"
+      },
+      {
+        "id": 4,
+        "value": "parentAssign"
+      },
+      {
+        "id": 37,
+        "value": "goLeft"
+      },
+      {
+        "id": 34,
+        "value": "parentAssign"
+      },
+      {
+        "id": 15,
+        "value": "goLeft"
+      },
+      {
+        "id": 35,
+        "value": "parentAssign"
+      },
+      {
+        "id": 3,
+        "value": "goLeft"
+      },
+      {
+        "id": 5,
+        "value": "checkLess"
+      },
+      {
+        "id": 10,
+        "value": "createNode"
+      },
+      {
+        "id": 18,
+        "value": "whileLoop"
+      },
+      {
+        "id": 16,
+        "value": "whileLoop"
+      },
+      {
+        "id": 7,
+        "value": "whileLoop"
+      },
+      {
+        "id": 36,
+        "value": "checkLess"
+      },
+      {
+        "id": 8,
+        "value": "returnRoot"
+      },
+      {
+        "id": 28,
+        "value": "returnRoot"
+      },
+      {
+        "id": 22,
+        "value": "whileLoop"
+      },
+      {
+        "id": 25,
+        "value": "goLeft"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "step": 1,
+      "stepId": "mainLoop",
+      "key": 700,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": null
+    },
+    {
+      "step": 2,
+      "stepId": "callInsert",
+      "key": 700,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": null
+    },
+    {
+      "step": 3,
+      "stepId": "createNode",
+      "key": 700,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": null
+    },
+    {
+      "step": 4,
+      "stepId": "checkEmpty",
+      "key": 700,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": null
+    },
+    {
+      "step": 5,
+      "stepId": "returnNew",
+      "key": 700,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 6,
+      "stepId": "mainLoop",
+      "key": 600,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 7,
+      "stepId": "callInsert",
+      "key": 600,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 8,
+      "stepId": "createNode",
+      "key": 600,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 9,
+      "stepId": "checkEmpty",
+      "key": 600,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 10,
+      "stepId": "setCurrent",
+      "key": 600,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 11,
+      "stepId": "setParent",
+      "key": 600,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 12,
+      "stepId": "whileLoop",
+      "key": 600,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 13,
+      "stepId": "parentAssign",
+      "key": 600,
+      "current": 700,
+      "parent": 700,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 14,
+      "stepId": "checkLess",
+      "key": 600,
+      "current": 700,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 15,
+      "stepId": "goLeft",
+      "key": 600,
+      "current": null,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 16,
+      "stepId": "whileLoop",
+      "key": 600,
+      "current": null,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 17,
+      "stepId": "attachCheck",
+      "key": 600,
+      "current": null,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 18,
+      "stepId": "attachLeft",
+      "key": 600,
+      "current": null,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 19,
+      "stepId": "returnRoot",
+      "key": 600,
+      "current": null,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 20,
+      "stepId": "mainLoop",
+      "key": 500,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 21,
+      "stepId": "callInsert",
+      "key": 500,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 22,
+      "stepId": "createNode",
+      "key": 500,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 23,
+      "stepId": "checkEmpty",
+      "key": 500,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 24,
+      "stepId": "setCurrent",
+      "key": 500,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 25,
+      "stepId": "setParent",
+      "key": 500,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 26,
+      "stepId": "whileLoop",
+      "key": 500,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 27,
+      "stepId": "parentAssign",
+      "key": 500,
+      "current": 700,
+      "parent": 700,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 28,
+      "stepId": "checkLess",
+      "key": 500,
+      "current": 700,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 29,
+      "stepId": "goLeft",
+      "key": 500,
+      "current": 600,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 30,
+      "stepId": "whileLoop",
+      "key": 500,
+      "current": 600,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 31,
+      "stepId": "parentAssign",
+      "key": 500,
+      "current": 600,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 32,
+      "stepId": "checkLess",
+      "key": 500,
+      "current": 600,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 33,
+      "stepId": "goLeft",
+      "key": 500,
+      "current": null,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 34,
+      "stepId": "whileLoop",
+      "key": 500,
+      "current": null,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 35,
+      "stepId": "attachCheck",
+      "key": 500,
+      "current": null,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 36,
+      "stepId": "attachLeft",
+      "key": 500,
+      "current": null,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 37,
+      "stepId": "returnRoot",
+      "key": 500,
+      "current": null,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 38,
+      "stepId": "mainLoop",
+      "key": 400,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 39,
+      "stepId": "callInsert",
+      "key": 400,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 40,
+      "stepId": "createNode",
+      "key": 400,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 41,
+      "stepId": "checkEmpty",
+      "key": 400,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 42,
+      "stepId": "setCurrent",
+      "key": 400,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 43,
+      "stepId": "setParent",
+      "key": 400,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 44,
+      "stepId": "whileLoop",
+      "key": 400,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 45,
+      "stepId": "parentAssign",
+      "key": 400,
+      "current": 700,
+      "parent": 700,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 46,
+      "stepId": "checkLess",
+      "key": 400,
+      "current": 700,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 47,
+      "stepId": "goLeft",
+      "key": 400,
+      "current": 600,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 48,
+      "stepId": "whileLoop",
+      "key": 400,
+      "current": 600,
+      "parent": 700,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 49,
+      "stepId": "parentAssign",
+      "key": 400,
+      "current": 600,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 50,
+      "stepId": "checkLess",
+      "key": 400,
+      "current": 600,
+      "parent": 600,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 51,
+      "stepId": "goLeft",
+      "key": 400,
+      "current": 500,
+      "parent": 600,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 52,
+      "stepId": "whileLoop",
+      "key": 400,
+      "current": 500,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 53,
+      "stepId": "parentAssign",
+      "key": 400,
+      "current": 500,
+      "parent": 500,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 54,
+      "stepId": "checkLess",
+      "key": 400,
+      "current": 500,
+      "parent": 500,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 55,
+      "stepId": "goLeft",
+      "key": 400,
+      "current": null,
+      "parent": 500,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 56,
+      "stepId": "whileLoop",
+      "key": 400,
+      "current": null,
+      "parent": 500,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 57,
+      "stepId": "attachCheck",
+      "key": 400,
+      "current": null,
+      "parent": 500,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 58,
+      "stepId": "attachLeft",
+      "key": 400,
+      "current": null,
+      "parent": 500,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 59,
+      "stepId": "returnRoot",
+      "key": 400,
+      "current": null,
+      "parent": 500,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 60,
+      "stepId": "mainLoop",
+      "key": 300,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 61,
+      "stepId": "callInsert",
+      "key": 300,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 62,
+      "stepId": "createNode",
+      "key": 300,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 63,
+      "stepId": "checkEmpty",
+      "key": 300,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 64,
+      "stepId": "setCurrent",
+      "key": 300,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 65,
+      "stepId": "setParent",
+      "key": 300,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 66,
+      "stepId": "whileLoop",
+      "key": 300,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 67,
+      "stepId": "parentAssign",
+      "key": 300,
+      "current": 700,
+      "parent": 700,
+      "side": null,
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 68,
+      "stepId": "checkLess",
+      "key": 300,
+      "current": 700,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 69,
+      "stepId": "goLeft",
+      "key": 300,
+      "current": 600,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 70,
+      "stepId": "whileLoop",
+      "key": 300,
+      "current": 600,
+      "parent": 700,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 71,
+      "stepId": "parentAssign",
+      "key": 300,
+      "current": 600,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 72,
+      "stepId": "checkLess",
+      "key": 300,
+      "current": 600,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 73,
+      "stepId": "goLeft",
+      "key": 300,
+      "current": 500,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 74,
+      "stepId": "whileLoop",
+      "key": 300,
+      "current": 500,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 75,
+      "stepId": "parentAssign",
+      "key": 300,
+      "current": 500,
+      "parent": 500,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 76,
+      "stepId": "checkLess",
+      "key": 300,
+      "current": 500,
+      "parent": 500,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 77,
+      "stepId": "goLeft",
+      "key": 300,
+      "current": 400,
+      "parent": 500,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 78,
+      "stepId": "whileLoop",
+      "key": 300,
+      "current": 400,
+      "parent": 500,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 79,
+      "stepId": "parentAssign",
+      "key": 300,
+      "current": 400,
+      "parent": 400,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 80,
+      "stepId": "checkLess",
+      "key": 300,
+      "current": 400,
+      "parent": 400,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 81,
+      "stepId": "goLeft",
+      "key": 300,
+      "current": null,
+      "parent": 400,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 82,
+      "stepId": "whileLoop",
+      "key": 300,
+      "current": null,
+      "parent": 400,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 83,
+      "stepId": "attachCheck",
+      "key": 300,
+      "current": null,
+      "parent": 400,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 84,
+      "stepId": "attachLeft",
+      "key": 300,
+      "current": null,
+      "parent": 400,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 85,
+      "stepId": "returnRoot",
+      "key": 300,
+      "current": null,
+      "parent": 400,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 86,
+      "stepId": "mainLoop",
+      "key": 200,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 87,
+      "stepId": "callInsert",
+      "key": 200,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 88,
+      "stepId": "createNode",
+      "key": 200,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 89,
+      "stepId": "checkEmpty",
+      "key": 200,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 90,
+      "stepId": "setCurrent",
+      "key": 200,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 91,
+      "stepId": "setParent",
+      "key": 200,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 92,
+      "stepId": "whileLoop",
+      "key": 200,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 93,
+      "stepId": "parentAssign",
+      "key": 200,
+      "current": 700,
+      "parent": 700,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 94,
+      "stepId": "checkLess",
+      "key": 200,
+      "current": 700,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 95,
+      "stepId": "goLeft",
+      "key": 200,
+      "current": 600,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 96,
+      "stepId": "whileLoop",
+      "key": 200,
+      "current": 600,
+      "parent": 700,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 97,
+      "stepId": "parentAssign",
+      "key": 200,
+      "current": 600,
+      "parent": 600,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 98,
+      "stepId": "checkLess",
+      "key": 200,
+      "current": 600,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 99,
+      "stepId": "goLeft",
+      "key": 200,
+      "current": 500,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 100,
+      "stepId": "whileLoop",
+      "key": 200,
+      "current": 500,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 101,
+      "stepId": "parentAssign",
+      "key": 200,
+      "current": 500,
+      "parent": 500,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 102,
+      "stepId": "checkLess",
+      "key": 200,
+      "current": 500,
+      "parent": 500,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 103,
+      "stepId": "goLeft",
+      "key": 200,
+      "current": 400,
+      "parent": 500,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 104,
+      "stepId": "whileLoop",
+      "key": 200,
+      "current": 400,
+      "parent": 500,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 105,
+      "stepId": "parentAssign",
+      "key": 200,
+      "current": 400,
+      "parent": 400,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 106,
+      "stepId": "checkLess",
+      "key": 200,
+      "current": 400,
+      "parent": 400,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 107,
+      "stepId": "goLeft",
+      "key": 200,
+      "current": 300,
+      "parent": 400,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 108,
+      "stepId": "whileLoop",
+      "key": 200,
+      "current": 300,
+      "parent": 400,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 109,
+      "stepId": "parentAssign",
+      "key": 200,
+      "current": 300,
+      "parent": 300,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 110,
+      "stepId": "checkLess",
+      "key": 200,
+      "current": 300,
+      "parent": 300,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 111,
+      "stepId": "goLeft",
+      "key": 200,
+      "current": null,
+      "parent": 300,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 112,
+      "stepId": "whileLoop",
+      "key": 200,
+      "current": null,
+      "parent": 300,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 113,
+      "stepId": "attachCheck",
+      "key": 200,
+      "current": null,
+      "parent": 300,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 114,
+      "stepId": "attachLeft",
+      "key": 200,
+      "current": null,
+      "parent": 300,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 115,
+      "stepId": "returnRoot",
+      "key": 200,
+      "current": null,
+      "parent": 300,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 116,
+      "stepId": "mainLoop",
+      "key": 100,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 117,
+      "stepId": "callInsert",
+      "key": 100,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 118,
+      "stepId": "createNode",
+      "key": 100,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 119,
+      "stepId": "checkEmpty",
+      "key": 100,
+      "current": null,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 120,
+      "stepId": "setCurrent",
+      "key": 100,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 121,
+      "stepId": "setParent",
+      "key": 100,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700
+    },
+    {
+      "step": 122,
+      "stepId": "whileLoop",
+      "key": 100,
+      "current": 700,
+      "parent": null,
+      "side": null,
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 123,
+      "stepId": "parentAssign",
+      "key": 100,
+      "current": 700,
+      "parent": 700,
+      "side": null,
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 124,
+      "stepId": "checkLess",
+      "key": 100,
+      "current": 700,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 125,
+      "stepId": "goLeft",
+      "key": 100,
+      "current": 600,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 126,
+      "stepId": "whileLoop",
+      "key": 100,
+      "current": 600,
+      "parent": 700,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 127,
+      "stepId": "parentAssign",
+      "key": 100,
+      "current": 600,
+      "parent": 600,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 128,
+      "stepId": "checkLess",
+      "key": 100,
+      "current": 600,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 129,
+      "stepId": "goLeft",
+      "key": 100,
+      "current": 500,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 130,
+      "stepId": "whileLoop",
+      "key": 100,
+      "current": 500,
+      "parent": 600,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 131,
+      "stepId": "parentAssign",
+      "key": 100,
+      "current": 500,
+      "parent": 500,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 132,
+      "stepId": "checkLess",
+      "key": 100,
+      "current": 500,
+      "parent": 500,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 133,
+      "stepId": "goLeft",
+      "key": 100,
+      "current": 400,
+      "parent": 500,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 134,
+      "stepId": "whileLoop",
+      "key": 100,
+      "current": 400,
+      "parent": 500,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 135,
+      "stepId": "parentAssign",
+      "key": 100,
+      "current": 400,
+      "parent": 400,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 136,
+      "stepId": "checkLess",
+      "key": 100,
+      "current": 400,
+      "parent": 400,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 137,
+      "stepId": "goLeft",
+      "key": 100,
+      "current": 300,
+      "parent": 400,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 138,
+      "stepId": "whileLoop",
+      "key": 100,
+      "current": 300,
+      "parent": 400,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 139,
+      "stepId": "parentAssign",
+      "key": 100,
+      "current": 300,
+      "parent": 300,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 140,
+      "stepId": "checkLess",
+      "key": 100,
+      "current": 300,
+      "parent": 300,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 141,
+      "stepId": "goLeft",
+      "key": 100,
+      "current": 200,
+      "parent": 300,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 142,
+      "stepId": "whileLoop",
+      "key": 100,
+      "current": 200,
+      "parent": 300,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 143,
+      "stepId": "parentAssign",
+      "key": 100,
+      "current": 200,
+      "parent": 200,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 144,
+      "stepId": "checkLess",
+      "key": 100,
+      "current": 200,
+      "parent": 200,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 145,
+      "stepId": "goLeft",
+      "key": 100,
+      "current": null,
+      "parent": 200,
+      "side": "left",
+      "root": 700,
+      "missing": {
+        "stepId": true
+      }
+    },
+    {
+      "step": 146,
+      "stepId": "whileLoop",
+      "key": 100,
+      "current": null,
+      "parent": 200,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 147,
+      "stepId": "attachCheck",
+      "key": 100,
+      "current": null,
+      "parent": 200,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 148,
+      "stepId": "attachLeft",
+      "key": 100,
+      "current": null,
+      "parent": 200,
+      "side": "left",
+      "root": 700
+    },
+    {
+      "step": 149,
+      "stepId": "returnRoot",
+      "key": 100,
+      "current": null,
+      "parent": 200,
+      "side": "left",
+      "root": 700
+    }
+  ]
+}

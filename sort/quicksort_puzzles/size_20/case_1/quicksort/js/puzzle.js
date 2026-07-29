@@ -1,0 +1,14311 @@
+/**
+ * Trace-fill puzzle: students drag Line / variable chips into blank rows.
+ * INSTANCE is embedded by generate_search_puzzles.js.
+ *
+ * Pieces are a multiset taken only from blank cells (repeats allowed).
+ * Execution gates on each blank row until that row is fully correct.
+ */
+
+window.TracePuzzle = (function () {
+  const INSTANCE = {
+  "array": [
+    586,
+    892,
+    456,
+    349,
+    266,
+    94,
+    944,
+    940,
+    842,
+    615,
+    967,
+    755,
+    501,
+    483,
+    420,
+    413,
+    243,
+    218,
+    203,
+    42
+  ],
+  "varFields": [
+    "low",
+    "high",
+    "i",
+    "j",
+    "pivot",
+    "pi"
+  ],
+  "blankFields": [
+    "stepId",
+    "low",
+    "high",
+    "i",
+    "j",
+    "pivot",
+    "pi"
+  ],
+  "executorGlobal": "QuickSortExecutor",
+  "pickedSteps": [
+    5,
+    7,
+    10,
+    14,
+    16,
+    17,
+    21,
+    25,
+    34,
+    35,
+    37,
+    45,
+    47,
+    48,
+    55,
+    62,
+    64,
+    65,
+    67,
+    69,
+    70,
+    74,
+    81,
+    84,
+    86,
+    88,
+    89,
+    93,
+    103,
+    105,
+    109,
+    116,
+    120,
+    121,
+    131,
+    133,
+    138,
+    142,
+    145,
+    147,
+    148,
+    154,
+    155,
+    159,
+    163,
+    164,
+    167,
+    170,
+    171,
+    182,
+    186,
+    188,
+    192,
+    193,
+    196,
+    198,
+    201,
+    202,
+    212,
+    215,
+    219,
+    220,
+    221,
+    224,
+    225,
+    226,
+    227,
+    228,
+    230,
+    236,
+    240,
+    243,
+    244,
+    246,
+    252,
+    256,
+    262,
+    267,
+    268,
+    269,
+    273,
+    274,
+    275,
+    276,
+    281,
+    286
+  ],
+  "answers": {
+    "5": {
+      "stepId": "setPivot",
+      "low": "0",
+      "high": "19",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "42",
+      "pi": "\u2014"
+    },
+    "7": {
+      "stepId": "forJ",
+      "low": "0",
+      "high": "19",
+      "i": "-1",
+      "j": "0",
+      "pivot": "42",
+      "pi": "\u2014"
+    },
+    "10": {
+      "stepId": "compare",
+      "low": "0",
+      "high": "19",
+      "i": "-1",
+      "j": "2",
+      "pivot": "42",
+      "pi": "\u2014"
+    },
+    "14": {
+      "stepId": "compare",
+      "low": "0",
+      "high": "19",
+      "i": "-1",
+      "j": "6",
+      "pivot": "42",
+      "pi": "\u2014"
+    },
+    "16": {
+      "stepId": "compare",
+      "low": "0",
+      "high": "19",
+      "i": "-1",
+      "j": "8",
+      "pivot": "42",
+      "pi": "\u2014"
+    },
+    "17": {
+      "stepId": "compare",
+      "low": "0",
+      "high": "19",
+      "i": "-1",
+      "j": "9",
+      "pivot": "42",
+      "pi": "\u2014"
+    },
+    "21": {
+      "stepId": "compare",
+      "low": "0",
+      "high": "19",
+      "i": "-1",
+      "j": "13",
+      "pivot": "42",
+      "pi": "\u2014"
+    },
+    "25": {
+      "stepId": "compare",
+      "low": "0",
+      "high": "19",
+      "i": "-1",
+      "j": "17",
+      "pivot": "42",
+      "pi": "\u2014"
+    },
+    "34": {
+      "stepId": "checkLowHigh",
+      "low": "1",
+      "high": "19",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "35": {
+      "stepId": "callPartition",
+      "low": "1",
+      "high": "19",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "37": {
+      "stepId": "initI",
+      "low": "1",
+      "high": "19",
+      "i": "0",
+      "j": "\u2014",
+      "pivot": "586",
+      "pi": "\u2014"
+    },
+    "45": {
+      "stepId": "swapIJ",
+      "low": "1",
+      "high": "19",
+      "i": "2",
+      "j": "3",
+      "pivot": "586",
+      "pi": "\u2014"
+    },
+    "47": {
+      "stepId": "incI",
+      "low": "1",
+      "high": "19",
+      "i": "3",
+      "j": "4",
+      "pivot": "586",
+      "pi": "\u2014"
+    },
+    "48": {
+      "stepId": "swapIJ",
+      "low": "1",
+      "high": "19",
+      "i": "3",
+      "j": "4",
+      "pivot": "586",
+      "pi": "\u2014"
+    },
+    "55": {
+      "stepId": "compare",
+      "low": "1",
+      "high": "19",
+      "i": "4",
+      "j": "9",
+      "pivot": "586",
+      "pi": "\u2014"
+    },
+    "62": {
+      "stepId": "incI",
+      "low": "1",
+      "high": "19",
+      "i": "6",
+      "j": "13",
+      "pivot": "586",
+      "pi": "\u2014"
+    },
+    "64": {
+      "stepId": "compare",
+      "low": "1",
+      "high": "19",
+      "i": "6",
+      "j": "14",
+      "pivot": "586",
+      "pi": "\u2014"
+    },
+    "65": {
+      "stepId": "incI",
+      "low": "1",
+      "high": "19",
+      "i": "7",
+      "j": "14",
+      "pivot": "586",
+      "pi": "\u2014"
+    },
+    "67": {
+      "stepId": "compare",
+      "low": "1",
+      "high": "19",
+      "i": "7",
+      "j": "15",
+      "pivot": "586",
+      "pi": "\u2014"
+    },
+    "69": {
+      "stepId": "swapIJ",
+      "low": "1",
+      "high": "19",
+      "i": "8",
+      "j": "15",
+      "pivot": "586",
+      "pi": "\u2014"
+    },
+    "70": {
+      "stepId": "compare",
+      "low": "1",
+      "high": "19",
+      "i": "8",
+      "j": "16",
+      "pivot": "586",
+      "pi": "\u2014"
+    },
+    "74": {
+      "stepId": "incI",
+      "low": "1",
+      "high": "19",
+      "i": "10",
+      "j": "17",
+      "pivot": "586",
+      "pi": "\u2014"
+    },
+    "81": {
+      "stepId": "sortLeft",
+      "low": "1",
+      "high": "19",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "12"
+    },
+    "84": {
+      "stepId": "callPartition",
+      "low": "1",
+      "high": "11",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "86": {
+      "stepId": "initI",
+      "low": "1",
+      "high": "11",
+      "i": "0",
+      "j": "\u2014",
+      "pivot": "203",
+      "pi": "\u2014"
+    },
+    "88": {
+      "stepId": "compare",
+      "low": "1",
+      "high": "11",
+      "i": "0",
+      "j": "1",
+      "pivot": "203",
+      "pi": "\u2014"
+    },
+    "89": {
+      "stepId": "compare",
+      "low": "1",
+      "high": "11",
+      "i": "0",
+      "j": "2",
+      "pivot": "203",
+      "pi": "\u2014"
+    },
+    "93": {
+      "stepId": "swapIJ",
+      "low": "1",
+      "high": "11",
+      "i": "1",
+      "j": "4",
+      "pivot": "203",
+      "pi": "\u2014"
+    },
+    "103": {
+      "stepId": "markRange",
+      "low": "1",
+      "high": "1",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "105": {
+      "stepId": "sortRight",
+      "low": "1",
+      "high": "11",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "2"
+    },
+    "109": {
+      "stepId": "setPivot",
+      "low": "3",
+      "high": "11",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "349",
+      "pi": "\u2014"
+    },
+    "116": {
+      "stepId": "compare",
+      "low": "3",
+      "high": "11",
+      "i": "3",
+      "j": "5",
+      "pivot": "349",
+      "pi": "\u2014"
+    },
+    "120": {
+      "stepId": "compare",
+      "low": "3",
+      "high": "11",
+      "i": "3",
+      "j": "9",
+      "pivot": "349",
+      "pi": "\u2014"
+    },
+    "121": {
+      "stepId": "incI",
+      "low": "3",
+      "high": "11",
+      "i": "4",
+      "j": "9",
+      "pivot": "349",
+      "pi": "\u2014"
+    },
+    "131": {
+      "stepId": "callPartition",
+      "low": "3",
+      "high": "5",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "133": {
+      "stepId": "initI",
+      "low": "3",
+      "high": "5",
+      "i": "2",
+      "j": "\u2014",
+      "pivot": "218",
+      "pi": "\u2014"
+    },
+    "138": {
+      "stepId": "returnPi",
+      "low": "3",
+      "high": "5",
+      "i": "2",
+      "j": "\u2014",
+      "pivot": "218",
+      "pi": "3"
+    },
+    "142": {
+      "stepId": "sortRight",
+      "low": "3",
+      "high": "5",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "3"
+    },
+    "145": {
+      "stepId": "callPartition",
+      "low": "4",
+      "high": "5",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "147": {
+      "stepId": "initI",
+      "low": "4",
+      "high": "5",
+      "i": "3",
+      "j": "\u2014",
+      "pivot": "266",
+      "pi": "\u2014"
+    },
+    "148": {
+      "stepId": "forJ",
+      "low": "4",
+      "high": "5",
+      "i": "3",
+      "j": "4",
+      "pivot": "266",
+      "pi": "\u2014"
+    },
+    "154": {
+      "stepId": "sortLeft",
+      "low": "4",
+      "high": "5",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "5"
+    },
+    "155": {
+      "stepId": "markRange",
+      "low": "4",
+      "high": "4",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "159": {
+      "stepId": "checkLowHigh",
+      "low": "6",
+      "high": "5",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "163": {
+      "stepId": "callPartition",
+      "low": "7",
+      "high": "11",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "164": {
+      "stepId": "setPivot",
+      "low": "7",
+      "high": "11",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "483",
+      "pi": "\u2014"
+    },
+    "167": {
+      "stepId": "compare",
+      "low": "7",
+      "high": "11",
+      "i": "6",
+      "j": "7",
+      "pivot": "483",
+      "pi": "\u2014"
+    },
+    "170": {
+      "stepId": "compare",
+      "low": "7",
+      "high": "11",
+      "i": "7",
+      "j": "8",
+      "pivot": "483",
+      "pi": "\u2014"
+    },
+    "171": {
+      "stepId": "incI",
+      "low": "7",
+      "high": "11",
+      "i": "8",
+      "j": "8",
+      "pivot": "483",
+      "pi": "\u2014"
+    },
+    "182": {
+      "stepId": "callPartition",
+      "low": "7",
+      "high": "9",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "186": {
+      "stepId": "compare",
+      "low": "7",
+      "high": "9",
+      "i": "6",
+      "j": "7",
+      "pivot": "456",
+      "pi": "\u2014"
+    },
+    "188": {
+      "stepId": "swapIJ",
+      "low": "7",
+      "high": "9",
+      "i": "7",
+      "j": "7",
+      "pivot": "456",
+      "pi": "\u2014"
+    },
+    "192": {
+      "stepId": "swapPivot",
+      "low": "7",
+      "high": "9",
+      "i": "8",
+      "j": "\u2014",
+      "pivot": "456",
+      "pi": "9"
+    },
+    "193": {
+      "stepId": "returnPi",
+      "low": "7",
+      "high": "9",
+      "i": "8",
+      "j": "\u2014",
+      "pivot": "456",
+      "pi": "9"
+    },
+    "196": {
+      "stepId": "checkLowHigh",
+      "low": "7",
+      "high": "8",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "198": {
+      "stepId": "setPivot",
+      "low": "7",
+      "high": "8",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "413",
+      "pi": "\u2014"
+    },
+    "201": {
+      "stepId": "compare",
+      "low": "7",
+      "high": "8",
+      "i": "6",
+      "j": "7",
+      "pivot": "413",
+      "pi": "\u2014"
+    },
+    "202": {
+      "stepId": "swapPivot",
+      "low": "7",
+      "high": "8",
+      "i": "6",
+      "j": "\u2014",
+      "pivot": "413",
+      "pi": "7"
+    },
+    "212": {
+      "stepId": "checkLowHigh",
+      "low": "10",
+      "high": "9",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "215": {
+      "stepId": "checkLowHigh",
+      "low": "11",
+      "high": "11",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "219": {
+      "stepId": "callPartition",
+      "low": "13",
+      "high": "19",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "220": {
+      "stepId": "setPivot",
+      "low": "13",
+      "high": "19",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "892",
+      "pi": "\u2014"
+    },
+    "221": {
+      "stepId": "initI",
+      "low": "13",
+      "high": "19",
+      "i": "12",
+      "j": "\u2014",
+      "pivot": "892",
+      "pi": "\u2014"
+    },
+    "224": {
+      "stepId": "compare",
+      "low": "13",
+      "high": "19",
+      "i": "12",
+      "j": "14",
+      "pivot": "892",
+      "pi": "\u2014"
+    },
+    "225": {
+      "stepId": "compare",
+      "low": "13",
+      "high": "19",
+      "i": "12",
+      "j": "15",
+      "pivot": "892",
+      "pi": "\u2014"
+    },
+    "226": {
+      "stepId": "incI",
+      "low": "13",
+      "high": "19",
+      "i": "13",
+      "j": "15",
+      "pivot": "892",
+      "pi": "\u2014"
+    },
+    "227": {
+      "stepId": "swapIJ",
+      "low": "13",
+      "high": "19",
+      "i": "13",
+      "j": "15",
+      "pivot": "892",
+      "pi": "\u2014"
+    },
+    "228": {
+      "stepId": "compare",
+      "low": "13",
+      "high": "19",
+      "i": "13",
+      "j": "16",
+      "pivot": "892",
+      "pi": "\u2014"
+    },
+    "230": {
+      "stepId": "swapIJ",
+      "low": "13",
+      "high": "19",
+      "i": "14",
+      "j": "16",
+      "pivot": "892",
+      "pi": "\u2014"
+    },
+    "236": {
+      "stepId": "returnPi",
+      "low": "13",
+      "high": "19",
+      "i": "15",
+      "j": "\u2014",
+      "pivot": "892",
+      "pi": "16"
+    },
+    "240": {
+      "stepId": "callPartition",
+      "low": "13",
+      "high": "15",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "243": {
+      "stepId": "forJ",
+      "low": "13",
+      "high": "15",
+      "i": "12",
+      "j": "13",
+      "pivot": "755",
+      "pi": "\u2014"
+    },
+    "244": {
+      "stepId": "compare",
+      "low": "13",
+      "high": "15",
+      "i": "12",
+      "j": "13",
+      "pivot": "755",
+      "pi": "\u2014"
+    },
+    "246": {
+      "stepId": "incI",
+      "low": "13",
+      "high": "15",
+      "i": "13",
+      "j": "14",
+      "pivot": "755",
+      "pi": "\u2014"
+    },
+    "252": {
+      "stepId": "checkLowHigh",
+      "low": "13",
+      "high": "13",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "256": {
+      "stepId": "sortRight",
+      "low": "13",
+      "high": "19",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "16"
+    },
+    "262": {
+      "stepId": "forJ",
+      "low": "17",
+      "high": "19",
+      "i": "16",
+      "j": "17",
+      "pivot": "940",
+      "pi": "\u2014"
+    },
+    "267": {
+      "stepId": "sortLeft",
+      "low": "17",
+      "high": "19",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "17"
+    },
+    "268": {
+      "stepId": "markRange",
+      "low": "17",
+      "high": "16",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "269": {
+      "stepId": "checkLowHigh",
+      "low": "17",
+      "high": "16",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "273": {
+      "stepId": "callPartition",
+      "low": "18",
+      "high": "19",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    },
+    "274": {
+      "stepId": "setPivot",
+      "low": "18",
+      "high": "19",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "967",
+      "pi": "\u2014"
+    },
+    "275": {
+      "stepId": "initI",
+      "low": "18",
+      "high": "19",
+      "i": "17",
+      "j": "\u2014",
+      "pivot": "967",
+      "pi": "\u2014"
+    },
+    "276": {
+      "stepId": "forJ",
+      "low": "18",
+      "high": "19",
+      "i": "17",
+      "j": "18",
+      "pivot": "967",
+      "pi": "\u2014"
+    },
+    "281": {
+      "stepId": "returnPi",
+      "low": "18",
+      "high": "19",
+      "i": "18",
+      "j": "\u2014",
+      "pivot": "967",
+      "pi": "19"
+    },
+    "286": {
+      "stepId": "markRange",
+      "low": "20",
+      "high": "19",
+      "i": "\u2014",
+      "j": "\u2014",
+      "pivot": "\u2014",
+      "pi": "\u2014"
+    }
+  },
+  "pieces": {
+    "stepId": [
+      {
+        "id": 225,
+        "value": "compare"
+      },
+      {
+        "id": 589,
+        "value": "returnPi"
+      },
+      {
+        "id": 400,
+        "value": "swapPivot"
+      },
+      {
+        "id": 526,
+        "value": "sortRight"
+      },
+      {
+        "id": 393,
+        "value": "compare"
+      },
+      {
+        "id": 575,
+        "value": "initI"
+      },
+      {
+        "id": 218,
+        "value": "compare"
+      },
+      {
+        "id": 92,
+        "value": "swapIJ"
+      },
+      {
+        "id": 232,
+        "value": "incI"
+      },
+      {
+        "id": 281,
+        "value": "forJ"
+      },
+      {
+        "id": 477,
+        "value": "swapIJ"
+      },
+      {
+        "id": 498,
+        "value": "forJ"
+      },
+      {
+        "id": 386,
+        "value": "setPivot"
+      },
+      {
+        "id": 176,
+        "value": "compare"
+      },
+      {
+        "id": 512,
+        "value": "incI"
+      },
+      {
+        "id": 127,
+        "value": "compare"
+      },
+      {
+        "id": 113,
+        "value": "compare"
+      },
+      {
+        "id": 253,
+        "value": "returnPi"
+      },
+      {
+        "id": 50,
+        "value": "compare"
+      },
+      {
+        "id": 162,
+        "value": "callPartition"
+      },
+      {
+        "id": 561,
+        "value": "callPartition"
+      },
+      {
+        "id": 505,
+        "value": "compare"
+      },
+      {
+        "id": 190,
+        "value": "swapIJ"
+      },
+      {
+        "id": 239,
+        "value": "callPartition"
+      },
+      {
+        "id": 358,
+        "value": "swapIJ"
+      },
+      {
+        "id": 106,
+        "value": "incI"
+      },
+      {
+        "id": 71,
+        "value": "initI"
+      },
+      {
+        "id": 183,
+        "value": "compare"
+      },
+      {
+        "id": 197,
+        "value": "markRange"
+      },
+      {
+        "id": 421,
+        "value": "callPartition"
+      },
+      {
+        "id": 260,
+        "value": "sortRight"
+      },
+      {
+        "id": 148,
+        "value": "incI"
+      },
+      {
+        "id": 351,
+        "value": "compare"
+      },
+      {
+        "id": 169,
+        "value": "initI"
+      },
+      {
+        "id": 57,
+        "value": "checkLowHigh"
+      },
+      {
+        "id": 596,
+        "value": "markRange"
+      },
+      {
+        "id": 470,
+        "value": "compare"
+      },
+      {
+        "id": 134,
+        "value": "swapIJ"
+      },
+      {
+        "id": 463,
+        "value": "swapIJ"
+      },
+      {
+        "id": 435,
+        "value": "initI"
+      },
+      {
+        "id": 316,
+        "value": "setPivot"
+      },
+      {
+        "id": 428,
+        "value": "setPivot"
+      },
+      {
+        "id": 1,
+        "value": "setPivot"
+      },
+      {
+        "id": 22,
+        "value": "compare"
+      },
+      {
+        "id": 540,
+        "value": "sortLeft"
+      },
+      {
+        "id": 582,
+        "value": "forJ"
+      },
+      {
+        "id": 414,
+        "value": "checkLowHigh"
+      },
+      {
+        "id": 372,
+        "value": "returnPi"
+      },
+      {
+        "id": 547,
+        "value": "markRange"
+      },
+      {
+        "id": 302,
+        "value": "checkLowHigh"
+      },
+      {
+        "id": 484,
+        "value": "returnPi"
+      },
+      {
+        "id": 456,
+        "value": "incI"
+      },
+      {
+        "id": 36,
+        "value": "compare"
+      },
+      {
+        "id": 78,
+        "value": "swapIJ"
+      },
+      {
+        "id": 267,
+        "value": "callPartition"
+      },
+      {
+        "id": 442,
+        "value": "compare"
+      },
+      {
+        "id": 141,
+        "value": "compare"
+      },
+      {
+        "id": 29,
+        "value": "compare"
+      },
+      {
+        "id": 554,
+        "value": "checkLowHigh"
+      },
+      {
+        "id": 407,
+        "value": "checkLowHigh"
+      },
+      {
+        "id": 519,
+        "value": "checkLowHigh"
+      },
+      {
+        "id": 379,
+        "value": "checkLowHigh"
+      },
+      {
+        "id": 449,
+        "value": "compare"
+      },
+      {
+        "id": 8,
+        "value": "forJ"
+      },
+      {
+        "id": 323,
+        "value": "compare"
+      },
+      {
+        "id": 246,
+        "value": "initI"
+      },
+      {
+        "id": 204,
+        "value": "sortRight"
+      },
+      {
+        "id": 337,
+        "value": "incI"
+      },
+      {
+        "id": 85,
+        "value": "incI"
+      },
+      {
+        "id": 491,
+        "value": "callPartition"
+      },
+      {
+        "id": 344,
+        "value": "callPartition"
+      },
+      {
+        "id": 568,
+        "value": "setPivot"
+      },
+      {
+        "id": 15,
+        "value": "compare"
+      },
+      {
+        "id": 120,
+        "value": "incI"
+      },
+      {
+        "id": 274,
+        "value": "initI"
+      },
+      {
+        "id": 43,
+        "value": "compare"
+      },
+      {
+        "id": 330,
+        "value": "compare"
+      },
+      {
+        "id": 295,
+        "value": "markRange"
+      },
+      {
+        "id": 288,
+        "value": "sortLeft"
+      },
+      {
+        "id": 64,
+        "value": "callPartition"
+      },
+      {
+        "id": 533,
+        "value": "forJ"
+      },
+      {
+        "id": 211,
+        "value": "setPivot"
+      },
+      {
+        "id": 155,
+        "value": "sortLeft"
+      },
+      {
+        "id": 99,
+        "value": "compare"
+      },
+      {
+        "id": 309,
+        "value": "callPartition"
+      },
+      {
+        "id": 365,
+        "value": "swapPivot"
+      }
+    ],
+    "low": [
+      {
+        "id": 597,
+        "value": "20"
+      },
+      {
+        "id": 485,
+        "value": "13"
+      },
+      {
+        "id": 282,
+        "value": "4"
+      },
+      {
+        "id": 9,
+        "value": "0"
+      },
+      {
+        "id": 121,
+        "value": "1"
+      },
+      {
+        "id": 16,
+        "value": "0"
+      },
+      {
+        "id": 436,
+        "value": "13"
+      },
+      {
+        "id": 429,
+        "value": "13"
+      },
+      {
+        "id": 562,
+        "value": "18"
+      },
+      {
+        "id": 51,
+        "value": "0"
+      },
+      {
+        "id": 233,
+        "value": "3"
+      },
+      {
+        "id": 548,
+        "value": "17"
+      },
+      {
+        "id": 366,
+        "value": "7"
+      },
+      {
+        "id": 331,
+        "value": "7"
+      },
+      {
+        "id": 177,
+        "value": "1"
+      },
+      {
+        "id": 415,
+        "value": "11"
+      },
+      {
+        "id": 506,
+        "value": "13"
+      },
+      {
+        "id": 471,
+        "value": "13"
+      },
+      {
+        "id": 457,
+        "value": "13"
+      },
+      {
+        "id": 317,
+        "value": "7"
+      },
+      {
+        "id": 394,
+        "value": "7"
+      },
+      {
+        "id": 93,
+        "value": "1"
+      },
+      {
+        "id": 191,
+        "value": "1"
+      },
+      {
+        "id": 30,
+        "value": "0"
+      },
+      {
+        "id": 527,
+        "value": "13"
+      },
+      {
+        "id": 380,
+        "value": "7"
+      },
+      {
+        "id": 205,
+        "value": "1"
+      },
+      {
+        "id": 261,
+        "value": "3"
+      },
+      {
+        "id": 443,
+        "value": "13"
+      },
+      {
+        "id": 555,
+        "value": "17"
+      },
+      {
+        "id": 58,
+        "value": "1"
+      },
+      {
+        "id": 359,
+        "value": "7"
+      },
+      {
+        "id": 352,
+        "value": "7"
+      },
+      {
+        "id": 296,
+        "value": "4"
+      },
+      {
+        "id": 219,
+        "value": "3"
+      },
+      {
+        "id": 576,
+        "value": "18"
+      },
+      {
+        "id": 135,
+        "value": "1"
+      },
+      {
+        "id": 499,
+        "value": "13"
+      },
+      {
+        "id": 65,
+        "value": "1"
+      },
+      {
+        "id": 79,
+        "value": "1"
+      },
+      {
+        "id": 114,
+        "value": "1"
+      },
+      {
+        "id": 464,
+        "value": "13"
+      },
+      {
+        "id": 72,
+        "value": "1"
+      },
+      {
+        "id": 422,
+        "value": "13"
+      },
+      {
+        "id": 583,
+        "value": "18"
+      },
+      {
+        "id": 513,
+        "value": "13"
+      },
+      {
+        "id": 86,
+        "value": "1"
+      },
+      {
+        "id": 387,
+        "value": "7"
+      },
+      {
+        "id": 23,
+        "value": "0"
+      },
+      {
+        "id": 184,
+        "value": "1"
+      },
+      {
+        "id": 373,
+        "value": "7"
+      },
+      {
+        "id": 2,
+        "value": "0"
+      },
+      {
+        "id": 268,
+        "value": "4"
+      },
+      {
+        "id": 107,
+        "value": "1"
+      },
+      {
+        "id": 163,
+        "value": "1"
+      },
+      {
+        "id": 247,
+        "value": "3"
+      },
+      {
+        "id": 324,
+        "value": "7"
+      },
+      {
+        "id": 450,
+        "value": "13"
+      },
+      {
+        "id": 478,
+        "value": "13"
+      },
+      {
+        "id": 37,
+        "value": "0"
+      },
+      {
+        "id": 198,
+        "value": "1"
+      },
+      {
+        "id": 240,
+        "value": "3"
+      },
+      {
+        "id": 310,
+        "value": "7"
+      },
+      {
+        "id": 149,
+        "value": "1"
+      },
+      {
+        "id": 100,
+        "value": "1"
+      },
+      {
+        "id": 142,
+        "value": "1"
+      },
+      {
+        "id": 226,
+        "value": "3"
+      },
+      {
+        "id": 590,
+        "value": "18"
+      },
+      {
+        "id": 345,
+        "value": "7"
+      },
+      {
+        "id": 156,
+        "value": "1"
+      },
+      {
+        "id": 520,
+        "value": "13"
+      },
+      {
+        "id": 212,
+        "value": "3"
+      },
+      {
+        "id": 569,
+        "value": "18"
+      },
+      {
+        "id": 128,
+        "value": "1"
+      },
+      {
+        "id": 492,
+        "value": "13"
+      },
+      {
+        "id": 534,
+        "value": "17"
+      },
+      {
+        "id": 170,
+        "value": "1"
+      },
+      {
+        "id": 44,
+        "value": "0"
+      },
+      {
+        "id": 254,
+        "value": "3"
+      },
+      {
+        "id": 541,
+        "value": "17"
+      },
+      {
+        "id": 289,
+        "value": "4"
+      },
+      {
+        "id": 275,
+        "value": "4"
+      },
+      {
+        "id": 408,
+        "value": "10"
+      },
+      {
+        "id": 401,
+        "value": "7"
+      },
+      {
+        "id": 338,
+        "value": "7"
+      },
+      {
+        "id": 303,
+        "value": "6"
+      }
+    ],
+    "high": [
+      {
+        "id": 3,
+        "value": "19"
+      },
+      {
+        "id": 549,
+        "value": "16"
+      },
+      {
+        "id": 213,
+        "value": "11"
+      },
+      {
+        "id": 374,
+        "value": "9"
+      },
+      {
+        "id": 87,
+        "value": "19"
+      },
+      {
+        "id": 493,
+        "value": "15"
+      },
+      {
+        "id": 185,
+        "value": "11"
+      },
+      {
+        "id": 472,
+        "value": "19"
+      },
+      {
+        "id": 227,
+        "value": "11"
+      },
+      {
+        "id": 381,
+        "value": "8"
+      },
+      {
+        "id": 388,
+        "value": "8"
+      },
+      {
+        "id": 178,
+        "value": "11"
+      },
+      {
+        "id": 367,
+        "value": "9"
+      },
+      {
+        "id": 444,
+        "value": "19"
+      },
+      {
+        "id": 10,
+        "value": "19"
+      },
+      {
+        "id": 59,
+        "value": "19"
+      },
+      {
+        "id": 45,
+        "value": "19"
+      },
+      {
+        "id": 101,
+        "value": "19"
+      },
+      {
+        "id": 416,
+        "value": "11"
+      },
+      {
+        "id": 584,
+        "value": "19"
+      },
+      {
+        "id": 360,
+        "value": "9"
+      },
+      {
+        "id": 535,
+        "value": "19"
+      },
+      {
+        "id": 150,
+        "value": "19"
+      },
+      {
+        "id": 255,
+        "value": "5"
+      },
+      {
+        "id": 157,
+        "value": "19"
+      },
+      {
+        "id": 262,
+        "value": "5"
+      },
+      {
+        "id": 451,
+        "value": "19"
+      },
+      {
+        "id": 248,
+        "value": "5"
+      },
+      {
+        "id": 521,
+        "value": "13"
+      },
+      {
+        "id": 94,
+        "value": "19"
+      },
+      {
+        "id": 241,
+        "value": "5"
+      },
+      {
+        "id": 171,
+        "value": "11"
+      },
+      {
+        "id": 192,
+        "value": "11"
+      },
+      {
+        "id": 409,
+        "value": "9"
+      },
+      {
+        "id": 234,
+        "value": "11"
+      },
+      {
+        "id": 24,
+        "value": "19"
+      },
+      {
+        "id": 129,
+        "value": "19"
+      },
+      {
+        "id": 122,
+        "value": "19"
+      },
+      {
+        "id": 38,
+        "value": "19"
+      },
+      {
+        "id": 598,
+        "value": "19"
+      },
+      {
+        "id": 73,
+        "value": "19"
+      },
+      {
+        "id": 500,
+        "value": "15"
+      },
+      {
+        "id": 304,
+        "value": "5"
+      },
+      {
+        "id": 339,
+        "value": "11"
+      },
+      {
+        "id": 591,
+        "value": "19"
+      },
+      {
+        "id": 80,
+        "value": "19"
+      },
+      {
+        "id": 563,
+        "value": "19"
+      },
+      {
+        "id": 115,
+        "value": "19"
+      },
+      {
+        "id": 136,
+        "value": "19"
+      },
+      {
+        "id": 346,
+        "value": "9"
+      },
+      {
+        "id": 297,
+        "value": "4"
+      },
+      {
+        "id": 318,
+        "value": "11"
+      },
+      {
+        "id": 52,
+        "value": "19"
+      },
+      {
+        "id": 17,
+        "value": "19"
+      },
+      {
+        "id": 31,
+        "value": "19"
+      },
+      {
+        "id": 514,
+        "value": "15"
+      },
+      {
+        "id": 276,
+        "value": "5"
+      },
+      {
+        "id": 423,
+        "value": "19"
+      },
+      {
+        "id": 66,
+        "value": "19"
+      },
+      {
+        "id": 486,
+        "value": "19"
+      },
+      {
+        "id": 164,
+        "value": "11"
+      },
+      {
+        "id": 290,
+        "value": "5"
+      },
+      {
+        "id": 577,
+        "value": "19"
+      },
+      {
+        "id": 108,
+        "value": "19"
+      },
+      {
+        "id": 458,
+        "value": "19"
+      },
+      {
+        "id": 479,
+        "value": "19"
+      },
+      {
+        "id": 269,
+        "value": "5"
+      },
+      {
+        "id": 528,
+        "value": "19"
+      },
+      {
+        "id": 283,
+        "value": "5"
+      },
+      {
+        "id": 542,
+        "value": "19"
+      },
+      {
+        "id": 199,
+        "value": "1"
+      },
+      {
+        "id": 507,
+        "value": "15"
+      },
+      {
+        "id": 395,
+        "value": "8"
+      },
+      {
+        "id": 556,
+        "value": "16"
+      },
+      {
+        "id": 206,
+        "value": "11"
+      },
+      {
+        "id": 143,
+        "value": "19"
+      },
+      {
+        "id": 325,
+        "value": "11"
+      },
+      {
+        "id": 430,
+        "value": "19"
+      },
+      {
+        "id": 220,
+        "value": "11"
+      },
+      {
+        "id": 311,
+        "value": "11"
+      },
+      {
+        "id": 465,
+        "value": "19"
+      },
+      {
+        "id": 402,
+        "value": "8"
+      },
+      {
+        "id": 353,
+        "value": "9"
+      },
+      {
+        "id": 332,
+        "value": "11"
+      },
+      {
+        "id": 570,
+        "value": "19"
+      },
+      {
+        "id": 437,
+        "value": "19"
+      }
+    ],
+    "i": [
+      {
+        "id": 403,
+        "value": "6"
+      },
+      {
+        "id": 536,
+        "value": "16"
+      },
+      {
+        "id": 333,
+        "value": "7"
+      },
+      {
+        "id": 417,
+        "value": "\u2014"
+      },
+      {
+        "id": 578,
+        "value": "17"
+      },
+      {
+        "id": 382,
+        "value": "\u2014"
+      },
+      {
+        "id": 445,
+        "value": "12"
+      },
+      {
+        "id": 466,
+        "value": "13"
+      },
+      {
+        "id": 256,
+        "value": "2"
+      },
+      {
+        "id": 305,
+        "value": "\u2014"
+      },
+      {
+        "id": 431,
+        "value": "\u2014"
+      },
+      {
+        "id": 46,
+        "value": "-1"
+      },
+      {
+        "id": 88,
+        "value": "3"
+      },
+      {
+        "id": 571,
+        "value": "\u2014"
+      },
+      {
+        "id": 4,
+        "value": "\u2014"
+      },
+      {
+        "id": 130,
+        "value": "7"
+      },
+      {
+        "id": 564,
+        "value": "\u2014"
+      },
+      {
+        "id": 249,
+        "value": "2"
+      },
+      {
+        "id": 144,
+        "value": "8"
+      },
+      {
+        "id": 515,
+        "value": "13"
+      },
+      {
+        "id": 270,
+        "value": "\u2014"
+      },
+      {
+        "id": 298,
+        "value": "\u2014"
+      },
+      {
+        "id": 487,
+        "value": "15"
+      },
+      {
+        "id": 137,
+        "value": "8"
+      },
+      {
+        "id": 74,
+        "value": "0"
+      },
+      {
+        "id": 550,
+        "value": "\u2014"
+      },
+      {
+        "id": 424,
+        "value": "\u2014"
+      },
+      {
+        "id": 172,
+        "value": "0"
+      },
+      {
+        "id": 235,
+        "value": "4"
+      },
+      {
+        "id": 368,
+        "value": "8"
+      },
+      {
+        "id": 459,
+        "value": "13"
+      },
+      {
+        "id": 529,
+        "value": "\u2014"
+      },
+      {
+        "id": 242,
+        "value": "\u2014"
+      },
+      {
+        "id": 18,
+        "value": "-1"
+      },
+      {
+        "id": 193,
+        "value": "1"
+      },
+      {
+        "id": 410,
+        "value": "\u2014"
+      },
+      {
+        "id": 228,
+        "value": "3"
+      },
+      {
+        "id": 354,
+        "value": "6"
+      },
+      {
+        "id": 508,
+        "value": "12"
+      },
+      {
+        "id": 326,
+        "value": "6"
+      },
+      {
+        "id": 501,
+        "value": "12"
+      },
+      {
+        "id": 438,
+        "value": "12"
+      },
+      {
+        "id": 396,
+        "value": "6"
+      },
+      {
+        "id": 165,
+        "value": "\u2014"
+      },
+      {
+        "id": 11,
+        "value": "-1"
+      },
+      {
+        "id": 389,
+        "value": "\u2014"
+      },
+      {
+        "id": 592,
+        "value": "18"
+      },
+      {
+        "id": 53,
+        "value": "-1"
+      },
+      {
+        "id": 585,
+        "value": "17"
+      },
+      {
+        "id": 375,
+        "value": "8"
+      },
+      {
+        "id": 95,
+        "value": "3"
+      },
+      {
+        "id": 81,
+        "value": "2"
+      },
+      {
+        "id": 186,
+        "value": "0"
+      },
+      {
+        "id": 473,
+        "value": "13"
+      },
+      {
+        "id": 102,
+        "value": "4"
+      },
+      {
+        "id": 277,
+        "value": "3"
+      },
+      {
+        "id": 480,
+        "value": "14"
+      },
+      {
+        "id": 522,
+        "value": "\u2014"
+      },
+      {
+        "id": 32,
+        "value": "-1"
+      },
+      {
+        "id": 312,
+        "value": "\u2014"
+      },
+      {
+        "id": 494,
+        "value": "\u2014"
+      },
+      {
+        "id": 179,
+        "value": "0"
+      },
+      {
+        "id": 452,
+        "value": "12"
+      },
+      {
+        "id": 151,
+        "value": "10"
+      },
+      {
+        "id": 39,
+        "value": "-1"
+      },
+      {
+        "id": 284,
+        "value": "3"
+      },
+      {
+        "id": 291,
+        "value": "\u2014"
+      },
+      {
+        "id": 557,
+        "value": "\u2014"
+      },
+      {
+        "id": 109,
+        "value": "6"
+      },
+      {
+        "id": 116,
+        "value": "6"
+      },
+      {
+        "id": 361,
+        "value": "7"
+      },
+      {
+        "id": 221,
+        "value": "3"
+      },
+      {
+        "id": 67,
+        "value": "\u2014"
+      },
+      {
+        "id": 200,
+        "value": "\u2014"
+      },
+      {
+        "id": 158,
+        "value": "\u2014"
+      },
+      {
+        "id": 263,
+        "value": "\u2014"
+      },
+      {
+        "id": 347,
+        "value": "\u2014"
+      },
+      {
+        "id": 214,
+        "value": "\u2014"
+      },
+      {
+        "id": 25,
+        "value": "-1"
+      },
+      {
+        "id": 543,
+        "value": "\u2014"
+      },
+      {
+        "id": 60,
+        "value": "\u2014"
+      },
+      {
+        "id": 599,
+        "value": "\u2014"
+      },
+      {
+        "id": 123,
+        "value": "7"
+      },
+      {
+        "id": 319,
+        "value": "\u2014"
+      },
+      {
+        "id": 207,
+        "value": "\u2014"
+      },
+      {
+        "id": 340,
+        "value": "8"
+      }
+    ],
+    "j": [
+      {
+        "id": 383,
+        "value": "\u2014"
+      },
+      {
+        "id": 306,
+        "value": "\u2014"
+      },
+      {
+        "id": 12,
+        "value": "0"
+      },
+      {
+        "id": 348,
+        "value": "\u2014"
+      },
+      {
+        "id": 278,
+        "value": "\u2014"
+      },
+      {
+        "id": 124,
+        "value": "14"
+      },
+      {
+        "id": 432,
+        "value": "\u2014"
+      },
+      {
+        "id": 313,
+        "value": "\u2014"
+      },
+      {
+        "id": 26,
+        "value": "6"
+      },
+      {
+        "id": 159,
+        "value": "\u2014"
+      },
+      {
+        "id": 117,
+        "value": "14"
+      },
+      {
+        "id": 131,
+        "value": "15"
+      },
+      {
+        "id": 551,
+        "value": "\u2014"
+      },
+      {
+        "id": 145,
+        "value": "16"
+      },
+      {
+        "id": 250,
+        "value": "\u2014"
+      },
+      {
+        "id": 285,
+        "value": "4"
+      },
+      {
+        "id": 320,
+        "value": "\u2014"
+      },
+      {
+        "id": 362,
+        "value": "7"
+      },
+      {
+        "id": 467,
+        "value": "15"
+      },
+      {
+        "id": 397,
+        "value": "7"
+      },
+      {
+        "id": 376,
+        "value": "\u2014"
+      },
+      {
+        "id": 334,
+        "value": "8"
+      },
+      {
+        "id": 509,
+        "value": "13"
+      },
+      {
+        "id": 579,
+        "value": "\u2014"
+      },
+      {
+        "id": 194,
+        "value": "4"
+      },
+      {
+        "id": 243,
+        "value": "\u2014"
+      },
+      {
+        "id": 460,
+        "value": "15"
+      },
+      {
+        "id": 173,
+        "value": "\u2014"
+      },
+      {
+        "id": 187,
+        "value": "2"
+      },
+      {
+        "id": 544,
+        "value": "\u2014"
+      },
+      {
+        "id": 390,
+        "value": "\u2014"
+      },
+      {
+        "id": 565,
+        "value": "\u2014"
+      },
+      {
+        "id": 33,
+        "value": "8"
+      },
+      {
+        "id": 215,
+        "value": "\u2014"
+      },
+      {
+        "id": 481,
+        "value": "16"
+      },
+      {
+        "id": 19,
+        "value": "2"
+      },
+      {
+        "id": 47,
+        "value": "13"
+      },
+      {
+        "id": 439,
+        "value": "\u2014"
+      },
+      {
+        "id": 180,
+        "value": "1"
+      },
+      {
+        "id": 488,
+        "value": "\u2014"
+      },
+      {
+        "id": 152,
+        "value": "17"
+      },
+      {
+        "id": 82,
+        "value": "3"
+      },
+      {
+        "id": 502,
+        "value": "13"
+      },
+      {
+        "id": 558,
+        "value": "\u2014"
+      },
+      {
+        "id": 369,
+        "value": "\u2014"
+      },
+      {
+        "id": 600,
+        "value": "\u2014"
+      },
+      {
+        "id": 166,
+        "value": "\u2014"
+      },
+      {
+        "id": 96,
+        "value": "4"
+      },
+      {
+        "id": 5,
+        "value": "\u2014"
+      },
+      {
+        "id": 292,
+        "value": "\u2014"
+      },
+      {
+        "id": 495,
+        "value": "\u2014"
+      },
+      {
+        "id": 222,
+        "value": "5"
+      },
+      {
+        "id": 264,
+        "value": "\u2014"
+      },
+      {
+        "id": 68,
+        "value": "\u2014"
+      },
+      {
+        "id": 236,
+        "value": "9"
+      },
+      {
+        "id": 355,
+        "value": "7"
+      },
+      {
+        "id": 418,
+        "value": "\u2014"
+      },
+      {
+        "id": 271,
+        "value": "\u2014"
+      },
+      {
+        "id": 75,
+        "value": "\u2014"
+      },
+      {
+        "id": 229,
+        "value": "9"
+      },
+      {
+        "id": 103,
+        "value": "9"
+      },
+      {
+        "id": 61,
+        "value": "\u2014"
+      },
+      {
+        "id": 341,
+        "value": "8"
+      },
+      {
+        "id": 257,
+        "value": "\u2014"
+      },
+      {
+        "id": 593,
+        "value": "\u2014"
+      },
+      {
+        "id": 138,
+        "value": "15"
+      },
+      {
+        "id": 89,
+        "value": "4"
+      },
+      {
+        "id": 201,
+        "value": "\u2014"
+      },
+      {
+        "id": 110,
+        "value": "13"
+      },
+      {
+        "id": 537,
+        "value": "17"
+      },
+      {
+        "id": 40,
+        "value": "9"
+      },
+      {
+        "id": 327,
+        "value": "7"
+      },
+      {
+        "id": 474,
+        "value": "16"
+      },
+      {
+        "id": 446,
+        "value": "14"
+      },
+      {
+        "id": 404,
+        "value": "\u2014"
+      },
+      {
+        "id": 523,
+        "value": "\u2014"
+      },
+      {
+        "id": 208,
+        "value": "\u2014"
+      },
+      {
+        "id": 530,
+        "value": "\u2014"
+      },
+      {
+        "id": 54,
+        "value": "17"
+      },
+      {
+        "id": 453,
+        "value": "15"
+      },
+      {
+        "id": 425,
+        "value": "\u2014"
+      },
+      {
+        "id": 572,
+        "value": "\u2014"
+      },
+      {
+        "id": 516,
+        "value": "14"
+      },
+      {
+        "id": 299,
+        "value": "\u2014"
+      },
+      {
+        "id": 411,
+        "value": "\u2014"
+      },
+      {
+        "id": 586,
+        "value": "18"
+      }
+    ],
+    "pivot": [
+      {
+        "id": 587,
+        "value": "967"
+      },
+      {
+        "id": 76,
+        "value": "586"
+      },
+      {
+        "id": 349,
+        "value": "\u2014"
+      },
+      {
+        "id": 55,
+        "value": "42"
+      },
+      {
+        "id": 237,
+        "value": "349"
+      },
+      {
+        "id": 510,
+        "value": "755"
+      },
+      {
+        "id": 573,
+        "value": "967"
+      },
+      {
+        "id": 118,
+        "value": "586"
+      },
+      {
+        "id": 503,
+        "value": "755"
+      },
+      {
+        "id": 426,
+        "value": "\u2014"
+      },
+      {
+        "id": 405,
+        "value": "413"
+      },
+      {
+        "id": 48,
+        "value": "42"
+      },
+      {
+        "id": 447,
+        "value": "892"
+      },
+      {
+        "id": 461,
+        "value": "892"
+      },
+      {
+        "id": 433,
+        "value": "892"
+      },
+      {
+        "id": 209,
+        "value": "\u2014"
+      },
+      {
+        "id": 419,
+        "value": "\u2014"
+      },
+      {
+        "id": 384,
+        "value": "\u2014"
+      },
+      {
+        "id": 398,
+        "value": "413"
+      },
+      {
+        "id": 594,
+        "value": "967"
+      },
+      {
+        "id": 251,
+        "value": "218"
+      },
+      {
+        "id": 153,
+        "value": "586"
+      },
+      {
+        "id": 125,
+        "value": "586"
+      },
+      {
+        "id": 307,
+        "value": "\u2014"
+      },
+      {
+        "id": 111,
+        "value": "586"
+      },
+      {
+        "id": 524,
+        "value": "\u2014"
+      },
+      {
+        "id": 139,
+        "value": "586"
+      },
+      {
+        "id": 496,
+        "value": "\u2014"
+      },
+      {
+        "id": 181,
+        "value": "203"
+      },
+      {
+        "id": 97,
+        "value": "586"
+      },
+      {
+        "id": 454,
+        "value": "892"
+      },
+      {
+        "id": 174,
+        "value": "203"
+      },
+      {
+        "id": 475,
+        "value": "892"
+      },
+      {
+        "id": 244,
+        "value": "\u2014"
+      },
+      {
+        "id": 69,
+        "value": "\u2014"
+      },
+      {
+        "id": 321,
+        "value": "483"
+      },
+      {
+        "id": 132,
+        "value": "586"
+      },
+      {
+        "id": 279,
+        "value": "266"
+      },
+      {
+        "id": 62,
+        "value": "\u2014"
+      },
+      {
+        "id": 335,
+        "value": "483"
+      },
+      {
+        "id": 20,
+        "value": "42"
+      },
+      {
+        "id": 41,
+        "value": "42"
+      },
+      {
+        "id": 83,
+        "value": "586"
+      },
+      {
+        "id": 391,
+        "value": "413"
+      },
+      {
+        "id": 363,
+        "value": "456"
+      },
+      {
+        "id": 412,
+        "value": "\u2014"
+      },
+      {
+        "id": 146,
+        "value": "586"
+      },
+      {
+        "id": 223,
+        "value": "349"
+      },
+      {
+        "id": 90,
+        "value": "586"
+      },
+      {
+        "id": 195,
+        "value": "203"
+      },
+      {
+        "id": 258,
+        "value": "218"
+      },
+      {
+        "id": 517,
+        "value": "755"
+      },
+      {
+        "id": 265,
+        "value": "\u2014"
+      },
+      {
+        "id": 601,
+        "value": "\u2014"
+      },
+      {
+        "id": 216,
+        "value": "349"
+      },
+      {
+        "id": 272,
+        "value": "\u2014"
+      },
+      {
+        "id": 188,
+        "value": "203"
+      },
+      {
+        "id": 104,
+        "value": "586"
+      },
+      {
+        "id": 440,
+        "value": "892"
+      },
+      {
+        "id": 468,
+        "value": "892"
+      },
+      {
+        "id": 559,
+        "value": "\u2014"
+      },
+      {
+        "id": 377,
+        "value": "456"
+      },
+      {
+        "id": 6,
+        "value": "42"
+      },
+      {
+        "id": 202,
+        "value": "\u2014"
+      },
+      {
+        "id": 300,
+        "value": "\u2014"
+      },
+      {
+        "id": 167,
+        "value": "\u2014"
+      },
+      {
+        "id": 552,
+        "value": "\u2014"
+      },
+      {
+        "id": 13,
+        "value": "42"
+      },
+      {
+        "id": 342,
+        "value": "483"
+      },
+      {
+        "id": 370,
+        "value": "456"
+      },
+      {
+        "id": 538,
+        "value": "940"
+      },
+      {
+        "id": 580,
+        "value": "967"
+      },
+      {
+        "id": 27,
+        "value": "42"
+      },
+      {
+        "id": 34,
+        "value": "42"
+      },
+      {
+        "id": 314,
+        "value": "\u2014"
+      },
+      {
+        "id": 545,
+        "value": "\u2014"
+      },
+      {
+        "id": 160,
+        "value": "\u2014"
+      },
+      {
+        "id": 356,
+        "value": "456"
+      },
+      {
+        "id": 566,
+        "value": "\u2014"
+      },
+      {
+        "id": 482,
+        "value": "892"
+      },
+      {
+        "id": 293,
+        "value": "\u2014"
+      },
+      {
+        "id": 230,
+        "value": "349"
+      },
+      {
+        "id": 328,
+        "value": "483"
+      },
+      {
+        "id": 286,
+        "value": "266"
+      },
+      {
+        "id": 489,
+        "value": "892"
+      },
+      {
+        "id": 531,
+        "value": "\u2014"
+      }
+    ],
+    "pi": [
+      {
+        "id": 455,
+        "value": "\u2014"
+      },
+      {
+        "id": 154,
+        "value": "\u2014"
+      },
+      {
+        "id": 28,
+        "value": "\u2014"
+      },
+      {
+        "id": 448,
+        "value": "\u2014"
+      },
+      {
+        "id": 112,
+        "value": "\u2014"
+      },
+      {
+        "id": 126,
+        "value": "\u2014"
+      },
+      {
+        "id": 42,
+        "value": "\u2014"
+      },
+      {
+        "id": 245,
+        "value": "\u2014"
+      },
+      {
+        "id": 364,
+        "value": "\u2014"
+      },
+      {
+        "id": 336,
+        "value": "\u2014"
+      },
+      {
+        "id": 7,
+        "value": "\u2014"
+      },
+      {
+        "id": 378,
+        "value": "9"
+      },
+      {
+        "id": 343,
+        "value": "\u2014"
+      },
+      {
+        "id": 182,
+        "value": "\u2014"
+      },
+      {
+        "id": 350,
+        "value": "\u2014"
+      },
+      {
+        "id": 210,
+        "value": "2"
+      },
+      {
+        "id": 168,
+        "value": "\u2014"
+      },
+      {
+        "id": 371,
+        "value": "9"
+      },
+      {
+        "id": 322,
+        "value": "\u2014"
+      },
+      {
+        "id": 63,
+        "value": "\u2014"
+      },
+      {
+        "id": 70,
+        "value": "\u2014"
+      },
+      {
+        "id": 511,
+        "value": "\u2014"
+      },
+      {
+        "id": 287,
+        "value": "\u2014"
+      },
+      {
+        "id": 189,
+        "value": "\u2014"
+      },
+      {
+        "id": 427,
+        "value": "\u2014"
+      },
+      {
+        "id": 434,
+        "value": "\u2014"
+      },
+      {
+        "id": 56,
+        "value": "\u2014"
+      },
+      {
+        "id": 588,
+        "value": "\u2014"
+      },
+      {
+        "id": 14,
+        "value": "\u2014"
+      },
+      {
+        "id": 399,
+        "value": "\u2014"
+      },
+      {
+        "id": 420,
+        "value": "\u2014"
+      },
+      {
+        "id": 49,
+        "value": "\u2014"
+      },
+      {
+        "id": 196,
+        "value": "\u2014"
+      },
+      {
+        "id": 490,
+        "value": "16"
+      },
+      {
+        "id": 294,
+        "value": "5"
+      },
+      {
+        "id": 462,
+        "value": "\u2014"
+      },
+      {
+        "id": 301,
+        "value": "\u2014"
+      },
+      {
+        "id": 21,
+        "value": "\u2014"
+      },
+      {
+        "id": 602,
+        "value": "\u2014"
+      },
+      {
+        "id": 175,
+        "value": "\u2014"
+      },
+      {
+        "id": 217,
+        "value": "\u2014"
+      },
+      {
+        "id": 441,
+        "value": "\u2014"
+      },
+      {
+        "id": 560,
+        "value": "\u2014"
+      },
+      {
+        "id": 133,
+        "value": "\u2014"
+      },
+      {
+        "id": 238,
+        "value": "\u2014"
+      },
+      {
+        "id": 35,
+        "value": "\u2014"
+      },
+      {
+        "id": 203,
+        "value": "\u2014"
+      },
+      {
+        "id": 224,
+        "value": "\u2014"
+      },
+      {
+        "id": 532,
+        "value": "16"
+      },
+      {
+        "id": 476,
+        "value": "\u2014"
+      },
+      {
+        "id": 567,
+        "value": "\u2014"
+      },
+      {
+        "id": 469,
+        "value": "\u2014"
+      },
+      {
+        "id": 259,
+        "value": "3"
+      },
+      {
+        "id": 77,
+        "value": "\u2014"
+      },
+      {
+        "id": 413,
+        "value": "\u2014"
+      },
+      {
+        "id": 595,
+        "value": "19"
+      },
+      {
+        "id": 98,
+        "value": "\u2014"
+      },
+      {
+        "id": 406,
+        "value": "7"
+      },
+      {
+        "id": 280,
+        "value": "\u2014"
+      },
+      {
+        "id": 231,
+        "value": "\u2014"
+      },
+      {
+        "id": 147,
+        "value": "\u2014"
+      },
+      {
+        "id": 546,
+        "value": "17"
+      },
+      {
+        "id": 119,
+        "value": "\u2014"
+      },
+      {
+        "id": 539,
+        "value": "\u2014"
+      },
+      {
+        "id": 84,
+        "value": "\u2014"
+      },
+      {
+        "id": 105,
+        "value": "\u2014"
+      },
+      {
+        "id": 574,
+        "value": "\u2014"
+      },
+      {
+        "id": 392,
+        "value": "\u2014"
+      },
+      {
+        "id": 252,
+        "value": "\u2014"
+      },
+      {
+        "id": 315,
+        "value": "\u2014"
+      },
+      {
+        "id": 504,
+        "value": "\u2014"
+      },
+      {
+        "id": 553,
+        "value": "\u2014"
+      },
+      {
+        "id": 91,
+        "value": "\u2014"
+      },
+      {
+        "id": 497,
+        "value": "\u2014"
+      },
+      {
+        "id": 140,
+        "value": "\u2014"
+      },
+      {
+        "id": 329,
+        "value": "\u2014"
+      },
+      {
+        "id": 581,
+        "value": "\u2014"
+      },
+      {
+        "id": 357,
+        "value": "\u2014"
+      },
+      {
+        "id": 518,
+        "value": "\u2014"
+      },
+      {
+        "id": 273,
+        "value": "\u2014"
+      },
+      {
+        "id": 161,
+        "value": "12"
+      },
+      {
+        "id": 385,
+        "value": "\u2014"
+      },
+      {
+        "id": 308,
+        "value": "\u2014"
+      },
+      {
+        "id": 266,
+        "value": "3"
+      },
+      {
+        "id": 525,
+        "value": "\u2014"
+      },
+      {
+        "id": 483,
+        "value": "\u2014"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "step": 1,
+      "stepId": "mainCall",
+      "low": 0,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 2,
+      "stepId": "markRange",
+      "low": 0,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 3,
+      "stepId": "checkLowHigh",
+      "low": 0,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 4,
+      "stepId": "callPartition",
+      "low": 0,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 5,
+      "stepId": "setPivot",
+      "low": 0,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 6,
+      "stepId": "initI",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": null,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 7,
+      "stepId": "forJ",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 0,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 8,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 0,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 9,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 1,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 10,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 2,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 11,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 3,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 12,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 4,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 13,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 5,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 14,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 6,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 15,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 7,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 16,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 8,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 17,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 9,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 18,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 10,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 19,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 11,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 20,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 12,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 21,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 13,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 22,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 14,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 23,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 15,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 24,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 16,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 25,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 17,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 26,
+      "stepId": "compare",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": 18,
+      "pivot": 42,
+      "pi": null,
+      "array": [
+        586,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        42
+      ]
+    },
+    {
+      "step": 27,
+      "stepId": "swapPivot",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": null,
+      "pivot": 42,
+      "pi": 0,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 28,
+      "stepId": "returnPi",
+      "low": 0,
+      "high": 19,
+      "i": -1,
+      "j": null,
+      "pivot": 42,
+      "pi": 0,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 29,
+      "stepId": "sortLeft",
+      "low": 0,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 0,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 30,
+      "stepId": "markRange",
+      "low": 0,
+      "high": -1,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 31,
+      "stepId": "checkLowHigh",
+      "low": 0,
+      "high": -1,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 32,
+      "stepId": "sortRight",
+      "low": 0,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 0,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 33,
+      "stepId": "markRange",
+      "low": 1,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 34,
+      "stepId": "checkLowHigh",
+      "low": 1,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 35,
+      "stepId": "callPartition",
+      "low": 1,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 36,
+      "stepId": "setPivot",
+      "low": 1,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 37,
+      "stepId": "initI",
+      "low": 1,
+      "high": 19,
+      "i": 0,
+      "j": null,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 38,
+      "stepId": "forJ",
+      "low": 1,
+      "high": 19,
+      "i": 0,
+      "j": 1,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 39,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 0,
+      "j": 1,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 40,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 0,
+      "j": 2,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 41,
+      "stepId": "incI",
+      "low": 1,
+      "high": 19,
+      "i": 1,
+      "j": 2,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        892,
+        456,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 42,
+      "stepId": "swapIJ",
+      "low": 1,
+      "high": 19,
+      "i": 1,
+      "j": 2,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        892,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 43,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 1,
+      "j": 3,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        892,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 44,
+      "stepId": "incI",
+      "low": 1,
+      "high": 19,
+      "i": 2,
+      "j": 3,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        892,
+        349,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 45,
+      "stepId": "swapIJ",
+      "low": 1,
+      "high": 19,
+      "i": 2,
+      "j": 3,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        892,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 46,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 2,
+      "j": 4,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        892,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 47,
+      "stepId": "incI",
+      "low": 1,
+      "high": 19,
+      "i": 3,
+      "j": 4,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        892,
+        266,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 48,
+      "stepId": "swapIJ",
+      "low": 1,
+      "high": 19,
+      "i": 3,
+      "j": 4,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        892,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 49,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 3,
+      "j": 5,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        892,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 50,
+      "stepId": "incI",
+      "low": 1,
+      "high": 19,
+      "i": 4,
+      "j": 5,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        892,
+        94,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 51,
+      "stepId": "swapIJ",
+      "low": 1,
+      "high": 19,
+      "i": 4,
+      "j": 5,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        892,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 52,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 4,
+      "j": 6,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        892,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 53,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 4,
+      "j": 7,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        892,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 54,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 4,
+      "j": 8,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        892,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 55,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 4,
+      "j": 9,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        892,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 56,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 4,
+      "j": 10,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        892,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 57,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 4,
+      "j": 11,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        892,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 58,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 4,
+      "j": 12,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        892,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 59,
+      "stepId": "incI",
+      "low": 1,
+      "high": 19,
+      "i": 5,
+      "j": 12,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        892,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 60,
+      "stepId": "swapIJ",
+      "low": 1,
+      "high": 19,
+      "i": 5,
+      "j": 12,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 61,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 5,
+      "j": 13,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 62,
+      "stepId": "incI",
+      "low": 1,
+      "high": 19,
+      "i": 6,
+      "j": 13,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 63,
+      "stepId": "swapIJ",
+      "low": 1,
+      "high": 19,
+      "i": 6,
+      "j": 13,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892,
+        944,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 64,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 6,
+      "j": 14,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892,
+        944,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 65,
+      "stepId": "incI",
+      "low": 1,
+      "high": 19,
+      "i": 7,
+      "j": 14,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892,
+        944,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 66,
+      "stepId": "swapIJ",
+      "low": 1,
+      "high": 19,
+      "i": 7,
+      "j": 14,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        842,
+        615,
+        967,
+        755,
+        892,
+        944,
+        940,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 67,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 7,
+      "j": 15,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        842,
+        615,
+        967,
+        755,
+        892,
+        944,
+        940,
+        413,
+        243,
+        218,
+        203,
+        586
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 68,
+      "stepId": "incI",
+      "low": 1,
+      "high": 19,
+      "i": 8,
+      "j": 15,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        842,
+        615,
+        967,
+        755,
+        892,
+        944,
+        940,
+        413,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 69,
+      "stepId": "swapIJ",
+      "low": 1,
+      "high": 19,
+      "i": 8,
+      "j": 15,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        615,
+        967,
+        755,
+        892,
+        944,
+        940,
+        842,
+        243,
+        218,
+        203,
+        586
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 70,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 8,
+      "j": 16,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        615,
+        967,
+        755,
+        892,
+        944,
+        940,
+        842,
+        243,
+        218,
+        203,
+        586
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 71,
+      "stepId": "incI",
+      "low": 1,
+      "high": 19,
+      "i": 9,
+      "j": 16,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        615,
+        967,
+        755,
+        892,
+        944,
+        940,
+        842,
+        243,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 72,
+      "stepId": "swapIJ",
+      "low": 1,
+      "high": 19,
+      "i": 9,
+      "j": 16,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        967,
+        755,
+        892,
+        944,
+        940,
+        842,
+        615,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 73,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 9,
+      "j": 17,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        967,
+        755,
+        892,
+        944,
+        940,
+        842,
+        615,
+        218,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 74,
+      "stepId": "incI",
+      "low": 1,
+      "high": 19,
+      "i": 10,
+      "j": 17,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        967,
+        755,
+        892,
+        944,
+        940,
+        842,
+        615,
+        218,
+        203,
+        586
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 75,
+      "stepId": "swapIJ",
+      "low": 1,
+      "high": 19,
+      "i": 10,
+      "j": 17,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        755,
+        892,
+        944,
+        940,
+        842,
+        615,
+        967,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 76,
+      "stepId": "compare",
+      "low": 1,
+      "high": 19,
+      "i": 10,
+      "j": 18,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        755,
+        892,
+        944,
+        940,
+        842,
+        615,
+        967,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 77,
+      "stepId": "incI",
+      "low": 1,
+      "high": 19,
+      "i": 11,
+      "j": 18,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        755,
+        892,
+        944,
+        940,
+        842,
+        615,
+        967,
+        203,
+        586
+      ]
+    },
+    {
+      "step": 78,
+      "stepId": "swapIJ",
+      "low": 1,
+      "high": 19,
+      "i": 11,
+      "j": 18,
+      "pivot": 586,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        892,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        586
+      ]
+    },
+    {
+      "step": 79,
+      "stepId": "swapPivot",
+      "low": 1,
+      "high": 19,
+      "i": 11,
+      "j": null,
+      "pivot": 586,
+      "pi": 12,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 80,
+      "stepId": "returnPi",
+      "low": 1,
+      "high": 19,
+      "i": 11,
+      "j": null,
+      "pivot": 586,
+      "pi": 12,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 81,
+      "stepId": "sortLeft",
+      "low": 1,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 12,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 82,
+      "stepId": "markRange",
+      "low": 1,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 83,
+      "stepId": "checkLowHigh",
+      "low": 1,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 84,
+      "stepId": "callPartition",
+      "low": 1,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 85,
+      "stepId": "setPivot",
+      "low": 1,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 86,
+      "stepId": "initI",
+      "low": 1,
+      "high": 11,
+      "i": 0,
+      "j": null,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 87,
+      "stepId": "forJ",
+      "low": 1,
+      "high": 11,
+      "i": 0,
+      "j": 1,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 88,
+      "stepId": "compare",
+      "low": 1,
+      "high": 11,
+      "i": 0,
+      "j": 1,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 89,
+      "stepId": "compare",
+      "low": 1,
+      "high": 11,
+      "i": 0,
+      "j": 2,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 90,
+      "stepId": "compare",
+      "low": 1,
+      "high": 11,
+      "i": 0,
+      "j": 3,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 91,
+      "stepId": "compare",
+      "low": 1,
+      "high": 11,
+      "i": 0,
+      "j": 4,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 92,
+      "stepId": "incI",
+      "low": 1,
+      "high": 11,
+      "i": 1,
+      "j": 4,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        456,
+        349,
+        266,
+        94,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 93,
+      "stepId": "swapIJ",
+      "low": 1,
+      "high": 11,
+      "i": 1,
+      "j": 4,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        349,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 94,
+      "stepId": "compare",
+      "low": 1,
+      "high": 11,
+      "i": 1,
+      "j": 5,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        349,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 95,
+      "stepId": "compare",
+      "low": 1,
+      "high": 11,
+      "i": 1,
+      "j": 6,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        349,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 96,
+      "stepId": "compare",
+      "low": 1,
+      "high": 11,
+      "i": 1,
+      "j": 7,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        349,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 97,
+      "stepId": "compare",
+      "low": 1,
+      "high": 11,
+      "i": 1,
+      "j": 8,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        349,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 98,
+      "stepId": "compare",
+      "low": 1,
+      "high": 11,
+      "i": 1,
+      "j": 9,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        349,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 99,
+      "stepId": "compare",
+      "low": 1,
+      "high": 11,
+      "i": 1,
+      "j": 10,
+      "pivot": 203,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        349,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        203,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 100,
+      "stepId": "swapPivot",
+      "low": 1,
+      "high": 11,
+      "i": 1,
+      "j": null,
+      "pivot": 203,
+      "pi": 2,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 101,
+      "stepId": "returnPi",
+      "low": 1,
+      "high": 11,
+      "i": 1,
+      "j": null,
+      "pivot": 203,
+      "pi": 2,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 102,
+      "stepId": "sortLeft",
+      "low": 1,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 2,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 103,
+      "stepId": "markRange",
+      "low": 1,
+      "high": 1,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 104,
+      "stepId": "checkLowHigh",
+      "low": 1,
+      "high": 1,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 105,
+      "stepId": "sortRight",
+      "low": 1,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 2,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 106,
+      "stepId": "markRange",
+      "low": 3,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 107,
+      "stepId": "checkLowHigh",
+      "low": 3,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 108,
+      "stepId": "callPartition",
+      "low": 3,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 109,
+      "stepId": "setPivot",
+      "low": 3,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 110,
+      "stepId": "initI",
+      "low": 3,
+      "high": 11,
+      "i": 2,
+      "j": null,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 111,
+      "stepId": "forJ",
+      "low": 3,
+      "high": 11,
+      "i": 2,
+      "j": 3,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 112,
+      "stepId": "compare",
+      "low": 3,
+      "high": 11,
+      "i": 2,
+      "j": 3,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 113,
+      "stepId": "incI",
+      "low": 3,
+      "high": 11,
+      "i": 3,
+      "j": 3,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 114,
+      "stepId": "swapIJ",
+      "low": 3,
+      "high": 11,
+      "i": 3,
+      "j": 3,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 115,
+      "stepId": "compare",
+      "low": 3,
+      "high": 11,
+      "i": 3,
+      "j": 4,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 116,
+      "stepId": "compare",
+      "low": 3,
+      "high": 11,
+      "i": 3,
+      "j": 5,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 117,
+      "stepId": "compare",
+      "low": 3,
+      "high": 11,
+      "i": 3,
+      "j": 6,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 118,
+      "stepId": "compare",
+      "low": 3,
+      "high": 11,
+      "i": 3,
+      "j": 7,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 119,
+      "stepId": "compare",
+      "low": 3,
+      "high": 11,
+      "i": 3,
+      "j": 8,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 120,
+      "stepId": "compare",
+      "low": 3,
+      "high": 11,
+      "i": 3,
+      "j": 9,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 121,
+      "stepId": "incI",
+      "low": 3,
+      "high": 11,
+      "i": 4,
+      "j": 9,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        456,
+        501,
+        483,
+        420,
+        413,
+        243,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 122,
+      "stepId": "swapIJ",
+      "low": 3,
+      "high": 11,
+      "i": 4,
+      "j": 9,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        501,
+        483,
+        420,
+        413,
+        456,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 123,
+      "stepId": "compare",
+      "low": 3,
+      "high": 11,
+      "i": 4,
+      "j": 10,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        501,
+        483,
+        420,
+        413,
+        456,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 124,
+      "stepId": "incI",
+      "low": 3,
+      "high": 11,
+      "i": 5,
+      "j": 10,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        501,
+        483,
+        420,
+        413,
+        456,
+        218,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 125,
+      "stepId": "swapIJ",
+      "low": 3,
+      "high": 11,
+      "i": 5,
+      "j": 10,
+      "pivot": 349,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        218,
+        483,
+        420,
+        413,
+        456,
+        501,
+        349,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 126,
+      "stepId": "swapPivot",
+      "low": 3,
+      "high": 11,
+      "i": 5,
+      "j": null,
+      "pivot": 349,
+      "pi": 6,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        218,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 127,
+      "stepId": "returnPi",
+      "low": 3,
+      "high": 11,
+      "i": 5,
+      "j": null,
+      "pivot": 349,
+      "pi": 6,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        218,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 128,
+      "stepId": "sortLeft",
+      "low": 3,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 6,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        218,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 129,
+      "stepId": "markRange",
+      "low": 3,
+      "high": 5,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        218,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 130,
+      "stepId": "checkLowHigh",
+      "low": 3,
+      "high": 5,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        218,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 131,
+      "stepId": "callPartition",
+      "low": 3,
+      "high": 5,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        218,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 132,
+      "stepId": "setPivot",
+      "low": 3,
+      "high": 5,
+      "i": null,
+      "j": null,
+      "pivot": 218,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        218,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 133,
+      "stepId": "initI",
+      "low": 3,
+      "high": 5,
+      "i": 2,
+      "j": null,
+      "pivot": 218,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        218,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 134,
+      "stepId": "forJ",
+      "low": 3,
+      "high": 5,
+      "i": 2,
+      "j": 3,
+      "pivot": 218,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        218,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 135,
+      "stepId": "compare",
+      "low": 3,
+      "high": 5,
+      "i": 2,
+      "j": 3,
+      "pivot": 218,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        218,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 136,
+      "stepId": "compare",
+      "low": 3,
+      "high": 5,
+      "i": 2,
+      "j": 4,
+      "pivot": 218,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        266,
+        243,
+        218,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 137,
+      "stepId": "swapPivot",
+      "low": 3,
+      "high": 5,
+      "i": 2,
+      "j": null,
+      "pivot": 218,
+      "pi": 3,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 138,
+      "stepId": "returnPi",
+      "low": 3,
+      "high": 5,
+      "i": 2,
+      "j": null,
+      "pivot": 218,
+      "pi": 3,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 139,
+      "stepId": "sortLeft",
+      "low": 3,
+      "high": 5,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 3,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 140,
+      "stepId": "markRange",
+      "low": 3,
+      "high": 2,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 141,
+      "stepId": "checkLowHigh",
+      "low": 3,
+      "high": 2,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 142,
+      "stepId": "sortRight",
+      "low": 3,
+      "high": 5,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 3,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 143,
+      "stepId": "markRange",
+      "low": 4,
+      "high": 5,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 144,
+      "stepId": "checkLowHigh",
+      "low": 4,
+      "high": 5,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 145,
+      "stepId": "callPartition",
+      "low": 4,
+      "high": 5,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 146,
+      "stepId": "setPivot",
+      "low": 4,
+      "high": 5,
+      "i": null,
+      "j": null,
+      "pivot": 266,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 147,
+      "stepId": "initI",
+      "low": 4,
+      "high": 5,
+      "i": 3,
+      "j": null,
+      "pivot": 266,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 148,
+      "stepId": "forJ",
+      "low": 4,
+      "high": 5,
+      "i": 3,
+      "j": 4,
+      "pivot": 266,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 149,
+      "stepId": "compare",
+      "low": 4,
+      "high": 5,
+      "i": 3,
+      "j": 4,
+      "pivot": 266,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 150,
+      "stepId": "incI",
+      "low": 4,
+      "high": 5,
+      "i": 4,
+      "j": 4,
+      "pivot": 266,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 151,
+      "stepId": "swapIJ",
+      "low": 4,
+      "high": 5,
+      "i": 4,
+      "j": 4,
+      "pivot": 266,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 152,
+      "stepId": "swapPivot",
+      "low": 4,
+      "high": 5,
+      "i": 4,
+      "j": null,
+      "pivot": 266,
+      "pi": 5,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 153,
+      "stepId": "returnPi",
+      "low": 4,
+      "high": 5,
+      "i": 4,
+      "j": null,
+      "pivot": 266,
+      "pi": 5,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 154,
+      "stepId": "sortLeft",
+      "low": 4,
+      "high": 5,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 5,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 155,
+      "stepId": "markRange",
+      "low": 4,
+      "high": 4,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 156,
+      "stepId": "checkLowHigh",
+      "low": 4,
+      "high": 4,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 157,
+      "stepId": "sortRight",
+      "low": 4,
+      "high": 5,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 5,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 158,
+      "stepId": "markRange",
+      "low": 6,
+      "high": 5,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 159,
+      "stepId": "checkLowHigh",
+      "low": 6,
+      "high": 5,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 160,
+      "stepId": "sortRight",
+      "low": 3,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 6,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 161,
+      "stepId": "markRange",
+      "low": 7,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 162,
+      "stepId": "checkLowHigh",
+      "low": 7,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 163,
+      "stepId": "callPartition",
+      "low": 7,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 164,
+      "stepId": "setPivot",
+      "low": 7,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": 483,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 165,
+      "stepId": "initI",
+      "low": 7,
+      "high": 11,
+      "i": 6,
+      "j": null,
+      "pivot": 483,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 166,
+      "stepId": "forJ",
+      "low": 7,
+      "high": 11,
+      "i": 6,
+      "j": 7,
+      "pivot": 483,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 167,
+      "stepId": "compare",
+      "low": 7,
+      "high": 11,
+      "i": 6,
+      "j": 7,
+      "pivot": 483,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 168,
+      "stepId": "incI",
+      "low": 7,
+      "high": 11,
+      "i": 7,
+      "j": 7,
+      "pivot": 483,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 169,
+      "stepId": "swapIJ",
+      "low": 7,
+      "high": 11,
+      "i": 7,
+      "j": 7,
+      "pivot": 483,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 170,
+      "stepId": "compare",
+      "low": 7,
+      "high": 11,
+      "i": 7,
+      "j": 8,
+      "pivot": 483,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 171,
+      "stepId": "incI",
+      "low": 7,
+      "high": 11,
+      "i": 8,
+      "j": 8,
+      "pivot": 483,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 172,
+      "stepId": "swapIJ",
+      "low": 7,
+      "high": 11,
+      "i": 8,
+      "j": 8,
+      "pivot": 483,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 173,
+      "stepId": "compare",
+      "low": 7,
+      "high": 11,
+      "i": 8,
+      "j": 9,
+      "pivot": 483,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 174,
+      "stepId": "incI",
+      "low": 7,
+      "high": 11,
+      "i": 9,
+      "j": 9,
+      "pivot": 483,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 175,
+      "stepId": "swapIJ",
+      "low": 7,
+      "high": 11,
+      "i": 9,
+      "j": 9,
+      "pivot": 483,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 176,
+      "stepId": "compare",
+      "low": 7,
+      "high": 11,
+      "i": 9,
+      "j": 10,
+      "pivot": 483,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        501,
+        483,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 177,
+      "stepId": "swapPivot",
+      "low": 7,
+      "high": 11,
+      "i": 9,
+      "j": null,
+      "pivot": 483,
+      "pi": 10,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 178,
+      "stepId": "returnPi",
+      "low": 7,
+      "high": 11,
+      "i": 9,
+      "j": null,
+      "pivot": 483,
+      "pi": 10,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 179,
+      "stepId": "sortLeft",
+      "low": 7,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 10,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 180,
+      "stepId": "markRange",
+      "low": 7,
+      "high": 9,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 181,
+      "stepId": "checkLowHigh",
+      "low": 7,
+      "high": 9,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 182,
+      "stepId": "callPartition",
+      "low": 7,
+      "high": 9,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 183,
+      "stepId": "setPivot",
+      "low": 7,
+      "high": 9,
+      "i": null,
+      "j": null,
+      "pivot": 456,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 184,
+      "stepId": "initI",
+      "low": 7,
+      "high": 9,
+      "i": 6,
+      "j": null,
+      "pivot": 456,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 185,
+      "stepId": "forJ",
+      "low": 7,
+      "high": 9,
+      "i": 6,
+      "j": 7,
+      "pivot": 456,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 186,
+      "stepId": "compare",
+      "low": 7,
+      "high": 9,
+      "i": 6,
+      "j": 7,
+      "pivot": 456,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 187,
+      "stepId": "incI",
+      "low": 7,
+      "high": 9,
+      "i": 7,
+      "j": 7,
+      "pivot": 456,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 188,
+      "stepId": "swapIJ",
+      "low": 7,
+      "high": 9,
+      "i": 7,
+      "j": 7,
+      "pivot": 456,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 189,
+      "stepId": "compare",
+      "low": 7,
+      "high": 9,
+      "i": 7,
+      "j": 8,
+      "pivot": 456,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 190,
+      "stepId": "incI",
+      "low": 7,
+      "high": 9,
+      "i": 8,
+      "j": 8,
+      "pivot": 456,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 191,
+      "stepId": "swapIJ",
+      "low": 7,
+      "high": 9,
+      "i": 8,
+      "j": 8,
+      "pivot": 456,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 192,
+      "stepId": "swapPivot",
+      "low": 7,
+      "high": 9,
+      "i": 8,
+      "j": null,
+      "pivot": 456,
+      "pi": 9,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 193,
+      "stepId": "returnPi",
+      "low": 7,
+      "high": 9,
+      "i": 8,
+      "j": null,
+      "pivot": 456,
+      "pi": 9,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 194,
+      "stepId": "sortLeft",
+      "low": 7,
+      "high": 9,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 9,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 195,
+      "stepId": "markRange",
+      "low": 7,
+      "high": 8,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 196,
+      "stepId": "checkLowHigh",
+      "low": 7,
+      "high": 8,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 197,
+      "stepId": "callPartition",
+      "low": 7,
+      "high": 8,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 198,
+      "stepId": "setPivot",
+      "low": 7,
+      "high": 8,
+      "i": null,
+      "j": null,
+      "pivot": 413,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 199,
+      "stepId": "initI",
+      "low": 7,
+      "high": 8,
+      "i": 6,
+      "j": null,
+      "pivot": 413,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 200,
+      "stepId": "forJ",
+      "low": 7,
+      "high": 8,
+      "i": 6,
+      "j": 7,
+      "pivot": 413,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 201,
+      "stepId": "compare",
+      "low": 7,
+      "high": 8,
+      "i": 6,
+      "j": 7,
+      "pivot": 413,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        420,
+        413,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 202,
+      "stepId": "swapPivot",
+      "low": 7,
+      "high": 8,
+      "i": 6,
+      "j": null,
+      "pivot": 413,
+      "pi": 7,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 203,
+      "stepId": "returnPi",
+      "low": 7,
+      "high": 8,
+      "i": 6,
+      "j": null,
+      "pivot": 413,
+      "pi": 7,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 204,
+      "stepId": "sortLeft",
+      "low": 7,
+      "high": 8,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 7,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 205,
+      "stepId": "markRange",
+      "low": 7,
+      "high": 6,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 206,
+      "stepId": "checkLowHigh",
+      "low": 7,
+      "high": 6,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 207,
+      "stepId": "sortRight",
+      "low": 7,
+      "high": 8,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 7,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 208,
+      "stepId": "markRange",
+      "low": 8,
+      "high": 8,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 209,
+      "stepId": "checkLowHigh",
+      "low": 8,
+      "high": 8,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 210,
+      "stepId": "sortRight",
+      "low": 7,
+      "high": 9,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 9,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 211,
+      "stepId": "markRange",
+      "low": 10,
+      "high": 9,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 212,
+      "stepId": "checkLowHigh",
+      "low": 10,
+      "high": 9,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 213,
+      "stepId": "sortRight",
+      "low": 7,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 10,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 214,
+      "stepId": "markRange",
+      "low": 11,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 215,
+      "stepId": "checkLowHigh",
+      "low": 11,
+      "high": 11,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 216,
+      "stepId": "sortRight",
+      "low": 1,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 12,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 217,
+      "stepId": "markRange",
+      "low": 13,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 218,
+      "stepId": "checkLowHigh",
+      "low": 13,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 219,
+      "stepId": "callPartition",
+      "low": 13,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 220,
+      "stepId": "setPivot",
+      "low": 13,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 221,
+      "stepId": "initI",
+      "low": 13,
+      "high": 19,
+      "i": 12,
+      "j": null,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 222,
+      "stepId": "forJ",
+      "low": 13,
+      "high": 19,
+      "i": 12,
+      "j": 13,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 223,
+      "stepId": "compare",
+      "low": 13,
+      "high": 19,
+      "i": 12,
+      "j": 13,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 224,
+      "stepId": "compare",
+      "low": 13,
+      "high": 19,
+      "i": 12,
+      "j": 14,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 225,
+      "stepId": "compare",
+      "low": 13,
+      "high": 19,
+      "i": 12,
+      "j": 15,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 226,
+      "stepId": "incI",
+      "low": 13,
+      "high": 19,
+      "i": 13,
+      "j": 15,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        944,
+        940,
+        842,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 227,
+      "stepId": "swapIJ",
+      "low": 13,
+      "high": 19,
+      "i": 13,
+      "j": 15,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        940,
+        944,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 228,
+      "stepId": "compare",
+      "low": 13,
+      "high": 19,
+      "i": 13,
+      "j": 16,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        940,
+        944,
+        615,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 229,
+      "stepId": "incI",
+      "low": 13,
+      "high": 19,
+      "i": 14,
+      "j": 16,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        940,
+        944,
+        615,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 230,
+      "stepId": "swapIJ",
+      "low": 13,
+      "high": 19,
+      "i": 14,
+      "j": 16,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        944,
+        940,
+        967,
+        755,
+        892
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 231,
+      "stepId": "compare",
+      "low": 13,
+      "high": 19,
+      "i": 14,
+      "j": 17,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        944,
+        940,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 232,
+      "stepId": "compare",
+      "low": 13,
+      "high": 19,
+      "i": 14,
+      "j": 18,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        944,
+        940,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 233,
+      "stepId": "incI",
+      "low": 13,
+      "high": 19,
+      "i": 15,
+      "j": 18,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        944,
+        940,
+        967,
+        755,
+        892
+      ]
+    },
+    {
+      "step": 234,
+      "stepId": "swapIJ",
+      "low": 13,
+      "high": 19,
+      "i": 15,
+      "j": 18,
+      "pivot": 892,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        755,
+        940,
+        967,
+        944,
+        892
+      ]
+    },
+    {
+      "step": 235,
+      "stepId": "swapPivot",
+      "low": 13,
+      "high": 19,
+      "i": 15,
+      "j": null,
+      "pivot": 892,
+      "pi": 16,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        755,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 236,
+      "stepId": "returnPi",
+      "low": 13,
+      "high": 19,
+      "i": 15,
+      "j": null,
+      "pivot": 892,
+      "pi": 16,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        755,
+        892,
+        967,
+        944,
+        940
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 237,
+      "stepId": "sortLeft",
+      "low": 13,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 16,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        755,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 238,
+      "stepId": "markRange",
+      "low": 13,
+      "high": 15,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        755,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 239,
+      "stepId": "checkLowHigh",
+      "low": 13,
+      "high": 15,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        755,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 240,
+      "stepId": "callPartition",
+      "low": 13,
+      "high": 15,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        755,
+        892,
+        967,
+        944,
+        940
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 241,
+      "stepId": "setPivot",
+      "low": 13,
+      "high": 15,
+      "i": null,
+      "j": null,
+      "pivot": 755,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        755,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 242,
+      "stepId": "initI",
+      "low": 13,
+      "high": 15,
+      "i": 12,
+      "j": null,
+      "pivot": 755,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        755,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 243,
+      "stepId": "forJ",
+      "low": 13,
+      "high": 15,
+      "i": 12,
+      "j": 13,
+      "pivot": 755,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        755,
+        892,
+        967,
+        944,
+        940
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 244,
+      "stepId": "compare",
+      "low": 13,
+      "high": 15,
+      "i": 12,
+      "j": 13,
+      "pivot": 755,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        755,
+        892,
+        967,
+        944,
+        940
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 245,
+      "stepId": "compare",
+      "low": 13,
+      "high": 15,
+      "i": 12,
+      "j": 14,
+      "pivot": 755,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        755,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 246,
+      "stepId": "incI",
+      "low": 13,
+      "high": 15,
+      "i": 13,
+      "j": 14,
+      "pivot": 755,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        842,
+        615,
+        755,
+        892,
+        967,
+        944,
+        940
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 247,
+      "stepId": "swapIJ",
+      "low": 13,
+      "high": 15,
+      "i": 13,
+      "j": 14,
+      "pivot": 755,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        842,
+        755,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 248,
+      "stepId": "swapPivot",
+      "low": 13,
+      "high": 15,
+      "i": 13,
+      "j": null,
+      "pivot": 755,
+      "pi": 14,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 249,
+      "stepId": "returnPi",
+      "low": 13,
+      "high": 15,
+      "i": 13,
+      "j": null,
+      "pivot": 755,
+      "pi": 14,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 250,
+      "stepId": "sortLeft",
+      "low": 13,
+      "high": 15,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 14,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 251,
+      "stepId": "markRange",
+      "low": 13,
+      "high": 13,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 252,
+      "stepId": "checkLowHigh",
+      "low": 13,
+      "high": 13,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 253,
+      "stepId": "sortRight",
+      "low": 13,
+      "high": 15,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 14,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 254,
+      "stepId": "markRange",
+      "low": 15,
+      "high": 15,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 255,
+      "stepId": "checkLowHigh",
+      "low": 15,
+      "high": 15,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 256,
+      "stepId": "sortRight",
+      "low": 13,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 16,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 257,
+      "stepId": "markRange",
+      "low": 17,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 258,
+      "stepId": "checkLowHigh",
+      "low": 17,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 259,
+      "stepId": "callPartition",
+      "low": 17,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 260,
+      "stepId": "setPivot",
+      "low": 17,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": 940,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 261,
+      "stepId": "initI",
+      "low": 17,
+      "high": 19,
+      "i": 16,
+      "j": null,
+      "pivot": 940,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 262,
+      "stepId": "forJ",
+      "low": 17,
+      "high": 19,
+      "i": 16,
+      "j": 17,
+      "pivot": 940,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 263,
+      "stepId": "compare",
+      "low": 17,
+      "high": 19,
+      "i": 16,
+      "j": 17,
+      "pivot": 940,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 264,
+      "stepId": "compare",
+      "low": 17,
+      "high": 19,
+      "i": 16,
+      "j": 18,
+      "pivot": 940,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        967,
+        944,
+        940
+      ]
+    },
+    {
+      "step": 265,
+      "stepId": "swapPivot",
+      "low": 17,
+      "high": 19,
+      "i": 16,
+      "j": null,
+      "pivot": 940,
+      "pi": 17,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ]
+    },
+    {
+      "step": 266,
+      "stepId": "returnPi",
+      "low": 17,
+      "high": 19,
+      "i": 16,
+      "j": null,
+      "pivot": 940,
+      "pi": 17,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ]
+    },
+    {
+      "step": 267,
+      "stepId": "sortLeft",
+      "low": 17,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 17,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 268,
+      "stepId": "markRange",
+      "low": 17,
+      "high": 16,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 269,
+      "stepId": "checkLowHigh",
+      "low": 17,
+      "high": 16,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 270,
+      "stepId": "sortRight",
+      "low": 17,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 17,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ]
+    },
+    {
+      "step": 271,
+      "stepId": "markRange",
+      "low": 18,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ]
+    },
+    {
+      "step": 272,
+      "stepId": "checkLowHigh",
+      "low": 18,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ]
+    },
+    {
+      "step": 273,
+      "stepId": "callPartition",
+      "low": 18,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 274,
+      "stepId": "setPivot",
+      "low": 18,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": 967,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 275,
+      "stepId": "initI",
+      "low": 18,
+      "high": 19,
+      "i": 17,
+      "j": null,
+      "pivot": 967,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 276,
+      "stepId": "forJ",
+      "low": 18,
+      "high": 19,
+      "i": 17,
+      "j": 18,
+      "pivot": 967,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 277,
+      "stepId": "compare",
+      "low": 18,
+      "high": 19,
+      "i": 17,
+      "j": 18,
+      "pivot": 967,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ]
+    },
+    {
+      "step": 278,
+      "stepId": "incI",
+      "low": 18,
+      "high": 19,
+      "i": 18,
+      "j": 18,
+      "pivot": 967,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ]
+    },
+    {
+      "step": 279,
+      "stepId": "swapIJ",
+      "low": 18,
+      "high": 19,
+      "i": 18,
+      "j": 18,
+      "pivot": 967,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ]
+    },
+    {
+      "step": 280,
+      "stepId": "swapPivot",
+      "low": 18,
+      "high": 19,
+      "i": 18,
+      "j": null,
+      "pivot": 967,
+      "pi": 19,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ]
+    },
+    {
+      "step": 281,
+      "stepId": "returnPi",
+      "low": 18,
+      "high": 19,
+      "i": 18,
+      "j": null,
+      "pivot": 967,
+      "pi": 19,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 282,
+      "stepId": "sortLeft",
+      "low": 18,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 19,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ]
+    },
+    {
+      "step": 283,
+      "stepId": "markRange",
+      "low": 18,
+      "high": 18,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ]
+    },
+    {
+      "step": 284,
+      "stepId": "checkLowHigh",
+      "low": 18,
+      "high": 18,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ]
+    },
+    {
+      "step": 285,
+      "stepId": "sortRight",
+      "low": 18,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": 19,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ]
+    },
+    {
+      "step": 286,
+      "stepId": "markRange",
+      "low": 20,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ],
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "i": true,
+        "j": true,
+        "pivot": true,
+        "pi": true
+      }
+    },
+    {
+      "step": 287,
+      "stepId": "checkLowHigh",
+      "low": 20,
+      "high": 19,
+      "i": null,
+      "j": null,
+      "pivot": null,
+      "pi": null,
+      "array": [
+        42,
+        94,
+        203,
+        218,
+        243,
+        266,
+        349,
+        413,
+        420,
+        456,
+        483,
+        501,
+        586,
+        615,
+        755,
+        842,
+        892,
+        940,
+        944,
+        967
+      ]
+    }
+  ]
+};
+
+  let filled = {}; // stepNumber -> { stepId?, i?, result?, ... }
+  /** Remaining chips per field (multiset); starts as a copy of INSTANCE.pieces. */
+  let availablePieces = {};
+  let activeSection = "stepId";
+  let gateResolve = null;
+  let gateReject = null;
+  /** Step number the executor is currently blocked on (if any). */
+  let pendingGateStep = null;
+  let panelOpen = false;
+  let dragPayload = null;
+  /** Step numbers of blank rows confirmed when the run reaches them. */
+  let validatedSteps = new Set();
+  let taskComplete = false;
+  let nextPieceId = 1;
+
+  function t(key) {
+    return window.I18n ? window.I18n.t(key) : key;
+  }
+
+  function stepLabel(stepId) {
+    return window.I18n ? window.I18n.stepLabel(stepId) : stepId;
+  }
+
+  function formatResult(result) {
+    if (result == null || result === "") return "—";
+    if (result === "NOT_FOUND") {
+      return window.I18n ? window.I18n.t("notFoundValue") : "NOT_FOUND";
+    }
+    return String(result);
+  }
+
+  function formatArray(arr) {
+    return "[" + arr.join(", ") + "]";
+  }
+
+  function displayFieldValue(field, value) {
+    if (value == null || value === "") return "—";
+    if (field === "stepId") return stepLabel(value);
+    if (field === "result") return formatResult(value);
+    return String(value);
+  }
+
+  function varFields() {
+    return INSTANCE.varFields || [];
+  }
+
+  function blankFieldList() {
+    if (INSTANCE.blankFields && INSTANCE.blankFields.length) {
+      return INSTANCE.blankFields.slice();
+    }
+    return ["stepId"].concat(varFields());
+  }
+
+  function sectionLabel(field) {
+    if (field === "stepId") return t("puzzleSectionStepId");
+    const key =
+      "puzzleSection" + field.charAt(0).toUpperCase() + field.slice(1);
+    const labeled = t(key);
+    if (labeled && labeled !== key) return labeled;
+    const colKey = "col" + field.charAt(0).toUpperCase() + field.slice(1);
+    const col = t(colKey);
+    if (col && col !== colKey) return col;
+    return field;
+  }
+
+  function executorApi() {
+    const name = INSTANCE.executorGlobal;
+    return name && window[name] ? window[name] : null;
+  }
+
+  function blankRows() {
+    return INSTANCE.rows.filter((row) => row.missing);
+  }
+
+  function totalBlankRows() {
+    return blankRows().length;
+  }
+
+  function missingFields(row) {
+    return row && row.missing ? Object.keys(row.missing) : [];
+  }
+
+  function clonePieces(src) {
+    const out = {};
+    Object.keys(src || {}).forEach((field) => {
+      out[field] = (src[field] || []).map((piece) => ({
+        id: piece.id != null ? piece.id : nextPieceId++,
+        value: String(piece.value),
+      }));
+    });
+    return out;
+  }
+
+  function resetAvailablePieces() {
+    nextPieceId = 1;
+    availablePieces = clonePieces(INSTANCE.pieces);
+  }
+
+  function takePiece(field, value, preferredId) {
+    const list = availablePieces[field] || [];
+    let idx = -1;
+    if (preferredId != null) {
+      idx = list.findIndex(
+        (p) => p.id === preferredId && String(p.value) === String(value)
+      );
+    }
+    if (idx < 0) {
+      idx = list.findIndex((p) => String(p.value) === String(value));
+    }
+    if (idx < 0) return null;
+    const [piece] = list.splice(idx, 1);
+    return piece;
+  }
+
+  function returnPiece(field, value) {
+    if (value == null || value === "") return;
+    if (!availablePieces[field]) availablePieces[field] = [];
+    availablePieces[field].push({
+      id: nextPieceId++,
+      value: String(value),
+    });
+  }
+
+  function getFill(stepNumber, field) {
+    const rowFill = filled[stepNumber];
+    if (!rowFill) return null;
+    return rowFill[field] != null ? rowFill[field] : null;
+  }
+
+  function expectedAnswer(stepNumber, field) {
+    const ans =
+      INSTANCE.answers[String(stepNumber)] || INSTANCE.answers[stepNumber];
+    if (!ans) return null;
+    return ans[field] != null ? String(ans[field]) : null;
+  }
+
+  function isBlankRowCorrect(stepNumber) {
+    const row = INSTANCE.rows.find((r) => r.step === stepNumber);
+    if (!row || !row.missing) return false;
+    for (const field of missingFields(row)) {
+      const got = getFill(stepNumber, field);
+      const want = expectedAnswer(stepNumber, field);
+      if (got == null || String(got) !== String(want)) return false;
+    }
+    return true;
+  }
+
+  function isSolved() {
+    return blankRows().every((row) => isBlankRowCorrect(row.step));
+  }
+
+  function isRowSolved(stepNumber) {
+    return isBlankRowCorrect(stepNumber);
+  }
+
+  function isTaskComplete() {
+    return taskComplete;
+  }
+
+  function updateStats() {
+    const countEl = document.getElementById("puzzle-correct-count");
+    const totalEl = document.getElementById("puzzle-total-blanks");
+    if (countEl) countEl.textContent = String(validatedSteps.size);
+    if (totalEl) totalEl.textContent = String(totalBlankRows());
+  }
+
+  function setControlsLocked(locked) {
+    const controls = document.querySelector(".controls");
+    if (controls) {
+      controls.classList.toggle("is-locked", locked);
+      controls.setAttribute("aria-disabled", locked ? "true" : "false");
+    }
+    ["btn-run", "btn-step", "btn-pause", "speed"].forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (locked) {
+        el.disabled = true;
+        el.setAttribute("data-puzzle-locked", "true");
+      } else if (el.getAttribute("data-puzzle-locked") === "true") {
+        el.removeAttribute("data-puzzle-locked");
+        if (id === "speed") el.disabled = false;
+      }
+    });
+  }
+
+  function setCompleteBadge(visible) {
+    const badge = document.getElementById("puzzle-complete-badge");
+    if (!badge) return;
+    badge.hidden = !visible;
+    if (visible) badge.textContent = t("puzzleComplete");
+  }
+
+  function setTaskComplete(complete) {
+    taskComplete = !!complete;
+    setCompleteBadge(taskComplete);
+    setControlsLocked(taskComplete);
+    const tracePanel = document.querySelector(".trace-panel");
+    if (tracePanel) {
+      tracePanel.classList.toggle("is-puzzle-complete", taskComplete);
+    }
+    if (taskComplete) {
+      closePanel();
+      setStatus(t("puzzleComplete"), "ok");
+      let completionPath = window.location.pathname.replace(/\\/g, "/");
+      const coursePath = completionPath.match(/(?:^|\/)(search|sort|tree)\/.+$/i);
+      if (coursePath) completionPath = coursePath[0].replace(/^\//, "");
+      const completionMessage = {
+        type: "tracelab:puzzle-complete",
+        path: completionPath,
+      };
+      try {
+        window.parent.postMessage(completionMessage, "*");
+      } catch (_) {
+        /* The puzzle also works as a standalone page. */
+      }
+      try {
+        if (window.opener && !window.opener.closed) {
+          window.opener.postMessage(completionMessage, "*");
+        }
+      } catch (_) {
+        /* Ignore a blocked opener. */
+      }
+      try {
+        const storageKey = "tracelab-standalone-completions-v1";
+        const stored = JSON.parse(localStorage.getItem(storageKey) || "[]");
+        if (stored.indexOf(completionPath) === -1) stored.push(completionPath);
+        localStorage.setItem(storageKey, JSON.stringify(stored));
+      } catch (_) {
+        /* Progress still reaches an embedding dashboard via postMessage. */
+      }
+    }
+  }
+
+  function releaseGateIfReady() {
+    if (!gateResolve || pendingGateStep == null) return;
+    if (!isRowSolved(pendingGateStep)) return;
+    const resolve = gateResolve;
+    gateResolve = null;
+    gateReject = null;
+    clearAwaitingFillMarks();
+    pendingGateStep = null;
+    resolve();
+  }
+
+  function clearAwaitingFillMarks() {
+    const body = document.getElementById("trace-body");
+    if (!body) return;
+    body.querySelectorAll("tr.is-awaiting-fill").forEach((r) => {
+      r.classList.remove("is-awaiting-fill");
+    });
+  }
+
+  function revealGateRow(stepNumber) {
+    if (stepNumber == null) return;
+    const body = document.getElementById("trace-body");
+    if (!body) return;
+    clearAwaitingFillMarks();
+    const tr = body.querySelector(`tr[data-puzzle-step="${stepNumber}"]`);
+    if (!tr) return;
+    tr.classList.add("is-awaiting-fill");
+    // Prefer centering so the blank row is not clipped under the last executed step.
+    tr.scrollIntoView({ block: "center", behavior: "smooth", inline: "nearest" });
+  }
+
+  function awaitGate() {
+    if (pendingGateStep != null && isRowSolved(pendingGateStep)) {
+      clearAwaitingFillMarks();
+      pendingGateStep = null;
+      return Promise.resolve();
+    }
+    const stepToReveal = pendingGateStep;
+    openPanel();
+    setStatus(t("puzzleBlocked"), "warn");
+    // Reveal now, then again after layout settles (panel open / prior smooth scrolls).
+    revealGateRow(stepToReveal);
+    requestAnimationFrame(() => {
+      revealGateRow(stepToReveal);
+      setTimeout(() => revealGateRow(stepToReveal), 120);
+    });
+    return new Promise((resolve, reject) => {
+      gateResolve = () => {
+        gateResolve = null;
+        gateReject = null;
+        clearAwaitingFillMarks();
+        pendingGateStep = null;
+        resolve();
+      };
+      gateReject = () => {
+        gateResolve = null;
+        gateReject = null;
+        clearAwaitingFillMarks();
+        pendingGateStep = null;
+        reject(new Error("aborted"));
+      };
+    });
+  }
+
+  function abortGate() {
+    if (gateReject) {
+      gateReject();
+      return;
+    }
+    if (gateResolve) {
+      const r = gateResolve;
+      gateResolve = null;
+      pendingGateStep = null;
+      r();
+    }
+  }
+
+  function setStatus(message, kind) {
+    const el = document.getElementById("puzzle-status");
+    if (!el) return;
+    el.textContent = message || "";
+    el.classList.remove("is-ok", "is-warn", "is-err");
+    if (kind) el.classList.add("is-" + kind);
+  }
+
+  function syncValidationForStep(stepNumber) {
+    if (isBlankRowCorrect(stepNumber)) return;
+    if (!validatedSteps.has(stepNumber)) return;
+    validatedSteps.delete(stepNumber);
+    const tr = document.querySelector(
+      `#trace-body tr[data-puzzle-step="${stepNumber}"]`
+    );
+    if (tr) {
+      tr.classList.remove("is-validated", "is-validating");
+    }
+    updateStats();
+  }
+
+  function updateDropCell(stepNumber, field) {
+    const cell = document.querySelector(
+      `#trace-body tr[data-puzzle-step="${stepNumber}"] td[data-drop-field="${field}"]`
+    );
+    if (!cell) return;
+
+    const value = getFill(stepNumber, field);
+    cell.classList.remove("is-filled", "is-correct", "is-wrong", "drag-over");
+    cell.innerHTML = "";
+
+    if (value == null || value === "") {
+      const slot = document.createElement("span");
+      slot.className = "drop-slot";
+      slot.textContent = t("puzzleDropHere");
+      cell.appendChild(slot);
+      return;
+    }
+
+    cell.classList.add("is-filled");
+    const chip = document.createElement("span");
+    chip.className = "drop-chip";
+    chip.draggable = !taskComplete;
+    chip.textContent = displayFieldValue(field, value);
+    chip.title = t("puzzleDragBackHint");
+    chip.addEventListener("dragstart", (e) => {
+      if (taskComplete) {
+        e.preventDefault();
+        return;
+      }
+      dragPayload = {
+        source: "trace",
+        field,
+        value: String(value),
+        stepNumber,
+      };
+      chip.classList.add("is-dragging");
+      e.dataTransfer.setData(
+        "application/x-trace-puzzle",
+        JSON.stringify(dragPayload)
+      );
+      e.dataTransfer.effectAllowed = "move";
+    });
+    chip.addEventListener("dragend", () => {
+      chip.classList.remove("is-dragging");
+      dragPayload = null;
+      clearDragOverMarks();
+    });
+    cell.appendChild(chip);
+
+    const correct = String(value) === String(expectedAnswer(stepNumber, field));
+    cell.classList.add(correct ? "is-correct" : "is-wrong");
+  }
+
+  function clearDragOverMarks() {
+    document
+      .querySelectorAll(".drop-target.drag-over, .puzzle-panel.drag-over-return")
+      .forEach((el) => el.classList.remove("drag-over", "drag-over-return"));
+  }
+
+  function refreshFilledCells() {
+    blankRows().forEach((row) => {
+      missingFields(row).forEach((field) => updateDropCell(row.step, field));
+    });
+
+    const banner = document.getElementById("puzzle-banner");
+    if (banner) {
+      banner.hidden = isSolved();
+    }
+
+    const anyFilled = Object.keys(filled).some((step) => {
+      const rowFill = filled[step];
+      return (
+        rowFill &&
+        Object.keys(rowFill).some((k) => rowFill[k] != null && rowFill[k] !== "")
+      );
+    });
+
+    if (isSolved()) {
+      setStatus(t("puzzleSolved"), "ok");
+    } else if (pendingGateStep != null && !isRowSolved(pendingGateStep)) {
+      setStatus(t("puzzleBlocked"), "warn");
+    } else if (anyFilled) {
+      setStatus(t("puzzlePartial"), "warn");
+    } else {
+      setStatus("", null);
+    }
+
+    releaseGateIfReady();
+  }
+
+  function renderTraceTable() {
+    const body = document.getElementById("trace-body");
+    const empty = document.getElementById("trace-empty");
+    if (!body) return;
+
+    if (empty) empty.classList.add("hidden");
+    body.innerHTML = "";
+
+    const arrText = formatArray(INSTANCE.array);
+
+    INSTANCE.rows.forEach((row) => {
+      const tr = document.createElement("tr");
+      tr.dataset.stepId = row.stepId;
+      tr.dataset.puzzleStep = String(row.step);
+      if (row.result != null) tr.dataset.result = String(row.result);
+      if (row.missing) tr.classList.add("puzzle-missing");
+
+      const cells = [
+        { text: String(row.step), field: null },
+        {
+          text:
+            row.missing && row.missing.stepId ? null : stepLabel(row.stepId),
+          field: row.missing && row.missing.stepId ? "stepId" : null,
+          stepId: row.stepId,
+        },
+        { text: arrText, field: null },
+      ];
+
+      varFields().forEach((field) => {
+        const blank = !!(row.missing && row.missing[field]);
+        let text;
+        if (blank) {
+          text = null;
+        } else if (field === "result") {
+          text = formatResult(row.result);
+        } else if (row[field] == null) {
+          text = "—";
+        } else {
+          text = String(row[field]);
+        }
+        cells.push({ text, field: blank ? field : null });
+      });
+
+      cells.forEach((spec) => {
+        const td = document.createElement("td");
+        if (spec.field) {
+          td.dataset.dropField = spec.field;
+          td.className = "drop-target";
+          td.setAttribute("aria-label", t("puzzleDropHere"));
+          bindDropTarget(td, row.step, spec.field);
+        } else {
+          td.textContent = spec.text;
+        }
+        tr.appendChild(td);
+      });
+
+      body.appendChild(tr);
+    });
+
+    refreshFilledCells();
+  }
+
+  function markActiveStep(stepNumber) {
+    const body = document.getElementById("trace-body");
+    if (!body) return;
+    body.querySelectorAll("tr.latest").forEach((r) => r.classList.remove("latest"));
+    const tr = body.querySelector(`tr[data-puzzle-step="${stepNumber}"]`);
+    if (!tr) return;
+    tr.classList.add("latest", "is-reached");
+
+    const row = INSTANCE.rows.find((r) => r.step === stepNumber);
+    if (row && row.missing && isBlankRowCorrect(stepNumber)) {
+      if (!validatedSteps.has(stepNumber)) {
+        validatedSteps.add(stepNumber);
+        updateStats();
+      }
+      tr.classList.remove("is-wrong-row");
+      tr.classList.add("is-validated");
+      tr.classList.remove("is-validating");
+      void tr.offsetWidth;
+      tr.classList.add("is-validating");
+    }
+
+    tr.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }
+
+  function clearValidationMarks() {
+    validatedSteps = new Set();
+    const body = document.getElementById("trace-body");
+    if (body) {
+      body
+        .querySelectorAll("tr.is-validated, tr.is-validating, tr.is-wrong-row")
+        .forEach((r) => {
+          r.classList.remove("is-validated", "is-validating", "is-wrong-row");
+        });
+    }
+    updateStats();
+  }
+
+  function onRunFinished(success) {
+    if (taskComplete) return;
+    if (!success) return;
+    if (validatedSteps.size < totalBlankRows()) return;
+    if (!isSolved()) return;
+    setTaskComplete(true);
+    const exec = executorApi();
+    if (exec && exec.setButtons) exec.setButtons();
+  }
+
+  function availableSections() {
+    const sections = [];
+    blankFieldList().forEach((field) => {
+      if (INSTANCE.pieces[field] && INSTANCE.pieces[field].length) {
+        sections.push(field);
+      }
+    });
+    return sections;
+  }
+
+  function ensureSectionButtons() {
+    const host = document.querySelector(".puzzle-sections");
+    if (!host) return;
+    const wanted = blankFieldList();
+    const existing = new Set(
+      Array.from(host.querySelectorAll(".puzzle-section-btn")).map(
+        (btn) => btn.dataset.section
+      )
+    );
+    wanted.forEach((field) => {
+      if (existing.has(field)) return;
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "puzzle-section-btn";
+      btn.dataset.section = field;
+      btn.setAttribute("role", "tab");
+      btn.setAttribute("aria-selected", "false");
+      btn.textContent = sectionLabel(field);
+      btn.addEventListener("click", () => {
+        activeSection = field;
+        refreshSectionTabs();
+        renderChips();
+      });
+      host.appendChild(btn);
+    });
+  }
+
+  function refreshLanguage() {
+    renderChips();
+    refreshSectionTabs();
+    refreshFilledCells();
+
+    const body = document.getElementById("trace-body");
+    if (!body || !window.I18n) return;
+    const hasResultField = varFields().indexOf("result") >= 0;
+    const resultOffset = hasResultField ? 3 + varFields().indexOf("result") : -1;
+    body.querySelectorAll("tr[data-step-id]").forEach((tr) => {
+      const stepId = tr.dataset.stepId;
+      const cells = tr.children;
+      if (!cells || cells.length < 2) return;
+      const lineTd = cells[1];
+      if (lineTd.dataset.dropField === "stepId") {
+        updateDropCell(Number(tr.dataset.puzzleStep), "stepId");
+      } else {
+        lineTd.textContent = window.I18n.stepLabel(stepId);
+      }
+      if (hasResultField && resultOffset >= 0 && cells[resultOffset]) {
+        const resultTd = cells[resultOffset];
+        if (resultTd.dataset.dropField === "result") {
+          updateDropCell(Number(tr.dataset.puzzleStep), "result");
+        } else if (tr.dataset.result != null) {
+          resultTd.textContent = formatResult(tr.dataset.result);
+        }
+      }
+    });
+
+    const title = document.getElementById("puzzle-panel-title");
+    if (title) title.textContent = t("puzzlePanelTitle");
+    const hint = document.getElementById("puzzle-panel-hint");
+    if (hint) hint.textContent = t("puzzlePanelHint");
+    const openBtn = document.getElementById("btn-puzzle-palette");
+    if (openBtn) openBtn.textContent = t("puzzleOpenPalette");
+    const resetBtn = document.getElementById("btn-puzzle-reset-pieces");
+    if (resetBtn) resetBtn.textContent = t("puzzleResetPieces");
+    const badge = document.getElementById("puzzle-complete-badge");
+    if (badge && !badge.hidden) badge.textContent = t("puzzleComplete");
+    const banner = document.getElementById("puzzle-banner");
+    if (banner && !banner.hidden) {
+      banner.textContent = t("puzzleBanner");
+    }
+    updateStats();
+  }
+
+  function refreshSectionTabs() {
+    ensureSectionButtons();
+    const sections = availableSections();
+    if (!sections.includes(activeSection)) {
+      activeSection = sections[0] || "stepId";
+    }
+    document.querySelectorAll(".puzzle-section-btn").forEach((btn) => {
+      const section = btn.dataset.section;
+      const available = sections.includes(section);
+      btn.hidden = !available;
+      if (!available) return;
+      const active = section === activeSection;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-selected", active ? "true" : "false");
+      btn.textContent = sectionLabel(section);
+    });
+  }
+
+  function shuffleInPlace(list) {
+    for (let i = list.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = list[i];
+      list[i] = list[j];
+      list[j] = tmp;
+    }
+    return list;
+  }
+
+  function renderChips() {
+    const host = document.getElementById("puzzle-chips");
+    if (!host) return;
+    host.innerHTML = "";
+
+    const field = activeSection;
+    const pieces = availablePieces[field] || [];
+    // Shuffle the selected column so piece order is not the trace order.
+    shuffleInPlace(pieces);
+    pieces.forEach((piece) => {
+      const label = displayFieldValue(field, piece.value);
+      host.appendChild(makeChip(field, piece.value, label, piece.id));
+    });
+  }
+
+  function makeChip(field, value, label, pieceId) {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "puzzle-chip";
+    chip.draggable = true;
+    chip.dataset.field = field;
+    chip.dataset.value = value;
+    if (pieceId != null) chip.dataset.pieceId = String(pieceId);
+    chip.textContent = label;
+    chip.title = t("puzzleDragHint");
+
+    chip.addEventListener("dragstart", (e) => {
+      dragPayload = { source: "panel", field, value, pieceId };
+      chip.classList.add("is-dragging");
+      e.dataTransfer.setData(
+        "application/x-trace-puzzle",
+        JSON.stringify(dragPayload)
+      );
+      e.dataTransfer.effectAllowed = "move";
+    });
+    chip.addEventListener("dragend", () => {
+      chip.classList.remove("is-dragging");
+      dragPayload = null;
+      clearDragOverMarks();
+    });
+
+    return chip;
+  }
+
+  function readDragPayload(e) {
+    let payload = dragPayload;
+    try {
+      const raw = e.dataTransfer.getData("application/x-trace-puzzle");
+      if (raw) payload = JSON.parse(raw);
+    } catch (_) {
+      /* keep dragPayload */
+    }
+    return payload;
+  }
+
+  function bindDropTarget(td, stepNumber, field) {
+    td.addEventListener("dragover", (e) => {
+      if (!dragPayload || dragPayload.field !== field) return;
+      if (
+        dragPayload.source === "trace" &&
+        dragPayload.stepNumber === stepNumber
+      ) {
+        return;
+      }
+      e.preventDefault();
+      e.dataTransfer.dropEffect = "move";
+      td.classList.add("drag-over");
+    });
+    td.addEventListener("dragleave", () => {
+      td.classList.remove("drag-over");
+    });
+    td.addEventListener("drop", (e) => {
+      e.preventDefault();
+      td.classList.remove("drag-over");
+      const payload = readDragPayload(e);
+      if (!payload || payload.field !== field) {
+        setStatus(t("puzzleWrongColumn"), "err");
+        return;
+      }
+      if (payload.source === "trace") {
+        moveFill(payload.stepNumber, stepNumber, field);
+        return;
+      }
+      applyFill(stepNumber, field, payload.value, payload.pieceId);
+    });
+  }
+
+  function bindPanelReturnZone() {
+    const panel = document.getElementById("puzzle-panel");
+    if (!panel) return;
+
+    panel.addEventListener("dragover", (e) => {
+      if (!dragPayload || dragPayload.source !== "trace") return;
+      e.preventDefault();
+      e.dataTransfer.dropEffect = "move";
+      panel.classList.add("drag-over-return");
+    });
+    panel.addEventListener("dragleave", (e) => {
+      if (panel.contains(e.relatedTarget)) return;
+      panel.classList.remove("drag-over-return");
+    });
+    panel.addEventListener("drop", (e) => {
+      panel.classList.remove("drag-over-return");
+      const payload = readDragPayload(e);
+      if (!payload || payload.source !== "trace") return;
+      e.preventDefault();
+      e.stopPropagation();
+      if (payload.field && availableSections().includes(payload.field)) {
+        activeSection = payload.field;
+        refreshSectionTabs();
+      }
+      clearFill(payload.stepNumber, payload.field);
+    });
+  }
+
+  function applyFill(stepNumber, field, value, pieceId) {
+    if (taskComplete) return;
+
+    const taken = takePiece(field, value, pieceId);
+    if (!taken) {
+      setStatus(t("puzzleWrongColumn"), "err");
+      renderChips();
+      return;
+    }
+
+    if (!filled[stepNumber]) filled[stepNumber] = {};
+    const previous = filled[stepNumber][field];
+    if (previous != null && previous !== "") {
+      returnPiece(field, previous);
+    }
+    filled[stepNumber][field] = String(taken.value);
+
+    syncValidationForStep(stepNumber);
+    renderChips();
+    refreshFilledCells();
+  }
+
+  function moveFill(fromStep, toStep, field) {
+    if (taskComplete) return;
+    if (fromStep == null || toStep == null || fromStep === toStep) return;
+
+    const value = getFill(fromStep, field);
+    if (value == null || value === "") return;
+
+    if (!filled[toStep]) filled[toStep] = {};
+    const previous = filled[toStep][field];
+    if (previous != null && previous !== "") {
+      returnPiece(field, previous);
+    }
+
+    delete filled[fromStep][field];
+    if (Object.keys(filled[fromStep]).length === 0) {
+      delete filled[fromStep];
+    }
+    filled[toStep][field] = String(value);
+
+    syncValidationForStep(fromStep);
+    syncValidationForStep(toStep);
+    renderChips();
+    refreshFilledCells();
+  }
+
+  function clearFill(stepNumber, field) {
+    if (taskComplete) return;
+    if (!filled[stepNumber]) return;
+    const previous = filled[stepNumber][field];
+    if (previous == null || previous === "") return;
+
+    returnPiece(field, previous);
+    delete filled[stepNumber][field];
+    if (Object.keys(filled[stepNumber]).length === 0) {
+      delete filled[stepNumber];
+    }
+
+    syncValidationForStep(stepNumber);
+    renderChips();
+    refreshFilledCells();
+  }
+
+  function clearFills() {
+    if (taskComplete) return;
+    filled = {};
+    resetAvailablePieces();
+    clearValidationMarks();
+    renderChips();
+    refreshFilledCells();
+    setStatus("", null);
+  }
+
+  function openPanel() {
+    const panel = document.getElementById("puzzle-panel");
+    if (!panel) return;
+    panel.hidden = false;
+    panelOpen = true;
+    const btn = document.getElementById("btn-puzzle-palette");
+    if (btn) btn.setAttribute("aria-expanded", "true");
+  }
+
+  function closePanel() {
+    const panel = document.getElementById("puzzle-panel");
+    if (!panel) return;
+    panel.hidden = true;
+    panelOpen = false;
+    const btn = document.getElementById("btn-puzzle-palette");
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  }
+
+  function togglePanel() {
+    if (panelOpen) closePanel();
+    else openPanel();
+  }
+
+  function bindPanelDrag() {
+    const panel = document.getElementById("puzzle-panel");
+    const handle = document.getElementById("puzzle-panel-handle");
+    if (!panel || !handle) return;
+
+    let dragging = false;
+    let ox = 0;
+    let oy = 0;
+
+    handle.addEventListener("pointerdown", (e) => {
+      if (e.button !== 0) return;
+      dragging = true;
+      const rect = panel.getBoundingClientRect();
+      ox = e.clientX - rect.left;
+      oy = e.clientY - rect.top;
+      handle.setPointerCapture(e.pointerId);
+      panel.classList.add("is-dragging-panel");
+      e.preventDefault();
+    });
+
+    handle.addEventListener("pointermove", (e) => {
+      if (!dragging) return;
+      const x = Math.min(
+        window.innerWidth - 80,
+        Math.max(8, e.clientX - ox)
+      );
+      const y = Math.min(
+        window.innerHeight - 80,
+        Math.max(8, e.clientY - oy)
+      );
+      panel.style.left = x + "px";
+      panel.style.top = y + "px";
+      panel.style.right = "auto";
+      panel.style.bottom = "auto";
+    });
+
+    function endDrag(e) {
+      if (!dragging) return;
+      dragging = false;
+      panel.classList.remove("is-dragging-panel");
+      try {
+        handle.releasePointerCapture(e.pointerId);
+      } catch (_) {
+        /* ignore */
+      }
+    }
+
+    handle.addEventListener("pointerup", endDrag);
+    handle.addEventListener("pointercancel", endDrag);
+  }
+
+  function bindUi() {
+    const openBtn = document.getElementById("btn-puzzle-palette");
+    if (openBtn) {
+      openBtn.addEventListener("click", () => togglePanel());
+    }
+    const closeBtn = document.getElementById("btn-puzzle-close");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => closePanel());
+    }
+    const resetBtn = document.getElementById("btn-puzzle-reset-pieces");
+    if (resetBtn) {
+      resetBtn.addEventListener("click", () => clearFills());
+    }
+    document.querySelectorAll(".puzzle-section-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        activeSection = btn.dataset.section || "stepId";
+        refreshSectionTabs();
+        renderChips();
+      });
+    });
+    bindPanelDrag();
+    bindPanelReturnZone();
+  }
+
+  function prepareRun(options) {
+    if (taskComplete && !(options && options.force)) return;
+    clearAwaitingFillMarks();
+    const body = document.getElementById("trace-body");
+    if (body) {
+      body
+        .querySelectorAll(
+          "tr.latest, tr.is-reached, tr.is-validated, tr.is-validating, tr.is-awaiting-fill"
+        )
+        .forEach((r) => {
+          r.classList.remove(
+            "latest",
+            "is-reached",
+            "is-validated",
+            "is-validating",
+            "is-awaiting-fill",
+            "is-wrong-row"
+          );
+        });
+    }
+    validatedSteps = new Set();
+    updateStats();
+    renderTraceTable();
+    const banner = document.getElementById("puzzle-banner");
+    if (banner) {
+      banner.hidden = isSolved();
+      if (!banner.hidden) banner.textContent = t("puzzleBanner");
+    }
+  }
+
+  function reset() {
+    setTaskComplete(false);
+    pendingGateStep = null;
+    clearAwaitingFillMarks();
+    clearFills();
+    clearValidationMarks();
+    renderTraceTable();
+    updateStats();
+    const banner = document.getElementById("puzzle-banner");
+    if (banner) {
+      banner.hidden = false;
+      banner.textContent = t("puzzleBanner");
+    }
+  }
+
+  function init() {
+    resetAvailablePieces();
+    bindUi();
+    reset();
+    refreshSectionTabs();
+    renderChips();
+    closePanel();
+    updateStats();
+  }
+
+  function shouldGate(nextStepNumber) {
+    const row = INSTANCE.rows.find((r) => r.step === nextStepNumber);
+    if (!row || !row.missing) return false;
+    if (isRowSolved(nextStepNumber)) return false;
+    pendingGateStep = nextStepNumber;
+    return true;
+  }
+
+  return {
+    INSTANCE,
+    init,
+    reset,
+    prepareRun,
+    renderTraceTable,
+    refreshLanguage,
+    markActiveStep,
+    awaitGate,
+    abortGate,
+    shouldGate,
+    isSolved,
+    isTaskComplete,
+    onRunFinished,
+    openPanel,
+    getInstance() {
+      return INSTANCE;
+    },
+  };
+})();

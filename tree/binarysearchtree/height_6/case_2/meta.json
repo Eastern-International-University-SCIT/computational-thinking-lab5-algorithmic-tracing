@@ -1,0 +1,23 @@
+{
+  "height": 6,
+  "case": 2,
+  "label": "unbalanced right",
+  "sequence": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700
+  ],
+  "treeHeight": 6,
+  "balanced": false,
+  "totalRows": 149,
+  "pickedRows": 37,
+  "blankFields": [
+    "stepId"
+  ],
+  "pickRatio": 0.25,
+  "skipFirstRatio": 0.3
+}

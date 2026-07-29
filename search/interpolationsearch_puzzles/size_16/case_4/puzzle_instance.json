@@ -1,0 +1,158 @@
+{
+  "array": [
+    2,
+    5,
+    8,
+    10,
+    40,
+    42,
+    45,
+    80,
+    85,
+    90,
+    150,
+    160,
+    170,
+    300,
+    310,
+    500
+  ],
+  "key": 507,
+  "varFields": [
+    "low",
+    "pos",
+    "high",
+    "result"
+  ],
+  "blankFields": [
+    "stepId",
+    "low",
+    "high",
+    "result"
+  ],
+  "executorGlobal": "InterpolationSearchExecutor",
+  "pickedSteps": [
+    3,
+    4
+  ],
+  "answers": {
+    "3": {
+      "stepId": "setHigh",
+      "low": "0",
+      "high": "15",
+      "result": "—"
+    },
+    "4": {
+      "stepId": "whileLoop",
+      "low": "0",
+      "high": "15",
+      "result": "—"
+    }
+  },
+  "pieces": {
+    "stepId": [
+      {
+        "id": 1,
+        "value": "setHigh"
+      },
+      {
+        "id": 5,
+        "value": "whileLoop"
+      }
+    ],
+    "low": [
+      {
+        "id": 2,
+        "value": "0"
+      },
+      {
+        "id": 6,
+        "value": "0"
+      }
+    ],
+    "high": [
+      {
+        "id": 3,
+        "value": "15"
+      },
+      {
+        "id": 7,
+        "value": "15"
+      }
+    ],
+    "result": [
+      {
+        "id": 4,
+        "value": "—"
+      },
+      {
+        "id": 8,
+        "value": "—"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "step": 1,
+      "stepId": "mainCall",
+      "n": 16,
+      "key": 507,
+      "low": null,
+      "pos": null,
+      "high": null,
+      "result": null
+    },
+    {
+      "step": 2,
+      "stepId": "setLow",
+      "n": 16,
+      "key": 507,
+      "low": 0,
+      "pos": null,
+      "high": null,
+      "result": null
+    },
+    {
+      "step": 3,
+      "stepId": "setHigh",
+      "n": 16,
+      "key": 507,
+      "low": 0,
+      "pos": null,
+      "high": 15,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 4,
+      "stepId": "whileLoop",
+      "n": 16,
+      "key": 507,
+      "low": 0,
+      "pos": null,
+      "high": 15,
+      "result": null,
+      "missing": {
+        "stepId": true,
+        "low": true,
+        "high": true,
+        "result": true
+      }
+    },
+    {
+      "step": 5,
+      "stepId": "returnMiss",
+      "n": 16,
+      "key": 507,
+      "low": 0,
+      "pos": null,
+      "high": 15,
+      "result": "NOT_FOUND"
+    }
+  ]
+}

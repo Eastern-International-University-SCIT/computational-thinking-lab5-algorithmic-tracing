@@ -1,0 +1,4572 @@
+{
+  "array": [
+    969,
+    770,
+    266,
+    12,
+    860,
+    855,
+    843,
+    222
+  ],
+  "varFields": [
+    "left",
+    "mid",
+    "right",
+    "i",
+    "j",
+    "k"
+  ],
+  "blankFields": [
+    "stepId",
+    "left",
+    "mid",
+    "right",
+    "i",
+    "j",
+    "k"
+  ],
+  "executorGlobal": "MergeSortExecutor",
+  "pickedSteps": [
+    8,
+    9,
+    13,
+    16,
+    20,
+    24,
+    26,
+    28,
+    41,
+    44,
+    51,
+    52,
+    59,
+    62,
+    63,
+    67,
+    68,
+    69,
+    70,
+    72,
+    74,
+    76,
+    77,
+    78,
+    79,
+    86,
+    98,
+    102,
+    104,
+    105,
+    106,
+    110,
+    111,
+    115,
+    118,
+    120,
+    121,
+    124,
+    125,
+    126
+  ],
+  "answers": {
+    "8": {
+      "stepId": "setMid",
+      "left": "0",
+      "mid": "1",
+      "right": "3",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "9": {
+      "stepId": "sortLeft",
+      "left": "0",
+      "mid": "1",
+      "right": "3",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "13": {
+      "stepId": "sortLeft",
+      "left": "0",
+      "mid": "0",
+      "right": "1",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "16": {
+      "stepId": "sortRight",
+      "left": "0",
+      "mid": "0",
+      "right": "1",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "20": {
+      "stepId": "copyRuns",
+      "left": "0",
+      "mid": "0",
+      "right": "1",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "24": {
+      "stepId": "takeRight",
+      "left": "0",
+      "mid": "0",
+      "right": "1",
+      "i": "0",
+      "j": "0",
+      "k": "0"
+    },
+    "26": {
+      "stepId": "drainLeft",
+      "left": "0",
+      "mid": "0",
+      "right": "1",
+      "i": "0",
+      "j": "—",
+      "k": "1"
+    },
+    "28": {
+      "stepId": "markRange",
+      "left": "2",
+      "mid": "—",
+      "right": "3",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "41": {
+      "stepId": "compareMerge",
+      "left": "2",
+      "mid": "2",
+      "right": "3",
+      "i": "0",
+      "j": "0",
+      "k": "2"
+    },
+    "44": {
+      "stepId": "drainLeft",
+      "left": "2",
+      "mid": "2",
+      "right": "3",
+      "i": "0",
+      "j": "—",
+      "k": "3"
+    },
+    "51": {
+      "stepId": "incK",
+      "left": "0",
+      "mid": "1",
+      "right": "3",
+      "i": "0",
+      "j": "1",
+      "k": "1"
+    },
+    "52": {
+      "stepId": "compareMerge",
+      "left": "0",
+      "mid": "1",
+      "right": "3",
+      "i": "0",
+      "j": "1",
+      "k": "1"
+    },
+    "59": {
+      "stepId": "setMid",
+      "left": "4",
+      "mid": "5",
+      "right": "7",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "62": {
+      "stepId": "checkLeftRight",
+      "left": "4",
+      "mid": "—",
+      "right": "5",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "63": {
+      "stepId": "setMid",
+      "left": "4",
+      "mid": "4",
+      "right": "5",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "67": {
+      "stepId": "sortRight",
+      "left": "4",
+      "mid": "4",
+      "right": "5",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "68": {
+      "stepId": "markRange",
+      "left": "5",
+      "mid": "—",
+      "right": "5",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "69": {
+      "stepId": "checkLeftRight",
+      "left": "5",
+      "mid": "—",
+      "right": "5",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "70": {
+      "stepId": "callMerge",
+      "left": "4",
+      "mid": "4",
+      "right": "5",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "72": {
+      "stepId": "initMergePointers",
+      "left": "4",
+      "mid": "4",
+      "right": "5",
+      "i": "0",
+      "j": "0",
+      "k": "4"
+    },
+    "74": {
+      "stepId": "compareMerge",
+      "left": "4",
+      "mid": "4",
+      "right": "5",
+      "i": "0",
+      "j": "0",
+      "k": "4"
+    },
+    "76": {
+      "stepId": "incK",
+      "left": "4",
+      "mid": "4",
+      "right": "5",
+      "i": "0",
+      "j": "—",
+      "k": "5"
+    },
+    "77": {
+      "stepId": "drainLeft",
+      "left": "4",
+      "mid": "4",
+      "right": "5",
+      "i": "0",
+      "j": "—",
+      "k": "5"
+    },
+    "78": {
+      "stepId": "sortRight",
+      "left": "4",
+      "mid": "5",
+      "right": "7",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "79": {
+      "stepId": "markRange",
+      "left": "6",
+      "mid": "—",
+      "right": "7",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "86": {
+      "stepId": "markRange",
+      "left": "7",
+      "mid": "—",
+      "right": "7",
+      "i": "—",
+      "j": "—",
+      "k": "—"
+    },
+    "98": {
+      "stepId": "initMergePointers",
+      "left": "4",
+      "mid": "5",
+      "right": "7",
+      "i": "0",
+      "j": "0",
+      "k": "4"
+    },
+    "102": {
+      "stepId": "incK",
+      "left": "4",
+      "mid": "5",
+      "right": "7",
+      "i": "0",
+      "j": "1",
+      "k": "5"
+    },
+    "104": {
+      "stepId": "takeRight",
+      "left": "4",
+      "mid": "5",
+      "right": "7",
+      "i": "0",
+      "j": "1",
+      "k": "5"
+    },
+    "105": {
+      "stepId": "incK",
+      "left": "4",
+      "mid": "5",
+      "right": "7",
+      "i": "0",
+      "j": "—",
+      "k": "6"
+    },
+    "106": {
+      "stepId": "drainLeft",
+      "left": "4",
+      "mid": "5",
+      "right": "7",
+      "i": "0",
+      "j": "—",
+      "k": "6"
+    },
+    "110": {
+      "stepId": "whileBoth",
+      "left": "0",
+      "mid": "3",
+      "right": "7",
+      "i": "0",
+      "j": "0",
+      "k": "0"
+    },
+    "111": {
+      "stepId": "compareMerge",
+      "left": "0",
+      "mid": "3",
+      "right": "7",
+      "i": "0",
+      "j": "0",
+      "k": "0"
+    },
+    "115": {
+      "stepId": "takeRight",
+      "left": "0",
+      "mid": "3",
+      "right": "7",
+      "i": "1",
+      "j": "0",
+      "k": "1"
+    },
+    "118": {
+      "stepId": "takeLeft",
+      "left": "0",
+      "mid": "3",
+      "right": "7",
+      "i": "1",
+      "j": "1",
+      "k": "2"
+    },
+    "120": {
+      "stepId": "compareMerge",
+      "left": "0",
+      "mid": "3",
+      "right": "7",
+      "i": "2",
+      "j": "1",
+      "k": "3"
+    },
+    "121": {
+      "stepId": "takeLeft",
+      "left": "0",
+      "mid": "3",
+      "right": "7",
+      "i": "2",
+      "j": "1",
+      "k": "3"
+    },
+    "124": {
+      "stepId": "takeRight",
+      "left": "0",
+      "mid": "3",
+      "right": "7",
+      "i": "3",
+      "j": "1",
+      "k": "4"
+    },
+    "125": {
+      "stepId": "incK",
+      "left": "0",
+      "mid": "3",
+      "right": "7",
+      "i": "3",
+      "j": "2",
+      "k": "5"
+    },
+    "126": {
+      "stepId": "compareMerge",
+      "left": "0",
+      "mid": "3",
+      "right": "7",
+      "i": "3",
+      "j": "2",
+      "k": "5"
+    }
+  },
+  "pieces": {
+    "stepId": [
+      {
+        "id": 155,
+        "value": "drainLeft"
+      },
+      {
+        "id": 134,
+        "value": "initMergePointers"
+      },
+      {
+        "id": 57,
+        "value": "compareMerge"
+      },
+      {
+        "id": 8,
+        "value": "sortLeft"
+      },
+      {
+        "id": 78,
+        "value": "compareMerge"
+      },
+      {
+        "id": 162,
+        "value": "sortRight"
+      },
+      {
+        "id": 15,
+        "value": "sortLeft"
+      },
+      {
+        "id": 225,
+        "value": "compareMerge"
+      },
+      {
+        "id": 127,
+        "value": "callMerge"
+      },
+      {
+        "id": 253,
+        "value": "takeLeft"
+      },
+      {
+        "id": 106,
+        "value": "sortRight"
+      },
+      {
+        "id": 148,
+        "value": "incK"
+      },
+      {
+        "id": 246,
+        "value": "compareMerge"
+      },
+      {
+        "id": 218,
+        "value": "whileBoth"
+      },
+      {
+        "id": 232,
+        "value": "takeRight"
+      },
+      {
+        "id": 64,
+        "value": "drainLeft"
+      },
+      {
+        "id": 239,
+        "value": "takeLeft"
+      },
+      {
+        "id": 92,
+        "value": "checkLeftRight"
+      },
+      {
+        "id": 43,
+        "value": "drainLeft"
+      },
+      {
+        "id": 211,
+        "value": "drainLeft"
+      },
+      {
+        "id": 22,
+        "value": "sortRight"
+      },
+      {
+        "id": 267,
+        "value": "incK"
+      },
+      {
+        "id": 169,
+        "value": "markRange"
+      },
+      {
+        "id": 176,
+        "value": "markRange"
+      },
+      {
+        "id": 50,
+        "value": "markRange"
+      },
+      {
+        "id": 99,
+        "value": "setMid"
+      },
+      {
+        "id": 260,
+        "value": "takeRight"
+      },
+      {
+        "id": 197,
+        "value": "takeRight"
+      },
+      {
+        "id": 29,
+        "value": "copyRuns"
+      },
+      {
+        "id": 71,
+        "value": "incK"
+      },
+      {
+        "id": 36,
+        "value": "takeRight"
+      },
+      {
+        "id": 190,
+        "value": "incK"
+      },
+      {
+        "id": 1,
+        "value": "setMid"
+      },
+      {
+        "id": 183,
+        "value": "initMergePointers"
+      },
+      {
+        "id": 120,
+        "value": "checkLeftRight"
+      },
+      {
+        "id": 204,
+        "value": "incK"
+      },
+      {
+        "id": 85,
+        "value": "setMid"
+      },
+      {
+        "id": 113,
+        "value": "markRange"
+      },
+      {
+        "id": 274,
+        "value": "compareMerge"
+      },
+      {
+        "id": 141,
+        "value": "compareMerge"
+      }
+    ],
+    "left": [
+      {
+        "id": 44,
+        "value": "0"
+      },
+      {
+        "id": 135,
+        "value": "4"
+      },
+      {
+        "id": 254,
+        "value": "0"
+      },
+      {
+        "id": 37,
+        "value": "0"
+      },
+      {
+        "id": 107,
+        "value": "4"
+      },
+      {
+        "id": 184,
+        "value": "4"
+      },
+      {
+        "id": 268,
+        "value": "0"
+      },
+      {
+        "id": 170,
+        "value": "6"
+      },
+      {
+        "id": 100,
+        "value": "4"
+      },
+      {
+        "id": 191,
+        "value": "4"
+      },
+      {
+        "id": 9,
+        "value": "0"
+      },
+      {
+        "id": 58,
+        "value": "2"
+      },
+      {
+        "id": 30,
+        "value": "0"
+      },
+      {
+        "id": 23,
+        "value": "0"
+      },
+      {
+        "id": 128,
+        "value": "4"
+      },
+      {
+        "id": 205,
+        "value": "4"
+      },
+      {
+        "id": 65,
+        "value": "2"
+      },
+      {
+        "id": 114,
+        "value": "5"
+      },
+      {
+        "id": 79,
+        "value": "0"
+      },
+      {
+        "id": 233,
+        "value": "0"
+      },
+      {
+        "id": 212,
+        "value": "4"
+      },
+      {
+        "id": 275,
+        "value": "0"
+      },
+      {
+        "id": 72,
+        "value": "0"
+      },
+      {
+        "id": 261,
+        "value": "0"
+      },
+      {
+        "id": 177,
+        "value": "7"
+      },
+      {
+        "id": 240,
+        "value": "0"
+      },
+      {
+        "id": 86,
+        "value": "4"
+      },
+      {
+        "id": 142,
+        "value": "4"
+      },
+      {
+        "id": 198,
+        "value": "4"
+      },
+      {
+        "id": 121,
+        "value": "5"
+      },
+      {
+        "id": 226,
+        "value": "0"
+      },
+      {
+        "id": 163,
+        "value": "4"
+      },
+      {
+        "id": 149,
+        "value": "4"
+      },
+      {
+        "id": 2,
+        "value": "0"
+      },
+      {
+        "id": 156,
+        "value": "4"
+      },
+      {
+        "id": 219,
+        "value": "0"
+      },
+      {
+        "id": 93,
+        "value": "4"
+      },
+      {
+        "id": 247,
+        "value": "0"
+      },
+      {
+        "id": 16,
+        "value": "0"
+      },
+      {
+        "id": 51,
+        "value": "2"
+      }
+    ],
+    "mid": [
+      {
+        "id": 227,
+        "value": "3"
+      },
+      {
+        "id": 108,
+        "value": "4"
+      },
+      {
+        "id": 192,
+        "value": "5"
+      },
+      {
+        "id": 3,
+        "value": "1"
+      },
+      {
+        "id": 87,
+        "value": "5"
+      },
+      {
+        "id": 101,
+        "value": "4"
+      },
+      {
+        "id": 10,
+        "value": "1"
+      },
+      {
+        "id": 241,
+        "value": "3"
+      },
+      {
+        "id": 157,
+        "value": "4"
+      },
+      {
+        "id": 185,
+        "value": "5"
+      },
+      {
+        "id": 234,
+        "value": "3"
+      },
+      {
+        "id": 255,
+        "value": "3"
+      },
+      {
+        "id": 164,
+        "value": "5"
+      },
+      {
+        "id": 220,
+        "value": "3"
+      },
+      {
+        "id": 143,
+        "value": "4"
+      },
+      {
+        "id": 199,
+        "value": "5"
+      },
+      {
+        "id": 31,
+        "value": "0"
+      },
+      {
+        "id": 17,
+        "value": "0"
+      },
+      {
+        "id": 262,
+        "value": "3"
+      },
+      {
+        "id": 150,
+        "value": "4"
+      },
+      {
+        "id": 171,
+        "value": "—"
+      },
+      {
+        "id": 269,
+        "value": "3"
+      },
+      {
+        "id": 38,
+        "value": "0"
+      },
+      {
+        "id": 45,
+        "value": "0"
+      },
+      {
+        "id": 52,
+        "value": "—"
+      },
+      {
+        "id": 122,
+        "value": "—"
+      },
+      {
+        "id": 66,
+        "value": "2"
+      },
+      {
+        "id": 59,
+        "value": "2"
+      },
+      {
+        "id": 276,
+        "value": "3"
+      },
+      {
+        "id": 213,
+        "value": "5"
+      },
+      {
+        "id": 94,
+        "value": "—"
+      },
+      {
+        "id": 115,
+        "value": "—"
+      },
+      {
+        "id": 178,
+        "value": "—"
+      },
+      {
+        "id": 24,
+        "value": "0"
+      },
+      {
+        "id": 136,
+        "value": "4"
+      },
+      {
+        "id": 73,
+        "value": "1"
+      },
+      {
+        "id": 206,
+        "value": "5"
+      },
+      {
+        "id": 80,
+        "value": "1"
+      },
+      {
+        "id": 129,
+        "value": "4"
+      },
+      {
+        "id": 248,
+        "value": "3"
+      }
+    ],
+    "right": [
+      {
+        "id": 53,
+        "value": "3"
+      },
+      {
+        "id": 46,
+        "value": "1"
+      },
+      {
+        "id": 25,
+        "value": "1"
+      },
+      {
+        "id": 116,
+        "value": "5"
+      },
+      {
+        "id": 207,
+        "value": "7"
+      },
+      {
+        "id": 18,
+        "value": "1"
+      },
+      {
+        "id": 151,
+        "value": "5"
+      },
+      {
+        "id": 186,
+        "value": "7"
+      },
+      {
+        "id": 109,
+        "value": "5"
+      },
+      {
+        "id": 228,
+        "value": "7"
+      },
+      {
+        "id": 249,
+        "value": "7"
+      },
+      {
+        "id": 214,
+        "value": "7"
+      },
+      {
+        "id": 256,
+        "value": "7"
+      },
+      {
+        "id": 144,
+        "value": "5"
+      },
+      {
+        "id": 102,
+        "value": "5"
+      },
+      {
+        "id": 263,
+        "value": "7"
+      },
+      {
+        "id": 32,
+        "value": "1"
+      },
+      {
+        "id": 172,
+        "value": "7"
+      },
+      {
+        "id": 11,
+        "value": "3"
+      },
+      {
+        "id": 74,
+        "value": "3"
+      },
+      {
+        "id": 123,
+        "value": "5"
+      },
+      {
+        "id": 95,
+        "value": "5"
+      },
+      {
+        "id": 277,
+        "value": "7"
+      },
+      {
+        "id": 165,
+        "value": "7"
+      },
+      {
+        "id": 235,
+        "value": "7"
+      },
+      {
+        "id": 158,
+        "value": "5"
+      },
+      {
+        "id": 67,
+        "value": "3"
+      },
+      {
+        "id": 242,
+        "value": "7"
+      },
+      {
+        "id": 60,
+        "value": "3"
+      },
+      {
+        "id": 200,
+        "value": "7"
+      },
+      {
+        "id": 137,
+        "value": "5"
+      },
+      {
+        "id": 4,
+        "value": "3"
+      },
+      {
+        "id": 130,
+        "value": "5"
+      },
+      {
+        "id": 179,
+        "value": "7"
+      },
+      {
+        "id": 81,
+        "value": "3"
+      },
+      {
+        "id": 270,
+        "value": "7"
+      },
+      {
+        "id": 88,
+        "value": "7"
+      },
+      {
+        "id": 39,
+        "value": "1"
+      },
+      {
+        "id": 193,
+        "value": "7"
+      },
+      {
+        "id": 221,
+        "value": "7"
+      }
+    ],
+    "i": [
+      {
+        "id": 159,
+        "value": "0"
+      },
+      {
+        "id": 61,
+        "value": "0"
+      },
+      {
+        "id": 145,
+        "value": "0"
+      },
+      {
+        "id": 201,
+        "value": "0"
+      },
+      {
+        "id": 26,
+        "value": "—"
+      },
+      {
+        "id": 33,
+        "value": "—"
+      },
+      {
+        "id": 110,
+        "value": "—"
+      },
+      {
+        "id": 68,
+        "value": "0"
+      },
+      {
+        "id": 54,
+        "value": "—"
+      },
+      {
+        "id": 89,
+        "value": "—"
+      },
+      {
+        "id": 82,
+        "value": "0"
+      },
+      {
+        "id": 264,
+        "value": "3"
+      },
+      {
+        "id": 278,
+        "value": "3"
+      },
+      {
+        "id": 131,
+        "value": "—"
+      },
+      {
+        "id": 250,
+        "value": "2"
+      },
+      {
+        "id": 40,
+        "value": "0"
+      },
+      {
+        "id": 124,
+        "value": "—"
+      },
+      {
+        "id": 103,
+        "value": "—"
+      },
+      {
+        "id": 5,
+        "value": "—"
+      },
+      {
+        "id": 173,
+        "value": "—"
+      },
+      {
+        "id": 75,
+        "value": "0"
+      },
+      {
+        "id": 180,
+        "value": "—"
+      },
+      {
+        "id": 47,
+        "value": "0"
+      },
+      {
+        "id": 208,
+        "value": "0"
+      },
+      {
+        "id": 19,
+        "value": "—"
+      },
+      {
+        "id": 166,
+        "value": "—"
+      },
+      {
+        "id": 236,
+        "value": "1"
+      },
+      {
+        "id": 194,
+        "value": "0"
+      },
+      {
+        "id": 271,
+        "value": "3"
+      },
+      {
+        "id": 187,
+        "value": "0"
+      },
+      {
+        "id": 117,
+        "value": "—"
+      },
+      {
+        "id": 152,
+        "value": "0"
+      },
+      {
+        "id": 257,
+        "value": "2"
+      },
+      {
+        "id": 222,
+        "value": "0"
+      },
+      {
+        "id": 229,
+        "value": "0"
+      },
+      {
+        "id": 215,
+        "value": "0"
+      },
+      {
+        "id": 138,
+        "value": "0"
+      },
+      {
+        "id": 243,
+        "value": "1"
+      },
+      {
+        "id": 96,
+        "value": "—"
+      },
+      {
+        "id": 12,
+        "value": "—"
+      }
+    ],
+    "j": [
+      {
+        "id": 90,
+        "value": "—"
+      },
+      {
+        "id": 244,
+        "value": "1"
+      },
+      {
+        "id": 104,
+        "value": "—"
+      },
+      {
+        "id": 209,
+        "value": "—"
+      },
+      {
+        "id": 223,
+        "value": "0"
+      },
+      {
+        "id": 230,
+        "value": "0"
+      },
+      {
+        "id": 13,
+        "value": "—"
+      },
+      {
+        "id": 27,
+        "value": "—"
+      },
+      {
+        "id": 6,
+        "value": "—"
+      },
+      {
+        "id": 272,
+        "value": "2"
+      },
+      {
+        "id": 118,
+        "value": "—"
+      },
+      {
+        "id": 160,
+        "value": "—"
+      },
+      {
+        "id": 202,
+        "value": "1"
+      },
+      {
+        "id": 251,
+        "value": "1"
+      },
+      {
+        "id": 139,
+        "value": "0"
+      },
+      {
+        "id": 216,
+        "value": "—"
+      },
+      {
+        "id": 111,
+        "value": "—"
+      },
+      {
+        "id": 181,
+        "value": "—"
+      },
+      {
+        "id": 83,
+        "value": "1"
+      },
+      {
+        "id": 146,
+        "value": "0"
+      },
+      {
+        "id": 188,
+        "value": "0"
+      },
+      {
+        "id": 55,
+        "value": "—"
+      },
+      {
+        "id": 237,
+        "value": "0"
+      },
+      {
+        "id": 20,
+        "value": "—"
+      },
+      {
+        "id": 76,
+        "value": "1"
+      },
+      {
+        "id": 125,
+        "value": "—"
+      },
+      {
+        "id": 174,
+        "value": "—"
+      },
+      {
+        "id": 132,
+        "value": "—"
+      },
+      {
+        "id": 62,
+        "value": "0"
+      },
+      {
+        "id": 41,
+        "value": "0"
+      },
+      {
+        "id": 195,
+        "value": "1"
+      },
+      {
+        "id": 279,
+        "value": "2"
+      },
+      {
+        "id": 167,
+        "value": "—"
+      },
+      {
+        "id": 48,
+        "value": "—"
+      },
+      {
+        "id": 153,
+        "value": "—"
+      },
+      {
+        "id": 69,
+        "value": "—"
+      },
+      {
+        "id": 97,
+        "value": "—"
+      },
+      {
+        "id": 34,
+        "value": "—"
+      },
+      {
+        "id": 265,
+        "value": "1"
+      },
+      {
+        "id": 258,
+        "value": "1"
+      }
+    ],
+    "k": [
+      {
+        "id": 273,
+        "value": "5"
+      },
+      {
+        "id": 63,
+        "value": "2"
+      },
+      {
+        "id": 98,
+        "value": "—"
+      },
+      {
+        "id": 224,
+        "value": "0"
+      },
+      {
+        "id": 119,
+        "value": "—"
+      },
+      {
+        "id": 182,
+        "value": "—"
+      },
+      {
+        "id": 105,
+        "value": "—"
+      },
+      {
+        "id": 217,
+        "value": "6"
+      },
+      {
+        "id": 161,
+        "value": "5"
+      },
+      {
+        "id": 245,
+        "value": "2"
+      },
+      {
+        "id": 231,
+        "value": "0"
+      },
+      {
+        "id": 168,
+        "value": "—"
+      },
+      {
+        "id": 49,
+        "value": "1"
+      },
+      {
+        "id": 35,
+        "value": "—"
+      },
+      {
+        "id": 175,
+        "value": "—"
+      },
+      {
+        "id": 154,
+        "value": "5"
+      },
+      {
+        "id": 77,
+        "value": "1"
+      },
+      {
+        "id": 259,
+        "value": "3"
+      },
+      {
+        "id": 140,
+        "value": "4"
+      },
+      {
+        "id": 238,
+        "value": "1"
+      },
+      {
+        "id": 266,
+        "value": "4"
+      },
+      {
+        "id": 133,
+        "value": "—"
+      },
+      {
+        "id": 42,
+        "value": "0"
+      },
+      {
+        "id": 28,
+        "value": "—"
+      },
+      {
+        "id": 280,
+        "value": "5"
+      },
+      {
+        "id": 147,
+        "value": "4"
+      },
+      {
+        "id": 70,
+        "value": "3"
+      },
+      {
+        "id": 203,
+        "value": "5"
+      },
+      {
+        "id": 112,
+        "value": "—"
+      },
+      {
+        "id": 210,
+        "value": "6"
+      },
+      {
+        "id": 84,
+        "value": "1"
+      },
+      {
+        "id": 7,
+        "value": "—"
+      },
+      {
+        "id": 252,
+        "value": "3"
+      },
+      {
+        "id": 21,
+        "value": "—"
+      },
+      {
+        "id": 196,
+        "value": "5"
+      },
+      {
+        "id": 14,
+        "value": "—"
+      },
+      {
+        "id": 56,
+        "value": "—"
+      },
+      {
+        "id": 126,
+        "value": "—"
+      },
+      {
+        "id": 189,
+        "value": "4"
+      },
+      {
+        "id": 91,
+        "value": "—"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "step": 1,
+      "stepId": "mainCall",
+      "left": 0,
+      "mid": null,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 2,
+      "stepId": "markRange",
+      "left": 0,
+      "mid": null,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 3,
+      "stepId": "checkLeftRight",
+      "left": 0,
+      "mid": null,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 4,
+      "stepId": "setMid",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 5,
+      "stepId": "sortLeft",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 6,
+      "stepId": "markRange",
+      "left": 0,
+      "mid": null,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 7,
+      "stepId": "checkLeftRight",
+      "left": 0,
+      "mid": null,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 8,
+      "stepId": "setMid",
+      "left": 0,
+      "mid": 1,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 9,
+      "stepId": "sortLeft",
+      "left": 0,
+      "mid": 1,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 10,
+      "stepId": "markRange",
+      "left": 0,
+      "mid": null,
+      "right": 1,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 11,
+      "stepId": "checkLeftRight",
+      "left": 0,
+      "mid": null,
+      "right": 1,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 12,
+      "stepId": "setMid",
+      "left": 0,
+      "mid": 0,
+      "right": 1,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 13,
+      "stepId": "sortLeft",
+      "left": 0,
+      "mid": 0,
+      "right": 1,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 14,
+      "stepId": "markRange",
+      "left": 0,
+      "mid": null,
+      "right": 0,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 15,
+      "stepId": "checkLeftRight",
+      "left": 0,
+      "mid": null,
+      "right": 0,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 16,
+      "stepId": "sortRight",
+      "left": 0,
+      "mid": 0,
+      "right": 1,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 17,
+      "stepId": "markRange",
+      "left": 1,
+      "mid": null,
+      "right": 1,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 18,
+      "stepId": "checkLeftRight",
+      "left": 1,
+      "mid": null,
+      "right": 1,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 19,
+      "stepId": "callMerge",
+      "left": 0,
+      "mid": 0,
+      "right": 1,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 20,
+      "stepId": "copyRuns",
+      "left": 0,
+      "mid": 0,
+      "right": 1,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 21,
+      "stepId": "initMergePointers",
+      "left": 0,
+      "mid": 0,
+      "right": 1,
+      "i": 0,
+      "j": 0,
+      "k": 0,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 22,
+      "stepId": "whileBoth",
+      "left": 0,
+      "mid": 0,
+      "right": 1,
+      "i": 0,
+      "j": 0,
+      "k": 0,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 23,
+      "stepId": "compareMerge",
+      "left": 0,
+      "mid": 0,
+      "right": 1,
+      "i": 0,
+      "j": 0,
+      "k": 0,
+      "array": [
+        969,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 24,
+      "stepId": "takeRight",
+      "left": 0,
+      "mid": 0,
+      "right": 1,
+      "i": 0,
+      "j": 0,
+      "k": 0,
+      "array": [
+        770,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 25,
+      "stepId": "incK",
+      "left": 0,
+      "mid": 0,
+      "right": 1,
+      "i": 0,
+      "j": null,
+      "k": 1,
+      "array": [
+        770,
+        770,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 26,
+      "stepId": "drainLeft",
+      "left": 0,
+      "mid": 0,
+      "right": 1,
+      "i": 0,
+      "j": null,
+      "k": 1,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 27,
+      "stepId": "sortRight",
+      "left": 0,
+      "mid": 1,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 28,
+      "stepId": "markRange",
+      "left": 2,
+      "mid": null,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 29,
+      "stepId": "checkLeftRight",
+      "left": 2,
+      "mid": null,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 30,
+      "stepId": "setMid",
+      "left": 2,
+      "mid": 2,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 31,
+      "stepId": "sortLeft",
+      "left": 2,
+      "mid": 2,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 32,
+      "stepId": "markRange",
+      "left": 2,
+      "mid": null,
+      "right": 2,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 33,
+      "stepId": "checkLeftRight",
+      "left": 2,
+      "mid": null,
+      "right": 2,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 34,
+      "stepId": "sortRight",
+      "left": 2,
+      "mid": 2,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 35,
+      "stepId": "markRange",
+      "left": 3,
+      "mid": null,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 36,
+      "stepId": "checkLeftRight",
+      "left": 3,
+      "mid": null,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 37,
+      "stepId": "callMerge",
+      "left": 2,
+      "mid": 2,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 38,
+      "stepId": "copyRuns",
+      "left": 2,
+      "mid": 2,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 39,
+      "stepId": "initMergePointers",
+      "left": 2,
+      "mid": 2,
+      "right": 3,
+      "i": 0,
+      "j": 0,
+      "k": 2,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 40,
+      "stepId": "whileBoth",
+      "left": 2,
+      "mid": 2,
+      "right": 3,
+      "i": 0,
+      "j": 0,
+      "k": 2,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 41,
+      "stepId": "compareMerge",
+      "left": 2,
+      "mid": 2,
+      "right": 3,
+      "i": 0,
+      "j": 0,
+      "k": 2,
+      "array": [
+        770,
+        969,
+        266,
+        12,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 42,
+      "stepId": "takeRight",
+      "left": 2,
+      "mid": 2,
+      "right": 3,
+      "i": 0,
+      "j": 0,
+      "k": 2,
+      "array": [
+        770,
+        969,
+        12,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 43,
+      "stepId": "incK",
+      "left": 2,
+      "mid": 2,
+      "right": 3,
+      "i": 0,
+      "j": null,
+      "k": 3,
+      "array": [
+        770,
+        969,
+        12,
+        12,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 44,
+      "stepId": "drainLeft",
+      "left": 2,
+      "mid": 2,
+      "right": 3,
+      "i": 0,
+      "j": null,
+      "k": 3,
+      "array": [
+        770,
+        969,
+        12,
+        266,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 45,
+      "stepId": "callMerge",
+      "left": 0,
+      "mid": 1,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        770,
+        969,
+        12,
+        266,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 46,
+      "stepId": "copyRuns",
+      "left": 0,
+      "mid": 1,
+      "right": 3,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        770,
+        969,
+        12,
+        266,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 47,
+      "stepId": "initMergePointers",
+      "left": 0,
+      "mid": 1,
+      "right": 3,
+      "i": 0,
+      "j": 0,
+      "k": 0,
+      "array": [
+        770,
+        969,
+        12,
+        266,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 48,
+      "stepId": "whileBoth",
+      "left": 0,
+      "mid": 1,
+      "right": 3,
+      "i": 0,
+      "j": 0,
+      "k": 0,
+      "array": [
+        770,
+        969,
+        12,
+        266,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 49,
+      "stepId": "compareMerge",
+      "left": 0,
+      "mid": 1,
+      "right": 3,
+      "i": 0,
+      "j": 0,
+      "k": 0,
+      "array": [
+        770,
+        969,
+        12,
+        266,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 50,
+      "stepId": "takeRight",
+      "left": 0,
+      "mid": 1,
+      "right": 3,
+      "i": 0,
+      "j": 0,
+      "k": 0,
+      "array": [
+        12,
+        969,
+        12,
+        266,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 51,
+      "stepId": "incK",
+      "left": 0,
+      "mid": 1,
+      "right": 3,
+      "i": 0,
+      "j": 1,
+      "k": 1,
+      "array": [
+        12,
+        969,
+        12,
+        266,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 52,
+      "stepId": "compareMerge",
+      "left": 0,
+      "mid": 1,
+      "right": 3,
+      "i": 0,
+      "j": 1,
+      "k": 1,
+      "array": [
+        12,
+        969,
+        12,
+        266,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 53,
+      "stepId": "takeRight",
+      "left": 0,
+      "mid": 1,
+      "right": 3,
+      "i": 0,
+      "j": 1,
+      "k": 1,
+      "array": [
+        12,
+        266,
+        12,
+        266,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 54,
+      "stepId": "incK",
+      "left": 0,
+      "mid": 1,
+      "right": 3,
+      "i": 0,
+      "j": null,
+      "k": 2,
+      "array": [
+        12,
+        266,
+        12,
+        266,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 55,
+      "stepId": "drainLeft",
+      "left": 0,
+      "mid": 1,
+      "right": 3,
+      "i": 0,
+      "j": null,
+      "k": 2,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 56,
+      "stepId": "sortRight",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 57,
+      "stepId": "markRange",
+      "left": 4,
+      "mid": null,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 58,
+      "stepId": "checkLeftRight",
+      "left": 4,
+      "mid": null,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 59,
+      "stepId": "setMid",
+      "left": 4,
+      "mid": 5,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 60,
+      "stepId": "sortLeft",
+      "left": 4,
+      "mid": 5,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 61,
+      "stepId": "markRange",
+      "left": 4,
+      "mid": null,
+      "right": 5,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 62,
+      "stepId": "checkLeftRight",
+      "left": 4,
+      "mid": null,
+      "right": 5,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 63,
+      "stepId": "setMid",
+      "left": 4,
+      "mid": 4,
+      "right": 5,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 64,
+      "stepId": "sortLeft",
+      "left": 4,
+      "mid": 4,
+      "right": 5,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 65,
+      "stepId": "markRange",
+      "left": 4,
+      "mid": null,
+      "right": 4,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 66,
+      "stepId": "checkLeftRight",
+      "left": 4,
+      "mid": null,
+      "right": 4,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 67,
+      "stepId": "sortRight",
+      "left": 4,
+      "mid": 4,
+      "right": 5,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 68,
+      "stepId": "markRange",
+      "left": 5,
+      "mid": null,
+      "right": 5,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 69,
+      "stepId": "checkLeftRight",
+      "left": 5,
+      "mid": null,
+      "right": 5,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 70,
+      "stepId": "callMerge",
+      "left": 4,
+      "mid": 4,
+      "right": 5,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 71,
+      "stepId": "copyRuns",
+      "left": 4,
+      "mid": 4,
+      "right": 5,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 72,
+      "stepId": "initMergePointers",
+      "left": 4,
+      "mid": 4,
+      "right": 5,
+      "i": 0,
+      "j": 0,
+      "k": 4,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 73,
+      "stepId": "whileBoth",
+      "left": 4,
+      "mid": 4,
+      "right": 5,
+      "i": 0,
+      "j": 0,
+      "k": 4,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 74,
+      "stepId": "compareMerge",
+      "left": 4,
+      "mid": 4,
+      "right": 5,
+      "i": 0,
+      "j": 0,
+      "k": 4,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        860,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 75,
+      "stepId": "takeRight",
+      "left": 4,
+      "mid": 4,
+      "right": 5,
+      "i": 0,
+      "j": 0,
+      "k": 4,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        855,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 76,
+      "stepId": "incK",
+      "left": 4,
+      "mid": 4,
+      "right": 5,
+      "i": 0,
+      "j": null,
+      "k": 5,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        855,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 77,
+      "stepId": "drainLeft",
+      "left": 4,
+      "mid": 4,
+      "right": 5,
+      "i": 0,
+      "j": null,
+      "k": 5,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 78,
+      "stepId": "sortRight",
+      "left": 4,
+      "mid": 5,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 79,
+      "stepId": "markRange",
+      "left": 6,
+      "mid": null,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 80,
+      "stepId": "checkLeftRight",
+      "left": 6,
+      "mid": null,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 81,
+      "stepId": "setMid",
+      "left": 6,
+      "mid": 6,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 82,
+      "stepId": "sortLeft",
+      "left": 6,
+      "mid": 6,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 83,
+      "stepId": "markRange",
+      "left": 6,
+      "mid": null,
+      "right": 6,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 84,
+      "stepId": "checkLeftRight",
+      "left": 6,
+      "mid": null,
+      "right": 6,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 85,
+      "stepId": "sortRight",
+      "left": 6,
+      "mid": 6,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 86,
+      "stepId": "markRange",
+      "left": 7,
+      "mid": null,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 87,
+      "stepId": "checkLeftRight",
+      "left": 7,
+      "mid": null,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 88,
+      "stepId": "callMerge",
+      "left": 6,
+      "mid": 6,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 89,
+      "stepId": "copyRuns",
+      "left": 6,
+      "mid": 6,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 90,
+      "stepId": "initMergePointers",
+      "left": 6,
+      "mid": 6,
+      "right": 7,
+      "i": 0,
+      "j": 0,
+      "k": 6,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 91,
+      "stepId": "whileBoth",
+      "left": 6,
+      "mid": 6,
+      "right": 7,
+      "i": 0,
+      "j": 0,
+      "k": 6,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 92,
+      "stepId": "compareMerge",
+      "left": 6,
+      "mid": 6,
+      "right": 7,
+      "i": 0,
+      "j": 0,
+      "k": 6,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        843,
+        222
+      ]
+    },
+    {
+      "step": 93,
+      "stepId": "takeRight",
+      "left": 6,
+      "mid": 6,
+      "right": 7,
+      "i": 0,
+      "j": 0,
+      "k": 6,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        222,
+        222
+      ]
+    },
+    {
+      "step": 94,
+      "stepId": "incK",
+      "left": 6,
+      "mid": 6,
+      "right": 7,
+      "i": 0,
+      "j": null,
+      "k": 7,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        222,
+        222
+      ]
+    },
+    {
+      "step": 95,
+      "stepId": "drainLeft",
+      "left": 6,
+      "mid": 6,
+      "right": 7,
+      "i": 0,
+      "j": null,
+      "k": 7,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        222,
+        843
+      ]
+    },
+    {
+      "step": 96,
+      "stepId": "callMerge",
+      "left": 4,
+      "mid": 5,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        222,
+        843
+      ]
+    },
+    {
+      "step": 97,
+      "stepId": "copyRuns",
+      "left": 4,
+      "mid": 5,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        222,
+        843
+      ]
+    },
+    {
+      "step": 98,
+      "stepId": "initMergePointers",
+      "left": 4,
+      "mid": 5,
+      "right": 7,
+      "i": 0,
+      "j": 0,
+      "k": 4,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        222,
+        843
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 99,
+      "stepId": "whileBoth",
+      "left": 4,
+      "mid": 5,
+      "right": 7,
+      "i": 0,
+      "j": 0,
+      "k": 4,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        222,
+        843
+      ]
+    },
+    {
+      "step": 100,
+      "stepId": "compareMerge",
+      "left": 4,
+      "mid": 5,
+      "right": 7,
+      "i": 0,
+      "j": 0,
+      "k": 4,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        855,
+        860,
+        222,
+        843
+      ]
+    },
+    {
+      "step": 101,
+      "stepId": "takeRight",
+      "left": 4,
+      "mid": 5,
+      "right": 7,
+      "i": 0,
+      "j": 0,
+      "k": 4,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        222,
+        860,
+        222,
+        843
+      ]
+    },
+    {
+      "step": 102,
+      "stepId": "incK",
+      "left": 4,
+      "mid": 5,
+      "right": 7,
+      "i": 0,
+      "j": 1,
+      "k": 5,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        222,
+        860,
+        222,
+        843
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 103,
+      "stepId": "compareMerge",
+      "left": 4,
+      "mid": 5,
+      "right": 7,
+      "i": 0,
+      "j": 1,
+      "k": 5,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        222,
+        860,
+        222,
+        843
+      ]
+    },
+    {
+      "step": 104,
+      "stepId": "takeRight",
+      "left": 4,
+      "mid": 5,
+      "right": 7,
+      "i": 0,
+      "j": 1,
+      "k": 5,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        222,
+        843,
+        222,
+        843
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 105,
+      "stepId": "incK",
+      "left": 4,
+      "mid": 5,
+      "right": 7,
+      "i": 0,
+      "j": null,
+      "k": 6,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        222,
+        843,
+        222,
+        843
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 106,
+      "stepId": "drainLeft",
+      "left": 4,
+      "mid": 5,
+      "right": 7,
+      "i": 0,
+      "j": null,
+      "k": 6,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        222,
+        843,
+        855,
+        860
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 107,
+      "stepId": "callMerge",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        222,
+        843,
+        855,
+        860
+      ]
+    },
+    {
+      "step": 108,
+      "stepId": "copyRuns",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": null,
+      "j": null,
+      "k": null,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        222,
+        843,
+        855,
+        860
+      ]
+    },
+    {
+      "step": 109,
+      "stepId": "initMergePointers",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 0,
+      "j": 0,
+      "k": 0,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        222,
+        843,
+        855,
+        860
+      ]
+    },
+    {
+      "step": 110,
+      "stepId": "whileBoth",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 0,
+      "j": 0,
+      "k": 0,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        222,
+        843,
+        855,
+        860
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 111,
+      "stepId": "compareMerge",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 0,
+      "j": 0,
+      "k": 0,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        222,
+        843,
+        855,
+        860
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 112,
+      "stepId": "takeLeft",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 0,
+      "j": 0,
+      "k": 0,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        222,
+        843,
+        855,
+        860
+      ]
+    },
+    {
+      "step": 113,
+      "stepId": "incK",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 1,
+      "j": 0,
+      "k": 1,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        222,
+        843,
+        855,
+        860
+      ]
+    },
+    {
+      "step": 114,
+      "stepId": "compareMerge",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 1,
+      "j": 0,
+      "k": 1,
+      "array": [
+        12,
+        266,
+        770,
+        969,
+        222,
+        843,
+        855,
+        860
+      ]
+    },
+    {
+      "step": 115,
+      "stepId": "takeRight",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 1,
+      "j": 0,
+      "k": 1,
+      "array": [
+        12,
+        222,
+        770,
+        969,
+        222,
+        843,
+        855,
+        860
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 116,
+      "stepId": "incK",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 1,
+      "j": 1,
+      "k": 2,
+      "array": [
+        12,
+        222,
+        770,
+        969,
+        222,
+        843,
+        855,
+        860
+      ]
+    },
+    {
+      "step": 117,
+      "stepId": "compareMerge",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 1,
+      "j": 1,
+      "k": 2,
+      "array": [
+        12,
+        222,
+        770,
+        969,
+        222,
+        843,
+        855,
+        860
+      ]
+    },
+    {
+      "step": 118,
+      "stepId": "takeLeft",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 1,
+      "j": 1,
+      "k": 2,
+      "array": [
+        12,
+        222,
+        266,
+        969,
+        222,
+        843,
+        855,
+        860
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 119,
+      "stepId": "incK",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 2,
+      "j": 1,
+      "k": 3,
+      "array": [
+        12,
+        222,
+        266,
+        969,
+        222,
+        843,
+        855,
+        860
+      ]
+    },
+    {
+      "step": 120,
+      "stepId": "compareMerge",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 2,
+      "j": 1,
+      "k": 3,
+      "array": [
+        12,
+        222,
+        266,
+        969,
+        222,
+        843,
+        855,
+        860
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 121,
+      "stepId": "takeLeft",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 2,
+      "j": 1,
+      "k": 3,
+      "array": [
+        12,
+        222,
+        266,
+        770,
+        222,
+        843,
+        855,
+        860
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 122,
+      "stepId": "incK",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 3,
+      "j": 1,
+      "k": 4,
+      "array": [
+        12,
+        222,
+        266,
+        770,
+        222,
+        843,
+        855,
+        860
+      ]
+    },
+    {
+      "step": 123,
+      "stepId": "compareMerge",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 3,
+      "j": 1,
+      "k": 4,
+      "array": [
+        12,
+        222,
+        266,
+        770,
+        222,
+        843,
+        855,
+        860
+      ]
+    },
+    {
+      "step": 124,
+      "stepId": "takeRight",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 3,
+      "j": 1,
+      "k": 4,
+      "array": [
+        12,
+        222,
+        266,
+        770,
+        843,
+        843,
+        855,
+        860
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 125,
+      "stepId": "incK",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 3,
+      "j": 2,
+      "k": 5,
+      "array": [
+        12,
+        222,
+        266,
+        770,
+        843,
+        843,
+        855,
+        860
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 126,
+      "stepId": "compareMerge",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 3,
+      "j": 2,
+      "k": 5,
+      "array": [
+        12,
+        222,
+        266,
+        770,
+        843,
+        843,
+        855,
+        860
+      ],
+      "missing": {
+        "stepId": true,
+        "left": true,
+        "mid": true,
+        "right": true,
+        "i": true,
+        "j": true,
+        "k": true
+      }
+    },
+    {
+      "step": 127,
+      "stepId": "takeRight",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 3,
+      "j": 2,
+      "k": 5,
+      "array": [
+        12,
+        222,
+        266,
+        770,
+        843,
+        855,
+        855,
+        860
+      ]
+    },
+    {
+      "step": 128,
+      "stepId": "incK",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 3,
+      "j": 3,
+      "k": 6,
+      "array": [
+        12,
+        222,
+        266,
+        770,
+        843,
+        855,
+        855,
+        860
+      ]
+    },
+    {
+      "step": 129,
+      "stepId": "compareMerge",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 3,
+      "j": 3,
+      "k": 6,
+      "array": [
+        12,
+        222,
+        266,
+        770,
+        843,
+        855,
+        855,
+        860
+      ]
+    },
+    {
+      "step": 130,
+      "stepId": "takeRight",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 3,
+      "j": 3,
+      "k": 6,
+      "array": [
+        12,
+        222,
+        266,
+        770,
+        843,
+        855,
+        860,
+        860
+      ]
+    },
+    {
+      "step": 131,
+      "stepId": "incK",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 3,
+      "j": null,
+      "k": 7,
+      "array": [
+        12,
+        222,
+        266,
+        770,
+        843,
+        855,
+        860,
+        860
+      ]
+    },
+    {
+      "step": 132,
+      "stepId": "drainLeft",
+      "left": 0,
+      "mid": 3,
+      "right": 7,
+      "i": 3,
+      "j": null,
+      "k": 7,
+      "array": [
+        12,
+        222,
+        266,
+        770,
+        843,
+        855,
+        860,
+        969
+      ]
+    }
+  ]
+}
