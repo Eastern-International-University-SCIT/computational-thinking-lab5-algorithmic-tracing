@@ -4,6 +4,7 @@
   const STORAGE_KEY = "tracelab-course-progress-v1";
   const STANDALONE_KEY = "tracelab-standalone-completions-v1";
   const LANGUAGE_KEY = "tracelab-language";
+  const STUDENT_KEY = "tracelab-student";
   const GUIDE_SEEN_KEY = "tracelab-first-puzzle-guide-v1";
   const PUZZLE_LANGUAGE_KEYS = ["ls-lang", "bs-lang", "is-lang", "js-lang", "es-lang", "fs-lang", "ss-lang", "qs-lang", "ms-lang", "nms-lang", "bsti-puzzle-lang", "avli-lang"];
 
@@ -11,7 +12,10 @@
     en: {
       pageTitle: "TraceLab — Algorithm Puzzle Course",
       courseProgress: "Course progress", save: "Save", load: "Load", language: "Language",
-      saveTitle: "Download a progress file", loadTitle: "Load a progress file", resetAll: "Reset all progress", resetTitle: "Reset progress",
+      saveTitle: "Save student progress", loadTitle: "Load a progress file", resetAll: "Reset all progress", resetTitle: "Reset progress",
+      saveDialogTitle: "Save student progress", saveDialogHelp: "Enter the student information that should be included in the JSON progress file.",
+      studentId: "Student ID", fullName: "Student full name", cancel: "Cancel", downloadJson: "Download JSON",
+      studentRequired: "Both student ID and full name are required.",
       heroEyebrow: "Computational Thinking Lab", heroTitle: "Think it through.<br><em>Trace it out.</em>",
       heroLede: "Complete the missing steps in real algorithm execution traces. Each solved set unlocks the next challenge on your path.",
       continueCourse: "Continue the course", algorithms: "Algorithms", puzzles: "Puzzles", modules: "Modules",
@@ -32,7 +36,9 @@
       sizeLevel: "Size {group} · Case {case}", heightLevel: "Height {group} · Case {case}",
       sessionOnly: "Progress is kept for this session, but this browser blocked local saving.", puzzleSaved: "Puzzle solved — progress saved.",
       setUnlocked: "{current} complete — {next} unlocked!", courseComplete: "Course complete — every algorithm mastered!",
-      fileSaved: "Progress file saved.", loaded: "Progress loaded — {count} puzzles complete.", invalidFile: "That is not a valid TraceLab progress file.",
+      fileSaved: "Progress saved for {name}.", loaded: "Progress loaded — {count} puzzles complete.",
+      loadedNamed: "Progress loaded for {name} — {count} puzzles complete.",
+      invalidFile: "That is not a valid TraceLab progress file.",
       readError: "The progress file could not be read.", resetDone: "Course progress reset.",
       guide: "Guide", closeGuide: "Close guide", guideSteps: "Guide steps", guideKicker: "QUICK START · {current} OF {total}",
       guideControlsTitle: "Control the simulation", guideControlsText: "Use Run to play continuously, Pause to stop, or Step to advance one operation at a time. The highlighted pseudocode and trace row show exactly what the algorithm is doing.",
@@ -48,7 +54,10 @@
     vi: {
       pageTitle: "TraceLab — Khóa học câu đố thuật toán",
       courseProgress: "Tiến độ khóa học", save: "Lưu", load: "Mở", language: "Ngôn ngữ",
-      saveTitle: "Tải tệp tiến độ xuống", loadTitle: "Mở tệp tiến độ", resetAll: "Đặt lại toàn bộ tiến độ", resetTitle: "Đặt lại tiến độ",
+      saveTitle: "Lưu tiến độ học sinh", loadTitle: "Mở tệp tiến độ", resetAll: "Đặt lại toàn bộ tiến độ", resetTitle: "Đặt lại tiến độ",
+      saveDialogTitle: "Lưu tiến độ học sinh", saveDialogHelp: "Nhập thông tin học sinh sẽ được ghi trong tệp tiến độ JSON.",
+      studentId: "Mã số sinh viên", fullName: "Họ và tên sinh viên", cancel: "Hủy", downloadJson: "Tải tệp JSON",
+      studentRequired: "Cần nhập cả mã số và họ tên sinh viên.",
       heroEyebrow: "Phòng thí nghiệm Tư duy tính toán", heroTitle: "Suy luận từng bước.<br><em>Hoàn thiện dấu vết.</em>",
       heroLede: "Hoàn thành các bước còn thiếu trong dấu vết thực thi thuật toán. Mỗi bộ câu đố hoàn tất sẽ mở khóa thử thách tiếp theo.",
       continueCourse: "Tiếp tục khóa học", algorithms: "Thuật toán", puzzles: "Câu đố", modules: "Chủ đề",
@@ -69,7 +78,9 @@
       sizeLevel: "Kích thước {group} · Trường hợp {case}", heightLevel: "Chiều cao {group} · Trường hợp {case}",
       sessionOnly: "Tiến độ được giữ trong phiên này, nhưng trình duyệt đã chặn lưu trữ cục bộ.", puzzleSaved: "Đã giải câu đố — tiến độ đã được lưu.",
       setUnlocked: "Đã hoàn thành {current} — đã mở khóa {next}!", courseComplete: "Đã hoàn thành khóa học — bạn đã chinh phục mọi thuật toán!",
-      fileSaved: "Đã lưu tệp tiến độ.", loaded: "Đã mở tiến độ — hoàn thành {count} câu đố.", invalidFile: "Đây không phải tệp tiến độ TraceLab hợp lệ.",
+      fileSaved: "Đã lưu tiến độ của {name}.", loaded: "Đã mở tiến độ — hoàn thành {count} câu đố.",
+      loadedNamed: "Đã tải tiến độ của {name} — hoàn thành {count} câu đố.",
+      invalidFile: "Đây không phải tệp tiến độ TraceLab hợp lệ.",
       readError: "Không thể đọc tệp tiến độ.", resetDone: "Đã đặt lại tiến độ khóa học.",
       guide: "Hướng dẫn", closeGuide: "Đóng hướng dẫn", guideSteps: "Các bước hướng dẫn", guideKicker: "BẮT ĐẦU NHANH · {current} / {total}",
       guideControlsTitle: "Điều khiển mô phỏng", guideControlsText: "Dùng Chạy để mô phỏng liên tục, Tạm dừng để dừng lại, hoặc Từng bước để thực hiện từng thao tác. Mã giả và hàng dấu vết được tô sáng cho biết chính xác thuật toán đang làm gì.",
@@ -200,6 +211,7 @@
   const courseModules = document.getElementById("courseModules");
   const algorithmDialog = document.getElementById("algorithmDialog");
   const resetDialog = document.getElementById("resetDialog");
+  const saveDialog = document.getElementById("saveDialog");
   const guideDialog = document.getElementById("guideDialog");
   const puzzlePlayer = document.getElementById("puzzlePlayer");
   const puzzleFrame = document.getElementById("puzzleFrame");
@@ -612,22 +624,68 @@
     toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 3600);
   }
 
-  function saveProgressFile() {
+  function getStudent() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(STUDENT_KEY) || "null");
+      if (parsed && typeof parsed.id === "string" && typeof parsed.fullName === "string") {
+        return { id: parsed.id, fullName: parsed.fullName };
+      }
+    } catch (_) { /* fall through */ }
+    return { id: "", fullName: "" };
+  }
+
+  function setStudent(student) {
+    try {
+      localStorage.setItem(STUDENT_KEY, JSON.stringify({
+        id: student.id,
+        fullName: student.fullName
+      }));
+    } catch (_) { /* Export still works without remembering the student locally. */ }
+  }
+
+  function normalizeStudent(raw) {
+    if (!raw || typeof raw !== "object") return null;
+    const id = typeof raw.id === "string" ? raw.id.trim() : "";
+    const fullName = typeof raw.fullName === "string" ? raw.fullName.trim() : "";
+    if (!id && !fullName) return null;
+    return { id, fullName };
+  }
+
+  function safeFilenamePart(value) {
+    const normalized = String(value).trim().replace(/[^a-zA-Z0-9_-]+/g, "-").replace(/^-+|-+$/g, "");
+    return normalized.slice(0, 48) || "student";
+  }
+
+  function openSaveDialog() {
+    const student = getStudent();
+    const idInput = document.getElementById("saveStudentId");
+    const nameInput = document.getElementById("saveStudentName");
+    document.getElementById("saveDialogError").textContent = "";
+    idInput.value = student.id;
+    nameInput.value = student.fullName;
+    if (!saveDialog.open) saveDialog.showModal();
+    (student.id ? nameInput : idInput).focus();
+  }
+
+  function saveProgressFile(student) {
+    setStudent(student);
     const payload = JSON.stringify({
       type: "TraceLabProgress",
       version: 1,
       savedAt: new Date().toISOString(),
+      language,
+      student: { id: student.id, fullName: student.fullName },
       completed: Array.from(completed).sort()
     }, null, 2);
     const url = URL.createObjectURL(new Blob([payload], { type: "application/json" }));
     const link = document.createElement("a");
     link.href = url;
-    link.download = `tracelab-progress-${new Date().toISOString().slice(0, 10)}.json`;
+    link.download = `tracelab-progress_${safeFilenamePart(student.id)}_${new Date().toISOString().slice(0, 10)}.json`;
     document.body.appendChild(link);
     link.click();
     link.remove();
     window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-    showToast(t("fileSaved"));
+    showToast(t("fileSaved", { name: student.fullName }));
   }
 
   function loadProgressFile(file) {
@@ -638,9 +696,14 @@
         const parsed = JSON.parse(String(reader.result));
         if (!parsed || parsed.type !== "TraceLabProgress" || !Array.isArray(parsed.completed)) throw new Error("invalid");
         completed = new Set(parsed.completed.map(normalizePath).filter((path) => allPaths.has(path)));
+        const student = normalizeStudent(parsed.student);
+        if (student && student.id && student.fullName) setStudent(student);
+        if (parsed.language === "en" || parsed.language === "vi") setLanguage(parsed.language, false);
         persistProgress();
         render();
-        showToast(t("loaded", { count: completed.size }));
+        showToast(student && student.fullName
+          ? t("loadedNamed", { name: student.fullName, count: completed.size })
+          : t("loaded", { count: completed.size }));
       } catch (_) {
         showToast(t("invalidFile"));
       }
@@ -690,7 +753,26 @@
     if (nextPath) openPuzzle(nextPath);
     else closePuzzle();
   });
-  document.getElementById("saveProgressButton").addEventListener("click", saveProgressFile);
+  document.getElementById("saveProgressButton").addEventListener("click", openSaveDialog);
+  document.getElementById("cancelSaveButton").addEventListener("click", () => saveDialog.close());
+  document.getElementById("saveProgressForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const student = {
+      id: document.getElementById("saveStudentId").value.trim(),
+      fullName: document.getElementById("saveStudentName").value.trim()
+    };
+    if (!student.id || !student.fullName) {
+      document.getElementById("saveDialogError").textContent = t("studentRequired");
+      (!student.id ? document.getElementById("saveStudentId") : document.getElementById("saveStudentName")).focus();
+      return;
+    }
+    document.getElementById("saveDialogError").textContent = "";
+    saveDialog.close();
+    saveProgressFile(student);
+  });
+  saveDialog.addEventListener("click", (event) => {
+    if (event.target === saveDialog) saveDialog.close();
+  });
   document.getElementById("loadProgressButton").addEventListener("click", () => document.getElementById("progressFileInput").click());
   document.querySelectorAll("[data-language]").forEach((button) => {
     button.addEventListener("click", () => setLanguage(button.dataset.language));
@@ -709,7 +791,7 @@
     showToast(t("resetDone"));
   });
   window.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape" || puzzlePlayer.hidden || guideDialog.open) return;
+    if (event.key !== "Escape" || puzzlePlayer.hidden || guideDialog.open || saveDialog.open) return;
     closePuzzle();
   });
 

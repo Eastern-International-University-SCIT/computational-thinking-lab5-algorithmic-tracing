@@ -1113,3 +1113,32 @@ body.is-resizing-trace canvas {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+/* Trace Pieces: many column tabs must wrap inside the panel */
+.puzzle-panel {
+  width: min(420px, calc(100vw - 24px));
+  max-height: calc(100vh - 32px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.puzzle-sections {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 6px;
+  padding: 0 12px;
+}
+.puzzle-section-btn {
+  flex: 0 1 auto;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  min-height: 32px;
+  padding: 6px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: 600 0.72rem var(--sans);
+  line-height: 1.2;
+}

@@ -25,7 +25,7 @@
     </section>
 
     <nav class="top-actions" aria-label="Progress tools">
-      <button class="quiet-button" id="saveProgressButton" type="button" title="Download a progress file" data-i18n="save" data-i18n-title="saveTitle">Save</button>
+      <button class="quiet-button" id="saveProgressButton" type="button" title="Save student progress" data-i18n="save" data-i18n-title="saveTitle">Save</button>
       <button class="quiet-button" id="loadProgressButton" type="button" title="Load a progress file" data-i18n="load" data-i18n-title="loadTitle">Load</button>
       <div class="language-toggle" role="group" aria-label="Language" data-i18n-aria-label="language">
         <button type="button" data-language="en" aria-pressed="true">EN</button>
@@ -122,6 +122,22 @@
       <div class="confirm-actions">
         <button class="quiet-button" value="cancel" data-i18n="keepProgress">Keep progress</button>
         <button class="danger-button" value="reset" data-i18n="resetEverything">Reset everything</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="save-dialog" id="saveDialog" aria-labelledby="saveDialogTitle">
+    <form id="saveProgressForm" novalidate>
+      <h2 id="saveDialogTitle" data-i18n="saveDialogTitle">Save student progress</h2>
+      <p class="save-dialog-help" data-i18n="saveDialogHelp">Enter the student information that should be included in the JSON progress file.</p>
+      <label for="saveStudentId" data-i18n="studentId">Student ID</label>
+      <input id="saveStudentId" name="studentId" type="text" autocomplete="off" maxlength="80" required>
+      <label for="saveStudentName" data-i18n="fullName">Student full name</label>
+      <input id="saveStudentName" name="fullName" type="text" autocomplete="name" maxlength="120" required>
+      <p class="save-dialog-error" id="saveDialogError" role="alert"></p>
+      <div class="confirm-actions">
+        <button class="quiet-button" id="cancelSaveButton" type="button" data-i18n="cancel">Cancel</button>
+        <button class="primary-button compact" type="submit" data-i18n="downloadJson">Download JSON</button>
       </div>
     </form>
   </dialog>

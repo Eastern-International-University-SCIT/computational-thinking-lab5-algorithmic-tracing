@@ -212,6 +212,16 @@ dialog::backdrop { background: rgba(24, 19, 35, .6); backdrop-filter: blur(5px);
 .confirm-actions { display: flex; justify-content: center; gap: 9px; }
 .danger-button { color: white; border-color: #b75353; background: #b75353; }
 
+.save-dialog { width: min(460px, calc(100vw - 32px)); border-radius: 20px; background: var(--card); box-shadow: var(--shadow); }
+.save-dialog form { padding: 32px; text-align: left; }
+.save-dialog h2 { margin: 0 0 8px; font-family: Georgia, serif; font-size: 28px; letter-spacing: -.03em; }
+.save-dialog-help { margin: 0 0 18px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.save-dialog label { display: block; margin: 14px 0 6px; color: var(--ink); font-size: 12px; font-weight: 750; }
+.save-dialog input { width: 100%; height: 44px; padding: 0 12px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: #fff; }
+.save-dialog input:focus { outline: 3px solid rgba(118, 85, 214, .2); border-color: var(--purple); }
+.save-dialog-error { min-height: 20px; margin: 10px 0 0; color: #b75353; font-size: 12px; }
+.save-dialog .confirm-actions { justify-content: flex-end; margin-top: 18px; }
+
 .guide-dialog { width: min(900px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: auto; border-radius: 24px; background: var(--card); box-shadow: 0 30px 90px rgba(22, 17, 35, .4); }
 .guide-shell { position: relative; display: grid; grid-template-columns: minmax(310px, .9fr) minmax(350px, 1.1fr); min-height: 520px; }
 .guide-shell > .dialog-close { z-index: 3; right: auto; left: 20px; color: white; border-color: rgba(255, 255, 255, .25); background: rgba(31, 27, 45, .38); }
@@ -279,6 +289,7 @@ html[lang="vi"] .module-title,
 html[lang="vi"] .algorithm-copy h3,
 html[lang="vi"] .dialog-heading h2,
 html[lang="vi"] .confirm-dialog h2,
+html[lang="vi"] .save-dialog h2,
 html[lang="vi"] .guide-copy h2,
 html[lang="vi"] .learning-bridge h3,
 html[lang="vi"] .player-title strong { font-family: "Segoe UI", Tahoma, Arial, sans-serif; font-style: normal; font-weight: 750; letter-spacing: -.025em; }
