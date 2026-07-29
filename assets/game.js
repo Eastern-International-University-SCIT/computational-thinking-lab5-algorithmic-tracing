@@ -35,7 +35,8 @@
       case: "Case {number}", height: "Height {number}", values: "{number} values", readySolve: "Ready to solve",
       sizeLevel: "Size {group} · Case {case}", heightLevel: "Height {group} · Case {case}",
       sessionOnly: "Progress is kept for this session, but this browser blocked local saving.", puzzleSaved: "Puzzle solved — progress saved.",
-      setUnlocked: "{current} complete — {next} unlocked!", courseComplete: "Course complete — every algorithm mastered!",
+      setUnlocked: "{current} complete — {next} unlocked!", setFinished: "{current} complete!",
+      courseComplete: "Course complete — every algorithm mastered!",
       fileSaved: "Progress saved for {name}.", loaded: "Progress loaded — {count} puzzles complete.",
       loadedNamed: "Progress loaded for {name} — {count} puzzles complete.",
       invalidFile: "That is not a valid TraceLab progress file.",
@@ -77,7 +78,8 @@
       case: "Trường hợp {number}", height: "Chiều cao {number}", values: "{number} giá trị", readySolve: "Sẵn sàng giải",
       sizeLevel: "Kích thước {group} · Trường hợp {case}", heightLevel: "Chiều cao {group} · Trường hợp {case}",
       sessionOnly: "Tiến độ được giữ trong phiên này, nhưng trình duyệt đã chặn lưu trữ cục bộ.", puzzleSaved: "Đã giải câu đố — tiến độ đã được lưu.",
-      setUnlocked: "Đã hoàn thành {current} — đã mở khóa {next}!", courseComplete: "Đã hoàn thành khóa học — bạn đã chinh phục mọi thuật toán!",
+      setUnlocked: "Đã hoàn thành {current} — đã mở khóa {next}!", setFinished: "Đã hoàn thành {current}!",
+      courseComplete: "Đã hoàn thành khóa học — bạn đã chinh phục mọi thuật toán!",
       fileSaved: "Đã lưu tiến độ của {name}.", loaded: "Đã mở tiến độ — hoàn thành {count} câu đố.",
       loadedNamed: "Đã tải tiến độ của {name} — hoàn thành {count} câu đố.",
       invalidFile: "Đây không phải tệp tiến độ TraceLab hợp lệ.",
@@ -121,67 +123,80 @@
     {
       id: "linear-search", category: "search", name: "Linear Search", short: "LINEAR",
       description: "Follow each comparison from left to right until the target is found—or the array ends.",
-      folder: "linearsearch_puzzles", app: "linearsearch", groups: [8, 12, 16], cases: 4, groupKind: "size"
+      folder: "linearsearch_puzzles", app: "linearsearch", groups: [8, 12, 16], cases: 4, groupKind: "size",
+      unlockAfter: null
     },
     {
       id: "binary-search", category: "search", name: "Binary Search", short: "BINARY",
       description: "Halve a sorted search interval and reason about low, mid, and high at every step.",
-      folder: "binarysearch_puzzles", app: "binarysearch", groups: [8, 12, 16], cases: 4, groupKind: "size"
+      folder: "binarysearch_puzzles", app: "binarysearch", groups: [8, 12, 16], cases: 4, groupKind: "size",
+      unlockAfter: "linear-search"
     },
     {
       id: "interpolation-search", category: "search", name: "Interpolation Search", short: "INTERPOLATION",
       description: "Estimate the target position from its value and refine the remaining interval.",
-      folder: "interpolationsearch_puzzles", app: "interpolationsearch", groups: [8, 12, 16], cases: 4, groupKind: "size"
+      folder: "interpolationsearch_puzzles", app: "interpolationsearch", groups: [8, 12, 16], cases: 4, groupKind: "size",
+      unlockAfter: "binary-search"
     },
     {
       id: "jump-search", category: "search", name: "Jump Search", short: "JUMP",
       description: "Leap across ordered blocks, then scan the promising block one element at a time.",
-      folder: "jumpsearch_puzzles", app: "jumpsearch", groups: [8, 12, 16], cases: 4, groupKind: "size"
+      folder: "jumpsearch_puzzles", app: "jumpsearch", groups: [8, 12, 16], cases: 4, groupKind: "size",
+      unlockAfter: "interpolation-search"
     },
     {
       id: "exponential-search", category: "search", name: "Exponential Search", short: "EXPONENTIAL",
       description: "Expand the search boundary exponentially before closing in with binary search.",
-      folder: "exponentialsearch_puzzles", app: "exponentialsearch", groups: [8, 12, 16], cases: 4, groupKind: "size"
+      folder: "exponentialsearch_puzzles", app: "exponentialsearch", groups: [8, 12, 16], cases: 4, groupKind: "size",
+      unlockAfter: "jump-search"
     },
     {
       id: "fibonacci-search", category: "search", name: "Fibonacci Search", short: "FIBONACCI",
       description: "Use Fibonacci offsets to partition a sorted array without dividing the interval in half.",
-      folder: "fibonaccisearch_puzzles", app: "fibonaccisearch", groups: [8, 12, 16], cases: 4, groupKind: "size"
+      folder: "fibonaccisearch_puzzles", app: "fibonaccisearch", groups: [8, 12, 16], cases: 4, groupKind: "size",
+      unlockAfter: "jump-search"
     },
     {
       id: "selection-sort", category: "sort", name: "Selection Sort", short: "SELECTION",
       description: "Track the smallest remaining value and place it into its final position each pass.",
-      folder: "selectionsort_puzzles", app: "selectionsort", groups: [8, 14, 20], cases: 3, groupKind: "size"
+      folder: "selectionsort_puzzles", app: "selectionsort", groups: [8, 14, 20], cases: 3, groupKind: "size",
+      unlockAfter: "jump-search"
     },
     {
       id: "bubble-sort", category: "sort", name: "Bubble Sort", short: "BUBBLE",
       description: "Compare neighbors, swap inverted pairs, and watch larger values rise to the end.",
-      folder: "bubblesort_puzzles", app: "bubblesort", groups: [8, 14, 20], cases: 3, groupKind: "size"
+      folder: "bubblesort_puzzles", app: "bubblesort", groups: [8, 14, 20], cases: 3, groupKind: "size",
+      unlockAfter: "selection-sort"
     },
     {
       id: "quick-sort", category: "sort", name: "Quick Sort", short: "QUICK",
       description: "Partition values around a pivot and trace the recursive work on both sides.",
-      folder: "quicksort_puzzles", app: "quicksort", groups: [8, 14, 20], cases: 3, groupKind: "size"
+      folder: "quicksort_puzzles", app: "quicksort", groups: [8, 14, 20], cases: 3, groupKind: "size",
+      unlockAfter: "bubble-sort"
     },
     {
       id: "merge-sort", category: "sort", name: "Merge Sort", short: "MERGE",
       description: "Split the array recursively, then reconstruct it through ordered merges.",
-      folder: "mergesort_puzzles", app: "mergesort", groups: [8, 14, 20], cases: 3, groupKind: "size"
+      folder: "mergesort_puzzles", app: "mergesort", groups: [8, 14, 20], cases: 3, groupKind: "size",
+      unlockAfter: "quick-sort"
     },
     {
       id: "natural-merge-sort", category: "sort", name: "Natural Merge Sort", short: "NATURAL MERGE",
       description: "Discover existing ordered runs and merge them until the whole array is sorted.",
-      folder: "naturalmergesort_puzzles", app: "naturalmergesort", groups: [8, 14, 20], cases: 3, groupKind: "size"
+      folder: "naturalmergesort_puzzles", app: "naturalmergesort", groups: [8, 14, 20], cases: 3, groupKind: "size",
+      unlockAfter: "quick-sort"
     },
     {
       id: "binary-search-tree", category: "tree", name: "Binary Search Tree", short: "BINARY TREE",
       description: "Trace comparison-driven insertions as the binary search tree grows node by node.",
-      folder: "binarysearchtree", app: "binarysearchtree_insertion", groups: [2, 4, 6], cases: 3, groupKind: "height"
+      folder: "binarysearchtree", app: "binarysearchtree_insertion", groups: [2, 4, 6], cases: 3, groupKind: "height",
+      unlockAfter: "quick-sort"
     },
     {
       id: "avl-tree", category: "tree", name: "AVL Tree", short: "AVL TREE",
       description: "Track insertions, balance factors, and rotations that keep the tree height-balanced.",
-      folder: "avltree", app: "avltree_insertion", groups: [2, 4, 6], cases: 3, groupKind: "height"
+      folder: "avltree", app: "avltree_insertion", groups: [2, 4, 6], cases: 3, groupKind: "height",
+      unlockAfter: "binary-search-tree"
     }
   ];
 
@@ -405,8 +420,30 @@
     return algorithmCompletedCount(algorithm) === algorithm.levels.length;
   }
 
+  function algorithmIndexById(id) {
+    return algorithms.findIndex((algorithm) => algorithm.id === id);
+  }
+
   function algorithmIsUnlocked(index) {
-    return index === 0 || algorithmIsComplete(index - 1);
+    const requirement = algorithms[index].unlockAfter;
+    if (!requirement) return true;
+    const requiredIndex = algorithmIndexById(requirement);
+    return requiredIndex !== -1 && algorithmIsComplete(requiredIndex);
+  }
+
+  function algorithmsUnlockedBy(completedIndex) {
+    const completedId = algorithms[completedIndex].id;
+    return algorithms.filter((algorithm) => algorithm.unlockAfter === completedId);
+  }
+
+  function formatNameList(names) {
+    if (names.length <= 1) return names[0] || "";
+    if (names.length === 2) {
+      return language === "vi" ? `${names[0]} và ${names[1]}` : `${names[0]} and ${names[1]}`;
+    }
+    const head = names.slice(0, -1).join(", ");
+    const last = names[names.length - 1];
+    return language === "vi" ? `${head} và ${last}` : `${head}, and ${last}`;
   }
 
   function firstActiveIndex() {
@@ -474,7 +511,9 @@
     let action;
 
     if (!unlocked) {
-      action = `<div class="lock-copy"><span>${t("finish")}<br>${algorithmName(algorithms[index - 1])}</span><span class="lock-icon" aria-hidden="true">🔒</span></div>`;
+      const requiredIndex = algorithmIndexById(algorithm.unlockAfter);
+      const prerequisite = requiredIndex >= 0 ? algorithms[requiredIndex] : algorithms[Math.max(0, index - 1)];
+      action = `<div class="lock-copy"><span>${t("finish")}<br>${algorithmName(prerequisite)}</span><span class="lock-icon" aria-hidden="true">🔒</span></div>`;
     } else {
       const actionLabel = complete ? t("reviewSet") : (done ? t("continue") : t("startSet"));
       action = `<button class="course-button" type="button" data-algorithm-index="${index}">${actionLabel} →</button>`;
@@ -607,10 +646,17 @@
     }
 
     if (!wasAlgorithmComplete && algorithmIsComplete(match.algorithmIndex)) {
-      const nextAlgorithm = algorithms[match.algorithmIndex + 1];
-      showToast(nextAlgorithm
-        ? t("setUnlocked", { current: algorithmName(algorithms[match.algorithmIndex]), next: algorithmName(nextAlgorithm) })
-        : t("courseComplete"));
+      const unlockedAlgorithms = algorithmsUnlockedBy(match.algorithmIndex);
+      if (unlockedAlgorithms.length) {
+        showToast(t("setUnlocked", {
+          current: algorithmName(algorithms[match.algorithmIndex]),
+          next: formatNameList(unlockedAlgorithms.map((algorithm) => algorithmName(algorithm)))
+        }));
+      } else if (algorithms.every((_, index) => algorithmIsComplete(index))) {
+        showToast(t("courseComplete"));
+      } else {
+        showToast(t("setFinished", { current: algorithmName(algorithms[match.algorithmIndex]) }));
+      }
     } else {
       showToast(t("puzzleSaved"));
     }
